@@ -55,11 +55,11 @@ about:
     with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient 
     cryptocurrency trading.
   description: |
-    [![Get a UNICORN Binance Suite License](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/logo/LUCIT-UBS-License-Offer.png)](https://shop.lucit.services)
+    [![Get a UNICORN Binance Suite License](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-License-Offer.png)](https://shop.lucit.services)
     
     [![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
-    [![GitHub Release](https://img.shields.io/github/release/LUCIT-Systems-and-Development/unicorn-binance-suite.svg?label=github)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
-    [![GitHub Downloads](https://img.shields.io/github/downloads/LUCIT-Systems-and-Development/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
+    [![GitHub Release](https://img.shields.io/github/release/oliver-zehentleitner/unicorn-binance-suite.svg?label=github)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
+    [![GitHub Downloads](https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
     [![Anaconda Release](https://anaconda.org/lucit/unicorn-binance-suite/badges/version.svg)](https://anaconda.org/lucit/unicorn-binance-suite)
     [![Anaconda Downloads](https://anaconda.org/lucit/unicorn-binance-suite/badges/downloads.svg)](https://anaconda.org/lucit/unicorn-binance-suite)
     [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
@@ -67,7 +67,7 @@ about:
     [![License](https://img.shields.io/badge/license-LSOSL-blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE)
     [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
     [![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues)
-    [![codecov](https://codecov.io/gh/LUCIT-Systems-and-Development/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/LUCIT-Systems-and-Development/unicorn-binance-suite)
+    [![codecov](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite)
     [![CodeQL](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml)
     [![Unit Tests](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml)
     [![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
@@ -77,7 +77,7 @@ about:
     [![Telegram](https://img.shields.io/badge/chat-telegram-41ab8c)](https://t.me/unicorndevs)
     [![Gitter](https://badges.gitter.im/unicorn-binance-suite/unicorn-binance-suite.svg)](https://gitter.im/unicorn-binance-suite/unicorn-binance-suite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
     
-    [![LUCIT-UBS-Banner](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
+    [![LUCIT-UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
     
     # UNICORN Binance Suite
     [Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
@@ -91,10 +91,10 @@ about:
     efficient cryptocurrency trading.
     
     The suite is the most stable, powerful and convenient way to interact with various Binance API endpoints via 
-    [REST](https://www.lucit.tech/unicorn-binance-rest-api.html) and 
-    [Websocket](https://www.lucit.tech/unicorn-binance-websocket-api.html) and to 
-    [manage local order books](https://www.lucit.tech/unicorn-binance-local-depth-cache.html) and 
-    [trailing stop losses](https://www.lucit.tech/unicorn-binance-trailing-stop-loss.html).
+    [REST](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) and 
+    [Websocket](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) and to 
+    [manage local order books](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) and 
+    [trailing stop losses](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss).
     
     All libraries in the suite are coordinated with each other, interlock perfectly, are fully documented and offer 
     standardized interfaces and tools for the programmer. LUCIT continuously develops the modules, fixes bugs, tests the 
@@ -108,14 +108,14 @@ about:
     
     ## Modules of the UNICORN Binance Suite
     
-    - [`UNICORN Binance Local Depth Cache`](https://www.lucit.tech/unicorn-binance-local-depth-cache.html): A local Binance DepthCache Manager for Python that supports multiple depth caches in one instance in a easy, fast, flexible, robust and fully-featured way. 
-    - [`UNICORN Binance REST API`](https://www.lucit.tech/unicorn-binance-rest-api.html): A Python API to use the Binance REST API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a easy, fast, flexible, robust and fully-featured way.
-    - [`UNICORN Binance Trailing Stop Loss`](https://www.lucit.tech/unicorn-binance-trailing-stop-loss.html): A Trailing Stop Loss Python Lib and [Command Line Tool](https://www.lucit.tech/ubtsl-cli.html).
-    - [`UNICORN Binance WebSocket API`](https://www.lucit.tech/unicorn-binance-websocket-api.html): A Python API to use the Binance Websocket API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in a easy, fast, flexible, robust and fully-featured way.
-    - [`UnicornFy`](https://www.lucit.tech/unicorn-fy.html): Convert received raw data from crypto exchange API endpoints into well-formed python dictionaries. 
+    - [`UNICORN Binance Local Depth Cache`](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache): A local Binance DepthCache Manager for Python that supports multiple depth caches in one instance in a easy, fast, flexible, robust and fully-featured way. 
+    - [`UNICORN Binance REST API`](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api): A Python API to use the Binance REST API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a easy, fast, flexible, robust and fully-featured way.
+    - [`UNICORN Binance Trailing Stop Loss`](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss): A Trailing Stop Loss Python Lib and [Command Line Tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli).
+    - [`UNICORN Binance WebSocket API`](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api): A Python API to use the Binance Websocket API`s (com+testnet, com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in a easy, fast, flexible, robust and fully-featured way.
+    - [`UnicornFy`](https://github.com/oliver-zehentleitner/unicorn-fy): Convert received raw data from crypto exchange API endpoints into well-formed python dictionaries. 
     
     If you like our projects, please 
-    [![star](https://raw.githubusercontent.com/lucit-systems-and-development/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
+    [![star](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
     [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)! 
     
     ## Get a UNICORN Binance Suite License
@@ -178,7 +178,7 @@ about:
     #### Linux, macOS, ...
     Run in bash:
     
-    `pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/$(curl -s https://api.github.com/repos/LUCIT-Systems-and-Development/unicorn-binance-suite/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")').tar.gz --upgrade`
+    `pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/$(curl -s https://api.github.com/repos/oliver-zehentleitner/unicorn-binance-suite/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")').tar.gz --upgrade`
     
     #### Windows
     Use the below command with the version (such as 1.1.0) you determined 
@@ -228,7 +228,7 @@ about:
     - [https://community.binance.org](https://community.binance.org)
     
     ## Receive Notifications
-    Follow us on [LinkedIn](https://www.linkedin.com/company/lucit-systems-and-development), 
+    Follow us on [LinkedIn](https://www.linkedin.com/company/oliver-zehentleitner), 
     [X](https://twitter.com/LUCIT_SysDev) or [Facebook](https://www.facebook.com/lucit.systems.and.development)!
     
     Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite) for spezific notifications.
@@ -262,7 +262,7 @@ about:
     
     ## Commercial Support
     
-    [![Get professional and fast support](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/support/LUCIT-get-professional-and-fast-support.png)](https://www.lucit.tech/get-support.html)
+    [![Get professional and fast support](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/support/LUCIT-get-professional-and-fast-support.png)](https://www.lucit.tech/get-support.html)
     
     ***Do you need a developer, operator or consultant?*** [Contact us](https://www.lucit.tech/contact.html) for a non-binding initial consultation!
 
