@@ -15,7 +15,7 @@ jobs:
 
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.8
 
     - name: Install dependencies
       run: |
@@ -24,9 +24,6 @@ jobs:
         pip install coveralls
 
     - name: Unit test
-      env:
-          LUCIT_API_SECRET: ${{ secrets.LUCIT_API_SECRET }}
-          LUCIT_LICENSE_TOKEN: ${{ secrets.LUCIT_LICENSE_TOKEN }}
       run: coverage run --source unicorn_binance_suite unittest_binance_suite.py
 
     - name: Upload coverage to Codecov
