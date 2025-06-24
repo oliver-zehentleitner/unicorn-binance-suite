@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to 
 [Semantic Versioning](http://semver.org/).
 
-[Discussions about unicorn-binance-suite releases!](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/discussions/categories/releases)
+[Discussions about unicorn-binance-suite releases!](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions/categories/releases)
 
-[How to upgrade to the latest version!](https://unicorn-binance-suite.docs.lucit.tech/readme.html#installation-and-upgrade)
+[How to upgrade to the latest version!](https://oliver-zehentleitner.github.io/unicorn-binance-suite/readme.html#installation-and-upgrade)
 
 ## 2.0.0.dev (development stage/unreleased/unstable)
 

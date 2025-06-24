@@ -4,9 +4,9 @@
 # File: tools/get_versions_of_unicorn_packages.py
 #
 # Part of ‘UNICORN Binance Suite’
-# Project website: https://www.lucit.tech/unicorn-binance-suite.html
-# Github: https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite
-# Documentation: https://unicorn-binance-suite.docs.lucit.tech
+# Project website: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+# Github: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+# Documentation: https://oliver-zehentleitner.github.io/unicorn-binance-suite
 # PyPI: https://pypi.org/project/unicorn-binance-suite
 #
 # Author: LUCIT Systems and Development

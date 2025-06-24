@@ -4,19 +4,38 @@
 # File: dev/sphinx/create_docs.sh
 #
 # Part of ‘UNICORN Binance Suite’
-# Project website: https://www.lucit.tech/unicorn-binance-suite.html
-# Github: https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite
-# Documentation: https://unicorn-binance-suite.docs.lucit.tech
+# Project website: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+# Github: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+# Documentation: https://oliver-zehentleitner.github.io/unicorn-binance-suite
 # PyPI: https://pypi.org/project/unicorn-binance-suite
-# LUCIT Online Shop: https://shop.lucit.services/software
 #
-# License: LSOSL - LUCIT Synergetic Open Source License
-# https://github.com/LUCIT-Systems-and-Development/unicorn-binance-websocket-api/blob/master/LICENSE
+# License: MIT
+# https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE
 #
-# Author: LUCIT Systems and Development
+# Author: Oliver Zehentleitner
 #
-# Copyright (c) 2019-2023, LUCIT Systems and Development (https://www.lucit.tech)
+# Copyright (c) 2019-2025, Oliver Zehentleitner (https://about.me/oliver-zehentleitner)
+#
 # All rights reserved.
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the
+# "Software"), to deal in the Software without restriction, including
+# without limitation the rights to use, copy, modify, merge, publish, dis-
+# tribute, sublicense, and/or sell copies of the Software, and to permit
+# persons to whom the Software is furnished to do so, subject to the fol-
+# lowing conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABIL-
+# ITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
+# SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
 
 rm dev/sphinx/source/changelog.md
 rm dev/sphinx/source/code_of_conduct.md
@@ -38,5 +57,5 @@ cd dev/sphinx
 rm build/html
 ln -s ../../../docs build/html
 make html -d
-echo "Creating CNAME file for GitHub."
-echo "unicorn-binance-suite.docs.lucit.tech" >> build/html/CNAME
+#echo "Creating CNAME file for GitHub."
+#echo "unicorn-binance-suite.docs.lucit.tech" >> build/html/CNAME

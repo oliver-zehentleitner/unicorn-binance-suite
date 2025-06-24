@@ -1,34 +1,30 @@
 [tool.poetry]
 name = "unicorn-binance-suite"
 version = "2.0.0"
-description = "LUCIT's UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient cryptocurrency trading."
+description = "The UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient cryptocurrency trading."
 authors = ["LUCIT Systems and Development <info@lucit.tech>"]
-license = "LSOSL - LUCIT Synergetic Open Source License"
+license = "MIT"
 readme = "README.md"
-homepage = "https://www.lucit.tech/unicorn-binance-suite.html"
-documentation = "https://unicorn-binance-suite.docs.lucit.tech"
-repository = "https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite"
+homepage = "https://github.com/oliver-zehentleitner/unicorn-binance-suite"
+documentation = "https://oliver-zehentleitner.github.io/unicorn-binance-suite"
+repository = "https://github.com/oliver-zehentleitner/unicorn-binance-suite"
 
 [tool.poetry.urls]
-'Howto' = 'https://www.lucit.tech/unicorn-binance-suite.html#howto'
-'Documentation' = 'https://unicorn-binance-suite.docs.lucit.tech'
-'Wiki' = 'https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/wiki'
-'Author' = 'https://www.lucit.tech'
-'Changes' = 'https://unicorn-binance-suite.docs.lucit.tech/changelog.html'
-'License' = 'https://unicorn-binance-suite.docs.lucit.tech/license.html'
-'Issue Tracker' = 'https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/issues'
+'Howto' = 'https://github.com/oliver-zehentleitner/unicorn-binance-suite#howto'
+'Documentation' = 'https://oliver-zehentleitner.github.io/unicorn-binance-suite'
+'Wiki' = 'https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki'
+'Author' = 'https://www.linkedin.com/in/oliver-zehentleitner'
+'Changes' = 'https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html'
+'License' = 'https://oliver-zehentleitner.github.io/unicorn-binance-suite/license.html'
+'Issue Tracker' = 'https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues'
 'Telegram' = 'https://t.me/unicorndevs'
-'Chat' = 'https://app.gitter.im/#/room/#unicorn-binance-suite_unicorn-binance-suite:gitter.im'
-'Get Support' = 'https://www.lucit.tech/get-support.html'
-'LUCIT Online Shop' = 'https://shop.lucit.services/software/unicorn-binance-suite'
 
 [tool.poetry.dependencies]
-python = ">=3.7.0"
-lucit-licensing-python = ">=1.8.1"
-unicorn-fy = ">=0.13.1"
+python = ">=3.8.0"
+unicorn-fy = ">=0.16.1"
 unicorn-binance-local-depth-cache = ">=1.0.0"
-unicorn-binance-rest-api = ">=2.0.0"
-unicorn-binance-websocket-api = ">=2.0.0"
+unicorn-binance-rest-api = ">=2.8.0"
+unicorn-binance-websocket-api = ">=2.10.2"
 unicorn-binance-trailing-stop-loss = ">=1.0.0"
 
 [tool.poetry.dev-dependencies]

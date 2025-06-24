@@ -1,35 +1,28 @@
-[![Get a UNICORN Binance Suite License](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/logo/LUCIT-UBS-License-Offer.png)](https://shop.lucit.services)
-
-[![GitHub Release](https://img.shields.io/github/release/LUCIT-Systems-and-Development/unicorn-binance-suite.svg?label=github)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/releases)
-[![GitHub Downloads](https://img.shields.io/github/downloads/LUCIT-Systems-and-Development/unicorn-binance-suite/total?color=blue)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/releases)
-![Anaconda Release](https://img.shields.io/conda/v/lucit/unicorn-binance-suite?color=blue)
-![Anaconda Downloads](https://img.shields.io/conda/dn/lucit/unicorn-binance-suite?color=blue)
+[![GitHub Release](https://img.shields.io/github/release/LUCIT-Systems-and-Development/unicorn-binance-suite.svg?label=github)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
+[![GitHub Downloads](https://img.shields.io/github/downloads/LUCIT-Systems-and-Development/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
 [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
 [![PyPi Downloads](https://pepy.tech/badge/unicorn-binance-suite)](https://pepy.tech/project/unicorn-binance-suite)
-[![License](https://img.shields.io/badge/license-LSOSL-blue)](https://unicorn-binance-suite.docs.lucit.tech/license.html)
+[![License](https://img.shields.io/badge/license-LSOSL-blue)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/license.html)
 [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
-[![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/issues)
+[![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues)
 [![codecov](https://codecov.io/gh/LUCIT-Systems-and-Development/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/LUCIT-Systems-and-Development/unicorn-binance-suite)
-[![CodeQL](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/codeql-analysis.yml)
-[![Unit Tests](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/unit-tests.yml)
-[![Build and Publish GH+PyPi](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_wheels.yml)
-[![Build and Publish Anaconda](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_conda.yml/badge.svg)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_conda.yml)
-[![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://unicorn-binance-suite.docs.lucit.tech/)
-[![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://medium.lucit.tech)
-[![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite)
+[![CodeQL](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml)
+[![Unit Tests](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml)
+[![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
+[![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
+[![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://technopathy.club)
+[![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
-[![Gitter](https://img.shields.io/badge/community-gitter-41ab8c)](https://gitter.im/unicorn-binance-suite/unicorn-binance-suite)
-[![Get Free Professional Support](https://img.shields.io/badge/chat-lucit%20support-004166)](https://www.lucit.tech/get-support.html)
 
-[![LUCIT-UBS-Banner](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://www.lucit.tech/unicorn-binance-suite.html)
+[![LUCIT-UBS-Banner](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
 # UNICORN Binance Suite
 [Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
-[Documentation](#documentation) | [Social](#social) | [Notifications](#receive-notifications) | [Bugs](#how-to-report-bugs-or-suggest-improvements) | 
-[Contributing](#contributing) | [Disclaimer](#disclaimer) | [Commercial Support](#commercial-support)
+[Documentation](#documentation) | [Social](#social) | [Bugs](#how-to-report-bugs-or-suggest-improvements) | 
+[Contributing](#contributing) | [Disclaimer](#disclaimer)
 
 ## Description
-LUCIT's [`UNICORN Binance Suite`](https://www.lucit.tech/unicorn-binance-suite.html) is a comprehensive collection of open-source Python packages designed for 
+The [`UNICORN Binance Suite`](https://github.com/oliver-zehentleitner/unicorn-binance-suite) is a comprehensive collection of open-source Python packages designed for 
 building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless 
 integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and 
 efficient cryptocurrency trading.
@@ -51,8 +44,6 @@ deployed directly to PyPi and Anaconda in a traceable manner. This process makes
 understand which code is contained in which package and can therefore easily install optimized builds for the platform, 
 architecture and Python version used.
 
-[Get help](https://www.lucit.tech/get-support.html) with the integration of the `UNICORN Binance Suite` modules!
-
 ## Modules of the UNICORN Binance Suite
 
 - [`UNICORN Binance Local Depth Cache`](https://www.lucit.tech/unicorn-binance-local-depth-cache.html): A Python SDK from LUCIT to access and manage multiple local Binance 
@@ -69,12 +60,12 @@ architecture and Python version used.
   well-formed python dictionaries. 
 
 If you like our projects, please 
-[![star](https://raw.githubusercontent.com/lucit-systems-and-development/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/stargazers) them on 
-[GitHub](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite)! 
+[![star](https://raw.githubusercontent.com/lucit-systems-and-development/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
+[GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)! 
 
 ## Get a UNICORN Binance Suite License
 
-To run modules of the *UNICORN Binance Suite* you need a [valid license](https://medium.lucit.tech/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8#4ca4)!
+To run modules of the *UNICORN Binance Suite* you need a [valid license](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8#4ca4)!
 
 ## Installation and Upgrade
 
@@ -83,15 +74,15 @@ processing.
 
 For the PyPy interpreter we offer packages only from Python version 3.9 and higher.
 
-Anaconda packages are available from Python version 3.8 and higher.
+[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
 
-If you run into errors during the installation take a look [here](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/wiki/Installation).
+If you run into errors during the installation take a look [here](https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki/Installation).
 
 ### Packages are created automatically with GitHub Actions
 When a new release is to be created, we start two GitHubActions: 
 
-- [Build and Publish Anaconda](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_conda.yml)
-- [Build and Publish GH+PyPi](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/actions/workflows/build_wheels.yml) 
+- [Build and Publish Anaconda](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_conda.yml)
+- [Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml) 
 
 Both start virtual Windows/Linux/Mac servers provided by GitHub in the cloud with preconfigured environments and 
 create the respective compilations and stub files, pack them into wheels and conda packages and then publish them on 
@@ -122,6 +113,8 @@ configuration.
 `pip install unicorn-binance-suite --upgrade`
 
 ### A Conda Package of the latest version with `conda` from [Anaconda](https://anaconda.org/lucit)
+[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
+
 The `unicorn-binance-suite` package is also available as a Cython version for the `linux-64`, `osx-64` 
 and `win-64` architectures with [Conda](https://docs.conda.io/en/latest/) through the 
 [`lucit` channel](https://anaconda.org/lucit). 
@@ -130,6 +123,8 @@ For optimal compatibility and performance, it is recommended to source the neces
 [`conda-forge` channel](https://anaconda.org/conda-forge). 
 
 #### Installation
+[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
+
 ```
 conda config --add channels conda-forge
 conda config --add channels lucit
@@ -137,28 +132,30 @@ conda install -c lucit unicorn-binance-suite
 ```
 
 #### Update
+[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
+
 `conda update -c lucit unicorn-binance-suite`
 
-### From source of the latest release with PIP from [GitHub](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite)
+### From source of the latest release with PIP from [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 #### Linux, macOS, ...
 Run in bash:
 
-`pip install https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/archive/$(curl -s https://api.github.com/repos/LUCIT-Systems-and-Development/unicorn-binance-suite/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")').tar.gz --upgrade`
+`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/$(curl -s https://api.github.com/repos/LUCIT-Systems-and-Development/unicorn-binance-suite/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")').tar.gz --upgrade`
 
 #### Windows
 Use the below command with the version (such as 2.0.0) you determined 
-[here](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/releases/latest):
+[here](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest):
 
-`pip install https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/archive/2.0.0.tar.gz --upgrade`
+`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/2.0.0.tar.gz --upgrade`
 
-### From the latest source (dev-stage) with PIP from [GitHub](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite)
+### From the latest source (dev-stage) with PIP from [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 This is not a release version and can not be considered to be stable!
 
-`pip install https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/tarball/master --upgrade`
+`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/tarball/master --upgrade`
 
 ### [Conda environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html), [Virtualenv](https://virtualenv.pypa.io/en/latest/) or plain [Python](https://www.python.org)
-Download the [latest release](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/releases/latest) 
-or the [current master branch](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/archive/master.zip)
+Download the [latest release](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest) 
+or the [current master branch](https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/master.zip)
  and use:
  
 - ./environment.yml
@@ -167,42 +164,37 @@ or the [current master branch](https://github.com/LUCIT-Systems-and-Development/
 - ./setup.py
 
 ## Change Log
-[https://unicorn-binance-suite.docs.lucit.tech/changelog.html](https://unicorn-binance-suite.docs.lucit.tech/changelog.html)
+[https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html](https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html)
 
-Please look for the information in the README.md of the [responsible subrepository](https://www.lucit.tech/unicorn-binance-suite.html#modules-of-the-unicorn-binance-suite).
+Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
 
 ## Documentation
-- [General](https://unicorn-binance-suite.docs.lucit.tech/)
+- [General](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 
-Please look for the information in the README.md of the [responsible subrepository](https://www.lucit.tech/unicorn-binance-suite.html#modules-of-the-unicorn-binance-suite).
+Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
 
 ## Howto
-- [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://medium.lucit.tech/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
-- [Instructions about the UNICORN Binance Suite](https://medium.lucit.tech/unicorn-binance-suite/home)
+- [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
 
 ## Project Homepage
-[https://www.lucit.tech/unicorn-binance-suite.html](https://www.lucit.tech/unicorn-binance-suite.html)
+[https://github.com/oliver-zehentleitner/unicorn-binance-suite](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
 ## Wiki
-[https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/wiki](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/wiki)
+[https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki](https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki)
 
 ## Social
-- [Discussions](https://github.com/LUCIT-Systems-and-Development/unicorn-binance-suite/discussions)
+- [Discussions](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions)
 - [https://t.me/unicorndevs](https://t.me/unicorndevs)
 - [https://dev.binance.vision](https://dev.binance.vision)
 - [https://community.binance.org](https://community.binance.org)
 
-## Receive Notifications
-Follow us on [LinkedIn](https://www.linkedin.com/company/lucit-systems-and-development), 
-[X](https://twitter.com/LUCIT_SysDev) or [Facebook](https://www.facebook.com/lucit.systems.and.development)!
-
-Please look for the information in the README.md of the [responsible subrepository](https://www.lucit.tech/unicorn-binance-suite.html#modules-of-the-unicorn-binance-suite) for spezific notifications.
+Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite) for spezific notifications.
 
 ## How to report Bugs or suggest Improvements?
-Please look for the information in the README.md of the [responsible subrepository](https://www.lucit.tech/unicorn-binance-suite.html#modules-of-the-unicorn-binance-suite).
+Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
 
 ## Contributing
-Please look for the information in the README.md of the [responsible subrepository](https://www.lucit.tech/unicorn-binance-suite.html#modules-of-the-unicorn-binance-suite).
+Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
 
 ## Disclaimer
 This project is for informational purposes only. You should not construe this information or any other material as 
@@ -224,9 +216,3 @@ The purpose of supporting a SOCKS5 proxy in the UNICORN Binance Suite and its mo
 use US services. For example, GitHub actions with UBS will not work without a SOCKS5 proxy, as they will inevitably run 
 on servers in the US and be blocked by Binance.com. Moreover, it also seems justified that traders, data scientists and 
 companies from the US analyze binance.com market data - as long as they do not trade there.
-
-## Commercial Support
-
-[![Get professional and fast support](https://raw.githubusercontent.com/LUCIT-Systems-and-Development/unicorn-binance-suite/master/images/support/LUCIT-get-professional-and-fast-support.png)](https://www.lucit.tech/get-support.html)
-
-***Do you need a developer, operator or consultant?*** [Contact us](https://www.lucit.tech/contact.html) for a non-binding initial consultation!
