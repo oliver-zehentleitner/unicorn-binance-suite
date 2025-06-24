@@ -28,17 +28,16 @@ integration with the Binance API, enabling the creation of advanced and professi
 efficient cryptocurrency trading.
 
 The suite is the most stable, powerful and convenient way to interact with various Binance API endpoints via 
-[REST](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) and
-[Websocket](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) and to
-[manage local order books](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) and
+[REST](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) and 
+[Websocket](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) and to 
+[manage local order books](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) and 
 [trailing stop losses](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss).
 
 All libraries in the suite are coordinated with each other, interlock perfectly, are fully documented and offer 
-standardized interfaces and tools for the programmer. LUCIT continuously develops the modules, fixes bugs, tests the 
-libraries extensively and offers [fast, direct and free support](https://www.lucit.tech/get-support.html).
+standardized interfaces and tools for the programmer.
 
 All modules are delivered optimized as PyPy and as Python C Extension (Cython) via 
-[PyPi](https://pypi.org/user/LUCIT/) and [Anaconda](https://anaconda.org/lucit). The package 
+[PyPi](https://pypi.org/) and [Anaconda](https://anaconda.org). The package 
 creation runs completely transparently directly from the respective GitHub repository through GitHub Actions and is 
 deployed directly to PyPi and Anaconda in a traceable manner. This process makes it tamper-proof for you to 
 understand which code is contained in which package and can therefore easily install optimized builds for the platform, 
@@ -46,26 +45,22 @@ architecture and Python version used.
 
 ## Modules of the UNICORN Binance Suite
 
-- [`UNICORN Binance Local Depth Cache`](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache): A Python SDK from LUCIT to access and manage multiple local Binance
+- [`UNICORN Binance Local Depth Cache`](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache): A Python SDK to access and manage multiple local Binance 
   DepthCaches with Python in a simple, fast, flexible, robust and fully-featured way. 
-- [`UNICORN Binance REST API`](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api): A Python SDK by LUCIT to use the Binance REST API`s (com+testnet,
+- [`UNICORN Binance REST API`](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api): A Python SDK to use the Binance REST API`s (com+testnet, 
   com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a simple, fast, flexible, robust 
   and fully-featured way. 
-- [`UNICORN Binance Trailing Stop Loss`](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss): A Python SDK and [Command Line Tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli)
-  from LUCIT with a trailing stop loss engine for the Binance Exchanges.
-- [`UNICORN Binance WebSocket API`](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api): A Python SDK by LUCIT to use the Binance Websocket API`s (com+testnet,
+- [`UNICORN Binance Trailing Stop Loss`](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss): A Python SDK and [Command Line Tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli) 
+  with a trailing stop loss engine for the Binance Exchanges.
+- [`UNICORN Binance WebSocket API`](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api): A Python SDK to use the Binance Websocket API`s (com+testnet, 
   com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in 
   a simple, fast, flexible, robust and fully-featured way. 
-- [`UnicornFy`](https://github.com/oliver-zehentleitner/unicorn-fy): A Python SDK by LUCIT to convert received raw data from crypto exchange API endpoints into
+- [`UnicornFy`](https://github.com/oliver-zehentleitner/unicorn-fy): A Python SDK to convert received raw data from crypto exchange API endpoints into 
   well-formed python dictionaries. 
 
 If you like our projects, please 
-[![star](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on
-[GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)! 
-
-## Get a UNICORN Binance Suite License
-
-To run modules of the *UNICORN Binance Suite* you need a [valid license](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8#4ca4)!
+[![star](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
+[GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)!
 
 ## Installation and Upgrade
 
@@ -81,7 +76,7 @@ If you run into errors during the installation take a look [here](https://github
 ### Packages are created automatically with GitHub Actions
 When a new release is to be created, we start two GitHubActions: 
 
-- [Build and Publish Anaconda](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_conda.yml)
+- [Build and Publish Anaconda](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
 - [Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml) 
 
 Both start virtual Windows/Linux/Mac servers provided by GitHub in the cloud with preconfigured environments and 
@@ -171,7 +166,12 @@ Please look for the information in the README.md of the [responsible subreposito
 ## Documentation
 - [General](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
+- https://oliver-zehentleitner.github.io/unicorn-binance-suite
+- https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache
+- https://oliver-zehentleitner.github.io/unicorn-binance-rest-api
+- https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss
+- https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api
+- https://oliver-zehentleitner.github.io/unicorn-fy
 
 ## Howto
 - [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
