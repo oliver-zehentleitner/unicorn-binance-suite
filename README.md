@@ -2,7 +2,7 @@
 [![GitHub Downloads](https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
 [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
 [![PyPi Downloads](https://pepy.tech/badge/unicorn-binance-suite)](https://pepy.tech/project/unicorn-binance-suite)
-[![License](https://img.shields.io/badge/license-LSOSL-blue)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/license.html)
+[![License](https://img.shields.io/github/license/oliver-zehentleitner/unicorn-binance-websocket-api.svg?color=blue)](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/license.html)
 [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
 [![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues)
 [![codecov](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite)
