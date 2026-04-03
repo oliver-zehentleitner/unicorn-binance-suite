@@ -76,15 +76,8 @@ try:
 except ModuleNotFoundError:
     ubwa_version = "not found"
 
-try:
-    from lucit_licensing_python.manager import LucitLicensingManager
-    with LucitLicensingManager(start=False) as llm:
-        llm_version = llm.get_module_version()
-except ModuleNotFoundError:
-    llm_version = "not found"
 
 print(f"Please post this to your github issue:")
-print(f"lucit_licensing_python: {llm_version}")
 print(f"unicorn_fy: {unify_version}")
 print(f"unicorn_binance_local_depth_cache: {ubldc_version}")
 print(f"unicorn_binance_rest_api: {ubra_version}")
