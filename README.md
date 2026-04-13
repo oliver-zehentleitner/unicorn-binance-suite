@@ -47,6 +47,9 @@ architecture and Python version used.
 
 - [`UNICORN Binance Local Depth Cache`](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache): A Python SDK to access and manage multiple local Binance 
   DepthCaches with Python in a simple, fast, flexible, robust and fully-featured way. 
+- [`UNICORN Binance Depth Cache Cluster`](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster): A highly scalable Kubernetes application to manage 
+  multiple and redundant UNICORN Binance Local Depth Cache Instances on a Kubernetes Cluster for high-frequency access 
+  to Binance's DepthCache data (order books).
 - [`UNICORN Binance REST API`](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api): A Python SDK to use the Binance REST API`s (com+testnet, 
   com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a simple, fast, flexible, robust 
   and fully-featured way. 
