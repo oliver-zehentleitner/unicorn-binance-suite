@@ -9,9 +9,9 @@
 # Documentation: https://oliver-zehentleitner.github.io/unicorn-binance-suite
 # PyPI: https://pypi.org/project/unicorn-binance-suite
 #
-# Author: LUCIT Systems and Development
+# Author: Oliver Zehentleitner
 #
-# Copyright (c) 2022-2023, LUCIT Systems and Development (https://www.lucit.tech) and Oliver Zehentleitner
+# Copyright (c) 2022-2025, Oliver Zehentleitner (https://about.me/oliver-zehentleitner)
 # All rights reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a

@@ -2,7 +2,7 @@
 name = "unicorn-binance-suite"
 version = "2.0.0"
 description = "The UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient cryptocurrency trading."
-authors = ["LUCIT Systems and Development <info@lucit.tech>"]
+authors = ["Oliver Zehentleitner"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/oliver-zehentleitner/unicorn-binance-suite"
@@ -20,7 +20,7 @@ repository = "https://github.com/oliver-zehentleitner/unicorn-binance-suite"
 'Telegram' = 'https://t.me/unicorndevs'
 
 [tool.poetry.dependencies]
-python = ">=3.8.0"
+python = ">=3.9.0"
 unicorn-fy = ">=0.16.1"
 unicorn-binance-local-depth-cache = ">=1.0.0"
 unicorn-binance-rest-api = ">=2.8.0"

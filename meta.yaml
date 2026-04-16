@@ -21,7 +21,6 @@ channels:
 requirements:
   host:
     - python
-    - lucit::lucit-licensing-python
     - lucit::unicorn-fy
     - lucit::unicorn-binance-local-depth-cache
     - lucit::unicorn-binance-rest-api
@@ -29,7 +28,6 @@ requirements:
     - lucit::unicorn-binance-trailing-stop-loss
   run:
     - python
-    - lucit::lucit-licensing-python
     - lucit::unicorn-fy
     - lucit::unicorn-binance-local-depth-cache
     - lucit::unicorn-binance-rest-api
@@ -50,13 +48,11 @@ test:
 
 about:
   summary: | 
-    LUCIT's UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building 
+    The UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building 
     sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless integration 
     with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient 
     cryptocurrency trading.
   description: |
-    [![Get a UNICORN Binance Suite License](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-License-Offer.png)](https://shop.lucit.services)
-    
     [![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
     [![GitHub Release](https://img.shields.io/github/release/oliver-zehentleitner/unicorn-binance-suite.svg?label=github)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
     [![GitHub Downloads](https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
@@ -64,7 +60,7 @@ about:
     [![Anaconda Downloads](https://anaconda.org/lucit/unicorn-binance-suite/badges/downloads.svg)](https://anaconda.org/lucit/unicorn-binance-suite)
     [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
     [![PyPi Downloads](https://pepy.tech/badge/unicorn-binance-suite)](https://pepy.tech/project/unicorn-binance-suite)
-    [![License](https://img.shields.io/badge/license-LSOSL-blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE)
+    [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE)
     [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
     [![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues)
     [![codecov](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite)
@@ -77,15 +73,13 @@ about:
     [![Telegram](https://img.shields.io/badge/chat-telegram-41ab8c)](https://t.me/unicorndevs)
     [![Gitter](https://badges.gitter.im/unicorn-binance-suite/unicorn-binance-suite.svg)](https://gitter.im/unicorn-binance-suite/unicorn-binance-suite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
     
-    [![LUCIT-UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
-    
     # UNICORN Binance Suite
     [Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
     [Documentation](#documentation) | [Social](#social) | [Notifications](#receive-notifications) | [Bugs](#how-to-report-bugs-or-suggest-improvements) | 
     [Contributing](#contributing) | [Disclaimer](#disclaimer) | [Commercial Support](#commercial-support)
     
     ## Description
-    LUCIT's [`UNICORN Binance Suite`](https://github.com/oliver-zehentleitner/unicorn-binance-suite) is a comprehensive collection of open-source Python packages designed for 
+    The [`UNICORN Binance Suite`](https://github.com/oliver-zehentleitner/unicorn-binance-suite) is a comprehensive collection of open-source Python packages designed for 
     building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless 
     integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and 
     efficient cryptocurrency trading.
@@ -97,8 +91,7 @@ about:
     [trailing stop losses](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss).
     
     All libraries in the suite are coordinated with each other, interlock perfectly, are fully documented and offer 
-    standardized interfaces and tools for the programmer. LUCIT continuously develops the modules, fixes bugs, tests the 
-    libraries extensively and offers [fast, direct and free support](https://www.lucit.tech/get-support.html).
+    standardized interfaces and tools for the programmer.
     
     All modules are delivered optimized as PyPy and as C++ compilations (Cython) via PyPi and Anaconda. The package 
     creation runs completely transparently directly from the respective GitHub repository through GitHub Actions and is 
@@ -118,13 +111,9 @@ about:
     [![star](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
     [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)! 
     
-    ## Get a UNICORN Binance Suite License
-    
-    To run modules of the *UNICORN Binance Suite* you need a [valid license](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8#4ca4)!
-    
     ## Installation and Upgrade
-    
-    The modules require Python 3.7 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent 
+
+    The modules require Python 3.9 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent 
     processing. 
     
     For the PyPy interpreter we offer packages only from Python version 3.9 and higher.
@@ -212,7 +201,7 @@ about:
     Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#description).
     
     ## Howto
-    - [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
+    - [Instructions about the UNICORN Binance Suite](https://technopathy.club/unicorn-binance-suite/home)
     - [Instructions about the UNICORN Binance Suite](https://technopathy.club/unicorn-binance-suite/home)
     
     ## Project Homepage
@@ -229,7 +218,7 @@ about:
     
     ## Receive Notifications
     Follow us on [LinkedIn](https://www.linkedin.com/company/oliver-zehentleitner), 
-    [X](https://twitter.com/LUCIT_SysDev) or [Facebook](https://www.facebook.com/lucit.systems.and.development)!
+    [LinkedIn](https://www.linkedin.com/in/oliver-zehentleitner)!
     
     Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite) for spezific notifications.
     
@@ -262,14 +251,12 @@ about:
     
     ## Commercial Support
     
-    [![Get professional and fast support](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/support/LUCIT-get-professional-and-fast-support.png)](https://www.lucit.tech/get-support.html)
-    
-    ***Do you need a developer, operator or consultant?*** [Contact us](https://www.lucit.tech/contact.html) for a non-binding initial consultation!
+    ***Do you need a developer, operator or consultant?*** [Contact me](https://about.me/oliver-zehentleitner) for a non-binding initial consultation!
 
   dev_url: https://github.com/oliver-zehentleitner/unicorn-binance-suite
   doc_url: https://oliver-zehentleitner.github.io/unicorn-binance-suite
   home: https://github.com/oliver-zehentleitner/unicorn-binance-suite
-  license: LSOSL
+  license: MIT
   license_file: LICENSE
 
 extra:
