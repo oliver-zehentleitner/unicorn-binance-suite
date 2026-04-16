@@ -12,8 +12,8 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-20.04]
-        python-version: ["3.8"]
+        os: [ubuntu-24.04]
+        python-version: ["3.9"]
     steps:
       - uses: actions/checkout@v4
       - name: Conda environment creation and activation
@@ -37,19 +37,16 @@ jobs:
 
       - name: Install Python Tools
         run: |
-          pip install setuptools wheel --upgrade       
+          pip install setuptools wheel --upgrade
 
-      - name: Install macOS SDK (only on macOS)
-        if: runner.os == 'macOS'
+      - name: "conda search: lucit::"
         run: |
-          sudo mkdir -p /opt/MacOSX10.10.sdk
-          sudo curl -L -o MacOSX10.10.sdk.tar.xz https://github.com/phracker/MacOSX-SDKs/releases/download/11.3/MacOSX10.10.sdk.tar.xz
-          sudo tar -xJf MacOSX10.10.sdk.tar.xz -C /opt/
-
-      - name: Set CONDA_BUILD_SYSROOT (only on macOS)
-        if: runner.os == 'macOS'
-        run: |
-          echo "CONDA_BUILD_SYSROOT: /opt/MacOSX10.10.sdk # [osx]" > conda_build_config.yaml
+          conda config --add channels conda-forge
+          conda config --add channels lucit
+          conda config --show channels
+          conda search lucit::unicorn-binance-rest-api
+          conda search lucit::unicorn-binance-websocket-api
+          conda search lucit::unicorn-fy
 
       - name: Build and upload the conda packages
         uses: uibcdf/action-build-and-upload-conda-packages@v1.2.0
