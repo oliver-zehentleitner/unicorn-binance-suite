@@ -10,14 +10,13 @@
 [![Unit Tests](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml)
 [![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
-[![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://technopathy.club)
 [![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
 [![LUCIT-UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
 # UNICORN Binance Suite
-[Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
+[Description](#description) | [Installation](#installation-and-upgrade) | [Change Log](#change-log) | 
 [Documentation](#documentation) | [Social](#social) | [Bugs](#how-to-report-bugs-or-suggest-improvements) | 
 [Contributing](#contributing) | [Disclaimer](#disclaimer)
 
@@ -176,9 +175,6 @@ Please look for the information in the README.md of the [responsible subreposito
 - https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api
 - https://oliver-zehentleitner.github.io/unicorn-fy
 
-## Howto
-- [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
-
 ## Project Homepage
 [https://github.com/oliver-zehentleitner/unicorn-binance-suite](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
@@ -189,9 +185,6 @@ Please look for the information in the README.md of the [responsible subreposito
 - [Discussions](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions)
 - [https://t.me/unicorndevs](https://t.me/unicorndevs)
 - [https://dev.binance.vision](https://dev.binance.vision)
-- [https://community.binance.org](https://community.binance.org)
-
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite) for spezific notifications.
 
 ## How to report Bugs or suggest Improvements?
 Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
