@@ -14,7 +14,6 @@
 [![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
-[![LUCIT-UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
 # UNICORN Binance Suite
 [Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
@@ -67,7 +66,7 @@ If you like our projects, please
 
 ## Installation and Upgrade
 
-The modules require Python 3.7 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent 
+The modules require Python 3.9 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent 
 processing. 
 
 For the PyPy interpreter we offer packages only from Python version 3.9 and higher.
@@ -175,9 +174,6 @@ Please look for the information in the README.md of the [responsible subreposito
 - https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss
 - https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api
 - https://oliver-zehentleitner.github.io/unicorn-fy
-
-## Howto
-- [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
 
 ## Project Homepage
 [https://github.com/oliver-zehentleitner/unicorn-binance-suite](https://github.com/oliver-zehentleitner/unicorn-binance-suite)

@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
+  test_python_3_9:
     runs-on: ubuntu-latest
     steps:
     - name: GitHub Checkout
@@ -15,7 +15,83 @@ jobs:
 
     - uses: actions/setup-python@v4
       with:
-        python-version: 3.8
+        python-version: 3.9
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coveralls
+
+    - name: Unit test
+      run: coverage run --source unicorn_binance_suite unittest_binance_suite.py
+
+  test_python_3_10:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Checkout
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coveralls
+
+    - name: Unit test
+      run: coverage run --source unicorn_binance_suite unittest_binance_suite.py
+
+  test_python_3_11:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Checkout
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coveralls
+
+    - name: Unit test
+      run: coverage run --source unicorn_binance_suite unittest_binance_suite.py
+
+  test_python_3_12:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Checkout
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.12"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coveralls
+
+    - name: Unit test
+      run: coverage run --source unicorn_binance_suite unittest_binance_suite.py
+
+  test_python_3_13:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Checkout
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.13"
 
     - name: Install dependencies
       run: |
@@ -29,6 +105,26 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         flags: unittests
         name: codecov-umbrella
         verbose: true
+
+  test_python_3_14:
+    runs-on: ubuntu-latest
+    steps:
+    - name: GitHub Checkout
+      uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.14"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coveralls
+
+    - name: Unit test
+      run: coverage run --source unicorn_binance_suite unittest_binance_suite.py

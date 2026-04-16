@@ -4,8 +4,8 @@
 # ./pyproject.toml
 # ./setup.py
 
-unicorn-fy>=0.13.1
-unicorn-binance-local-depth-cache>=1.0.0
-unicorn-binance-rest-api>=2.1.2
-unicorn-binance-trailing-stop-loss>=1.0.0
-unicorn-binance-websocket-api>=2.1.2
+unicorn-fy>=0.16.1
+unicorn-binance-local-depth-cache>=2.8.0
+unicorn-binance-rest-api>=2.8.0
+unicorn-binance-trailing-stop-loss>=1.1.0
+unicorn-binance-websocket-api>=2.10.2
