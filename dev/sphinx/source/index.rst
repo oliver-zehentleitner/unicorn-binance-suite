@@ -11,6 +11,7 @@ Welcome to unicorn-binance-suite's documentation!
    :caption: Contents:
 
    Readme <readme.md>
+   Docs Index <docs_index.md>
    Modules <modules.rst>
    ChangeLog <changelog.md>
    Code of Conduct <code_of_conduct.md>
