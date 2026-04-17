@@ -76,6 +76,11 @@ try:
 except ModuleNotFoundError:
     ubwa_version = "not found"
 
+try:
+    from ubdcc import __version__ as ubdcc_version
+except (ModuleNotFoundError, ImportError):
+    ubdcc_version = "not found"
+
 
 print(f"Please post this to your github issue:")
 print(f"unicorn_fy: {unify_version}")
@@ -83,3 +88,4 @@ print(f"unicorn_binance_local_depth_cache: {ubldc_version}")
 print(f"unicorn_binance_rest_api: {ubra_version}")
 print(f"unicorn_binance_trailing_stop_loss: {ubtsl_version}")
 print(f"unicorn_binance_websocket_api: {ubwa_version}")
+print(f"ubdcc: {ubdcc_version}")
