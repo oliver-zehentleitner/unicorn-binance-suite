@@ -25,23 +25,23 @@ pip install unicorn-binance-suite
 
 ## Why UNICORN Binance Suite — the honest comparison
 
-|  | **UBS** | **python-binance** | **ccxt / ccxt.pro** | **binance-connector-python** |
-|---|---|---|---|---|
-| **Binance focus** | Specialist. Knows every quirk (Spot, Margin, Futures, COIN-M, Options, US, TR, Testnets) | Binance-only, but shallower | Generalist for 100+ exchanges — Binance is *one of many* | Official, but only a *"simple connector"* (Binance's own words) |
-| **WebSocket reconnect** | Automatic, unlimited, battle-tested, logged | Hard-coded **max. 5 retries**, then `BinanceUnableToConnect` and you're done | [Silently hangs without exception](https://github.com/ccxt/ccxt/issues/22662) after ~12h, no heartbeat | DIY — build it yourself |
-| **DepthCache sync detection** | `is_depth_cache_synchronized()` + `DepthCacheOutOfSync` exception + auto re-init in seconds | Returns `None`, instance dead: *"this instance of the DepthCacheManager will not be able to be used again"* | See silent-hang bug above | No DepthCache, no sync |
-| **Orphan level cleanup (>1000)** | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
-| **DepthCache refresh** | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
-| **Kubernetes cluster** | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
-| **Trailing stop loss** | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Build it yourself | Build it yourself | Build it yourself |
-| **Performance** | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
-| **Multi-arch wheels** | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
-| **Python support** | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
-| **Runtime sub/unsub without disconnect** | Yes | No — stop & restart the stream | Partially | No |
-| **UserData stream handling** | Automatic, listenKey refresh transparent | Manual | Partially abstracted | Manual |
-| **Package structure** | One monolith `unicorn-binance-suite` or modular | One package | One huge package (100+ exchanges) | **Recently split** into `binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, etc. — migration guide required |
-| **License** | MIT | MIT | MIT (ccxt), **ccxt.pro = commercial** | MIT |
-| **Maintainer** | Active, reachable by name | Sam inactive for years — now community-continued by third parties | Commercial entity, enterprise-first | Auto-generated SDK, Binance team |
+|                                                                                                               | **UBS** | **python-binance** | **ccxt / ccxt.pro** | **binance-connector-python** |
+|---------------------------------------------------------------------------------------------------------------|---|---|---|---|
+| **Binance focus**                                                                                             | Specialist. Knows every quirk (Spot, Margin, Futures, COIN-M, Options, US, TR, Testnets) | Binance-only, but shallower | Generalist for 100+ exchanges — Binance is *one of many* | Official, but only a *"simple connector"* (Binance's own words) |
+| **WebSocket reconnect**                                                                                       | Automatic, unlimited, battle-tested, logged | Hard-coded **max. 5 retries**, then `BinanceUnableToConnect` and you're done | [Silently hangs without exception](https://github.com/ccxt/ccxt/issues/22662) after ~12h, no heartbeat | DIY — build it yourself |
+| **DepthCache sync detection**                                                                                 | `is_depth_cache_synchronized()` + `DepthCacheOutOfSync` exception + auto re-init in seconds | Returns `None`, instance dead: *"this instance of the DepthCacheManager will not be able to be used again"* | See silent-hang bug above | No DepthCache, no sync |
+| **[Orphan level cleanup (>1000)](https://blog.technopathy.club/your-binance-order-book-is-wrong-here-s-why)** | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
+| **DepthCache refresh**                                                                                        | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
+| **Kubernetes cluster**                                                                                        | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
+| **Trailing stop loss**                                                                                        | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Build it yourself | Build it yourself | Build it yourself |
+| **Performance**                                                                                               | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
+| **Multi-arch wheels**                                                                                         | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
+| **Python support**                                                                                            | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
+| **Runtime sub/unsub without disconnect**                                                                      | Yes | No — stop & restart the stream | Partially | No |
+| **UserData stream handling**                                                                                  | Automatic, listenKey refresh transparent | Manual | Partially abstracted | Manual |
+| **Package structure**                                                                                         | One monolith `unicorn-binance-suite` or modular | One package | One huge package (100+ exchanges) | **Recently split** into `binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, etc. — migration guide required |
+| **License**                                                                                                   | MIT | MIT | MIT (ccxt), **ccxt.pro = commercial** | MIT |
+| **Maintainer**                                                                                                | Active, reachable by name | Sam inactive for years — now community-continued by third parties | Commercial entity, enterprise-first | Auto-generated SDK, Binance team |
 
 ---
 
