@@ -9,7 +9,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [How to upgrade to the latest version!](https://oliver-zehentleitner.github.io/unicorn-binance-suite/readme.html#installation-and-upgrade)
 
-## 2.0.0.dev (development stage/unreleased/unstable)
+## 2.1.0.dev (development stage/unreleased/unstable)
+
+## 2.1.0
+### Added                                                                                                                                                                                                                                                                                                             
+- `ubdcc` as suite dependency — `pip install unicorn-binance-suite` now includes the DepthCache Cluster                                                                                                                                                                                                               
+- `llms.txt` for AI tool integration (ChatGPT, Claude, Copilot) with use-case routing and code examples                                                                                                                                                                                                               
+- Expanded bug report template with hardware, OS, Python version and exchange dropdowns                                                                                                                                                                                                                               
+- UBDCC added to `tools/get_versions_of_unicorn_packages.py`                                                                                                                                                                                                                                                          
+### Changed                                                                                                                                                                                                                                                                                                           
+- License: LSOSL → MIT                                                                                                                                                                                                                                                                                                
+- Author: LUCIT Systems and Development → Oliver Zehentleitner                                                                                                                                                                                                                                                      
+- GitHub URLs: LUCIT-Systems-and-Development → oliver-zehentleitner                                                                                                                                                                                                                                                   
+- Python: minimum 3.8 → 3.9, added support up to 3.14                                                                                                                                                                                                                                                                 
+- Unit tests now run on all supported Python versions (3.9-3.14)                                                                                                                                                                                                                                                      
+- Dependency pins updated to current releases (UBWA ≥2.12.0, UBRA ≥2.10.0, UBLDC ≥2.12.1, UBTSL ≥1.3.0, UnicornFy ≥0.17.1)                                                                                                                                                                                            
+- README rewritten with competitor comparison, architecture diagram, quick start examples and conda-forge install                                                                                                                                                                                                     
+- build_conda.yml: updated runner OS and Python version                                                                                                                                                                                                                                                               
+### Removed                                                                                                                                                                                                                                                                                                           
+- LUCIT licensing dependency (`lucit-licensing-python`)                                                                                                                                                                                                                                                               
+- Gitter references                                                                                                                                                                                                                                                                                                   
+- LUCIT branding from all files    
 
 ## 2.0.0
 ### Added

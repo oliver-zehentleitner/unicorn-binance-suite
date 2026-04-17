@@ -44,7 +44,7 @@ with open("README.md", "r") as fh:
 
 setup(
      name='unicorn_binance_suite',
-     version='2.0.0',
+     version='2.1.0',
      author="Oliver Zehentleitner",
      url="https://github.com/oliver-zehentleitner/unicorn-binance-suite",
      description="The UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed "
