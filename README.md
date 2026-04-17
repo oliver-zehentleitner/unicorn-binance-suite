@@ -86,8 +86,8 @@ Isolated Margin, Futures, US and TR -- all with testnet support.
 
 ### [UNICORN Binance Local Depth Cache](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) (UBLDC)
 Synchronized local order books with real-time WebSocket updates and automatic re-initialization on gaps. The fastest 
-way to access current order book depth without exceeding Binance rate limits. Manages multiple depth caches per 
-instance in asyncio coroutines.
+way to access current order book depth without exceeding Binance rate limits. Supports Spot, Futures, 
+**European Options (Vanilla Options)**, US and TR. Manages multiple depth caches per instance in asyncio coroutines.
 
 **220K+ downloads** | **49 stars**
 
@@ -99,7 +99,7 @@ programming language.
 ### [UNICORN Binance Trailing Stop Loss](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss) (UBTSL)
 Trailing stop loss engine with smart entry (`jump-in-and-trail`). Available as Python SDK and 
 [CLI tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli). 
-Supports email and Telegram notifications.
+Supports email notifications.
 
 **101K+ downloads** | **27 stars**
 
