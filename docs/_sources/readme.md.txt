@@ -34,8 +34,8 @@ pip install unicorn-binance-suite
 | **[Orphan level cleanup (>1000)](https://blog.technopathy.club/your-binance-order-book-is-wrong-here-s-why)**                                                                                    | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
 | **DepthCache refresh**                                                                                                                                                                           | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
 | **DepthCache cluster**                                                                                                                                                                           | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
-| **Trailing stop loss**                                                                                                                                                                           | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Build it yourself | Build it yourself | Build it yourself |
-| **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
+| **Trailing stop loss**                                                                                                                                                                           | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Not included | Not included | Not included |
+| **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [reported performance issues](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
 | **Multi-arch wheels**                                                                                                                                                                            | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
 | **Python support**                                                                                                                                                                               | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
 | **[Stream signals](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/wiki/%60stream_signals%60)**                                                                            | `CONNECT`, `FIRST_RECEIVED_DATA`, `DISCONNECT`, `STOP`, `STREAM_UNREPAIRABLE` — know the exact state of every stream | No | No | No |
@@ -46,25 +46,35 @@ pip install unicorn-binance-suite
 | **Asyncio**                                                                                                                                                                                      | Native asyncio under the hood, but **no async boilerplate required** — works out of the box with sync code | Threads + callbacks | Async-first, requires `await` everywhere | Sync and async variants, but separate packages |
 | **Package structure**                                                                                                                                                                            | One monolith `unicorn-binance-suite` or modular | One package | One huge package (100+ exchanges) | **Recently split** into `binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, etc. — migration guide required |
 | **License**                                                                                                                                                                                      | MIT | MIT | MIT (ccxt), **ccxt.pro = commercial** | MIT |
-| **Maintainer**                                                                                                                                                                                   | Active, reachable by name | Sam inactive for years — now community-continued by third parties | Commercial entity, enterprise-first | Auto-generated SDK, Binance team |
+| **Maintainer**                                                                                                                                                                                   | Active, reachable by name | Original author abandoned in 2022 — community-maintained fork with sporadic releases | Commercial entity, enterprise-first | Auto-generated SDK, Binance team |
 
 ---
 
-## The pain points UBS saves you from
+### python-binance: reconnect limitations
 
-**python-binance** — WebSocket reconnect capped at 5 retries, then dead. `DepthCacheManager` permanently unusable after a missed reconnect — restart the process. No Cython, no multi-arch wheels, maintainer inactive since years.
+Original author abandoned the project in 2022. Community fork ships sporadic patches, but the fundamental architecture 
+is unchanged: max. 5 reconnect retries, then dead. `DepthCacheManager` permanently unusable after a missed 
+reconnect — restart your process, lose your state. Default 30-minute REST polling means you're trading on a stale 
+book between refreshes. No Cython, no multi-arch wheels, no cluster story.
 
-**ccxt / ccxt.pro** — `watch_order_book` [hangs silently after ~12h](https://github.com/ccxt/ccxt/issues/22662), no heartbeat detection. Generalist overhead: every call pays the abstraction tax for 100+ exchanges you'll never use. Pro features (order book caching) require a commercial license.
+### ccxt: silent disconnect on watch_order_book
 
-**binance-connector-python** — Official ≠ production-ready. No automatic reconnect, no UserDataStream management, no DepthCache, no trailing stop. Recently split into ~5 packages with mandatory migration.
+`watch_order_book` [hangs silently after ~12h](https://github.com/ccxt/ccxt/issues/22662) — no exception, no 
+reconnect, your bot just stops. Open since May 2024. Generalist architecture means you pay the abstraction tax for 
+100+ exchanges you'll never use. Order book caching requires a commercial ccxt.pro license.
+
+### binance-connector-python: minimal by design
+
+Official ≠ production. No reconnect, no UserDataStream refresh, no DepthCache, no trailing stop. Recently fragmented 
+into 5+ packages (`binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, ...) — existing code needs 
+migration.
 
 ---
 
-## The money shot
+## In short
 
-> **python-binance has become a hobby project. ccxt is a Swiss army knife with known Binance bugs. The official connector is a REST wrapper with a WebSocket afterthought.**
->
-> **UBS is what comes out when someone trades on Binance daily since 2019 and has eaten every edge case himself — including bugs in Binance's own spec.**
+> **UBS is what comes out when someone trades on Binance daily since 2019 and has eaten every edge case himself — 
+> including bugs in Binance's own spec.**
 
 ---
 
@@ -232,6 +242,7 @@ is traceable.
 | UBWA (WebSocket) | [oliver-zehentleitner.github.io/unicorn-binance-websocket-api](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api) |
 | UBRA (REST) | [oliver-zehentleitner.github.io/unicorn-binance-rest-api](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) |
 | UBLDC (Depth Cache) | [oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) |
+| UBDCC (Depth Cache Cluster) | [oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster](https://oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster) |
 | UBTSL (Trailing Stop) | [oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) |
 | UnicornFy | [oliver-zehentleitner.github.io/unicorn-fy](https://oliver-zehentleitner.github.io/unicorn-fy) |
 
