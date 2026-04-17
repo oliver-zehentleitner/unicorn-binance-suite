@@ -66,13 +66,19 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
-<li><a class="reference internal" href="#websocket-stream-in-4-lines">WebSocket stream in 4 lines</a></li>
+<li><a class="reference internal" href="#websocket-stream-in-3-lines">WebSocket stream in 3 lines</a></li>
 <li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
-<li><a class="reference internal" href="#trailing-stop-loss-via-cli">Trailing stop loss via CLI</a></li>
+<li><a class="reference internal" href="#trailing-stop-loss-in-3-lines">Trailing stop loss in 3 lines</a></li>
+<li><a class="reference internal" href="#depthcache-cluster-in-3-lines">DepthCache Cluster in 3 lines</a></li>
 <li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#pip">pip</a></li>
+<li><a class="reference internal" href="#conda">conda</a></li>
+<li><a class="reference internal" href="#or-install-individual-modules">Or install individual modules</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
@@ -198,7 +204,8 @@
 <h1>UNICORN Binance Suite<a class="headerlink" href="#unicorn-binance-suite" title="Link to this heading">¶</a></h1>
 <p><strong>The production-grade Python toolkit for Binance.</strong> WebSocket streams, REST API, local order books, trailing stop
 losses and cluster-scale depth caches – all coordinated, fully documented, MIT-licensed and delivered as optimized
-Cython C extensions.</p>
+Cython C extensions. Available via <a class="reference external" href="https://pypi.org/project/unicorn-binance-suite/">PyPI</a> and
+<a class="reference external" href="https://anaconda.org/conda-forge/unicorn-binance-suite">Anaconda</a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
 </pre></div>
 </div>
@@ -288,7 +295,7 @@ Cython C extensions.</p>
 <td>3.9+</td>
 </tr>
 <tr>
-<td><strong>Runtime sub/unsub without disconnect</strong></td>
+<td><strong>Runtime subscribe/unsubscribe without disconnect</strong></td>
 <td>Yes</td>
 <td>No — stop &amp; restart the stream</td>
 <td>Partially</td>
@@ -328,9 +335,9 @@ Cython C extensions.</p>
 <hr class="docutils" />
 <section id="the-pain-points-ubs-saves-you-from">
 <h2>The pain points UBS saves you from<a class="headerlink" href="#the-pain-points-ubs-saves-you-from" title="Link to this heading">¶</a></h2>
-<p><strong>python-binance</strong> — <code class="docutils literal notranslate"><span class="pre">DepthCacheManager</span></code> is <em>permanently</em> unusable after a missed reconnect. You restart the process. Default refresh via REST every 30 min = you’re trading on a non-synchronized book in the meantime.</p>
-<p><strong>ccxt / ccxt.pro</strong> — <code class="docutils literal notranslate"><span class="pre">watch_order_book</span></code> hangs silently without exception, <a class="reference external" href="https://github.com/ccxt/ccxt/issues/22662">open since 2024</a>. Timeout workarounds don’t help because the internal reconnect logic doesn’t detect the dead state. On top of that, generalist overhead: every call pays the abstraction tax for 100+ exchanges you’ll never use.</p>
-<p><strong>binance-connector-python</strong> — Official ≠ production-ready. No DepthCache, no automatic reconnect, no UserDataStream management, no trailing stop. Just split into ~5 packages, migration guide mandatory.</p>
+<p><strong>python-binance</strong> — WebSocket reconnect capped at 5 retries, then dead. <code class="docutils literal notranslate"><span class="pre">DepthCacheManager</span></code> permanently unusable after a missed reconnect — restart the process. No Cython, no multi-arch wheels, maintainer inactive since years.</p>
+<p><strong>ccxt / ccxt.pro</strong> — <code class="docutils literal notranslate"><span class="pre">watch_order_book</span></code> <a class="reference external" href="https://github.com/ccxt/ccxt/issues/22662">hangs silently after ~12h</a>, no heartbeat detection. Generalist overhead: every call pays the abstraction tax for 100+ exchanges you’ll never use. Pro features (order book caching) require a commercial license.</p>
+<p><strong>binance-connector-python</strong> — Official ≠ production-ready. No automatic reconnect, no UserDataStream management, no DepthCache, no trailing stop. Recently split into ~5 packages with mandatory migration.</p>
 </section>
 <hr class="docutils" />
 <section id="the-money-shot">
@@ -394,8 +401,8 @@ way to access current order book depth without exceeding Binance rate limits. Su
 </section>
 <section id="unicorn-binance-depthcache-cluster-ubdcc">
 <h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster">UNICORN Binance DepthCache Cluster</a> (UBDCC)<a class="headerlink" href="#unicorn-binance-depthcache-cluster-ubdcc" title="Link to this heading">¶</a></h3>
-<p>Kubernetes-native cluster for production-scale depth cache management. Load balancing, automatic failover and
-self-healing state. Runs locally on a single machine or scales across a K8s cluster. REST API accessible from any
+<p>Production-scale depth cache management with load balancing, automatic failover and self-healing state. Runs locally
+on a single machine (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ubdcc</span></code>) or scales across a Kubernetes cluster. REST API accessible from any
 programming language.</p>
 </section>
 <section id="unicorn-binance-trailing-stop-loss-ubtsl">
@@ -415,8 +422,8 @@ all suite modules.</p>
 <hr class="docutils" />
 <section id="quick-start">
 <h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
-<section id="websocket-stream-in-4-lines">
-<h3>WebSocket stream in 4 lines<a class="headerlink" href="#websocket-stream-in-4-lines" title="Link to this heading">¶</a></h3>
+<section id="websocket-stream-in-3-lines">
+<h3>WebSocket stream in 3 lines<a class="headerlink" href="#websocket-stream-in-3-lines" title="Link to this heading">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_websocket_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceWebSocketApiManager</span>
 
 <span class="n">ubwa</span> <span class="o">=</span> <span class="n">BinanceWebSocketApiManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span>
@@ -433,12 +440,26 @@ all suite modules.</p>
 </pre></div>
 </div>
 </section>
-<section id="trailing-stop-loss-via-cli">
-<h3>Trailing stop loss via CLI<a class="headerlink" href="#trailing-stop-loss-via-cli" title="Link to this heading">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>unicorn-binance-trailing-stop-loss
-$<span class="w"> </span>ubtsl<span class="w"> </span>--profile<span class="w"> </span>BTCUSDT_SELL<span class="w"> </span>--stoplosslimit<span class="w"> </span><span class="m">0</span>.5%
+<section id="trailing-stop-loss-in-3-lines">
+<h3>Trailing stop loss in 3 lines<a class="headerlink" href="#trailing-stop-loss-in-3-lines" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_trailing_stop_loss</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceTrailingStopLossManager</span>
+
+<span class="n">ubtsl</span> <span class="o">=</span> <span class="n">BinanceTrailingStopLossManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span>
+                                       <span class="n">stop_loss_limit</span><span class="o">=</span><span class="s2">&quot;1.5%&quot;</span><span class="p">,</span> <span class="n">stop_loss_order_type</span><span class="o">=</span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
+                                       <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">api_secret</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>Also available as a CLI: <code class="docutils literal notranslate"><span class="pre">ubtsl</span> <span class="pre">--profile</span> <span class="pre">BTCUSDT_SELL</span> <span class="pre">--stoplosslimit</span> <span class="pre">0.5%</span></code></p>
+</section>
+<section id="depthcache-cluster-in-3-lines">
+<h3>DepthCache Cluster in 3 lines<a class="headerlink" href="#depthcache-cluster-in-3-lines" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span>
+
+<span class="k">with</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">ubdcc_address</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ubldc</span><span class="p">:</span>
+    <span class="n">ubldc</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">create_depthcaches</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">markets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;ETHUSDT&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Runs locally (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ubdcc</span> <span class="pre">&amp;&amp;</span> <span class="pre">ubdcc</span> <span class="pre">start</span></code>) or on a Kubernetes cluster. Access via REST API from any language.</p>
 </section>
 <section id="install-everything-at-once">
 <h3>Install everything at once<a class="headerlink" href="#install-everything-at-once" title="Link to this heading">¶</a></h3>
@@ -451,20 +472,34 @@ $<span class="w"> </span>ubtsl<span class="w"> </span>--profile<span class="w"> 
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
 <p>Python 3.9+ required. Runs smoothly up to and including Python 3.14.</p>
+<section id="pip">
+<h3>pip<a class="headerlink" href="#pip" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
 </pre></div>
 </div>
-<p>Or install individual modules:</p>
+</section>
+<section id="conda">
+<h3>conda<a class="headerlink" href="#conda" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+</section>
+<section id="or-install-individual-modules">
+<h3>Or install individual modules<a class="headerlink" href="#or-install-individual-modules" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">websocket</span><span class="o">-</span><span class="n">api</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">depth</span><span class="o">-</span><span class="n">cache</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">trailing</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">loss</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">fy</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">ubdcc</span>
 </pre></div>
 </div>
 <p>PyPy interpreter supported from Python 3.9+.</p>
 <p>All packages are built transparently via GitHub Actions and published directly to
-<a class="reference external" href="https://pypi.org/project/unicorn-binance-suite/">PyPI</a> – the entire pipeline from source to wheel is traceable.</p>
+<a class="reference external" href="https://pypi.org/project/unicorn-binance-suite/">PyPI</a> and
+<a class="reference external" href="https://anaconda.org/conda-forge/unicorn-binance-suite">conda-forge</a> – the entire pipeline from source to wheel
+is traceable.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="documentation">
@@ -572,13 +607,19 @@ for legitimate market data analysis.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
-<li><a class="reference internal" href="#websocket-stream-in-4-lines">WebSocket stream in 4 lines</a></li>
+<li><a class="reference internal" href="#websocket-stream-in-3-lines">WebSocket stream in 3 lines</a></li>
 <li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
-<li><a class="reference internal" href="#trailing-stop-loss-via-cli">Trailing stop loss via CLI</a></li>
+<li><a class="reference internal" href="#trailing-stop-loss-in-3-lines">Trailing stop loss in 3 lines</a></li>
+<li><a class="reference internal" href="#depthcache-cluster-in-3-lines">DepthCache Cluster in 3 lines</a></li>
 <li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#pip">pip</a></li>
+<li><a class="reference internal" href="#conda">conda</a></li>
+<li><a class="reference internal" href="#or-install-individual-modules">Or install individual modules</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
@@ -688,7 +729,7 @@ for legitimate market data analysis.</p>
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 17 2026 at 09:24 (CET).
+    Last updated on Apr 17 2026 at 09:44 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
