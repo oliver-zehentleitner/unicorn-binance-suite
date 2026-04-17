@@ -33,7 +33,7 @@ pip install unicorn-binance-suite
 | **DepthCache sync detection**                                                                                                                                                                    | `is_depth_cache_synchronized()` + `DepthCacheOutOfSync` exception + auto re-init in seconds | Returns `None`, instance dead: *"this instance of the DepthCacheManager will not be able to be used again"* | See silent-hang bug above | No DepthCache, no sync |
 | **[Orphan level cleanup (>1000)](https://blog.technopathy.club/your-binance-order-book-is-wrong-here-s-why)**                                                                                    | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
 | **DepthCache refresh**                                                                                                                                                                           | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
-| **Kubernetes cluster**                                                                                                                                                                           | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
+| **DepthCache cluster**                                                                                                                                                                           | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
 | **Trailing stop loss**                                                                                                                                                                           | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Build it yourself | Build it yourself | Build it yourself |
 | **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
 | **Multi-arch wheels**                                                                                                                                                                            | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
@@ -179,7 +179,10 @@ with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.
     ubldc.cluster.create_depthcaches(exchange="binance.com", markets=["BTCUSDT", "ETHUSDT"])
 ```
 
-Runs locally (`pip install ubdcc && ubdcc start`) or on a Kubernetes cluster. Access via REST API from any language.
+[Runs locally](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes) 
+(`pip install ubdcc && ubdcc start`) or on a 
+[Kubernetes](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup) 
+cluster. Access via [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) from any language.
 
 ### Install everything at once
 ```
