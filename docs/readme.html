@@ -52,39 +52,31 @@
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">UNICORN Binance Suite</a><ul>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#modules-of-the-unicorn-binance-suite">Modules of the UNICORN Binance Suite</a></li>
-<li><a class="reference internal" href="#installation-and-upgrade">Installation and Upgrade</a><ul>
-<li><a class="reference internal" href="#packages-are-created-automatically-with-github-actions">Packages are created automatically with GitHub Actions</a></li>
-<li><a class="reference internal" href="#a-cython-binary-pypy-or-source-code-based-cpython-wheel-of-the-latest-version-with-pip-from-pypi">A Cython binary, PyPy or source code based CPython wheel of the latest version with <code class="docutils literal notranslate"><span class="pre">pip</span></code> from PyPI</a><ul>
+<li><a class="reference internal" href="#why-unicorn-binance-suite-the-honest-comparison">Why UNICORN Binance Suite — the honest comparison</a></li>
+<li><a class="reference internal" href="#the-pain-points-ubs-saves-you-from">The pain points UBS saves you from</a></li>
+<li><a class="reference internal" href="#the-money-shot">The money shot</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
+<li><a class="reference internal" href="#modules">Modules</a><ul>
+<li><a class="reference internal" href="#unicorn-binance-websocket-api-ubwa">UNICORN Binance WebSocket API (UBWA)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-rest-api-ubra">UNICORN Binance REST API (UBRA)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-local-depth-cache-ubldc">UNICORN Binance Local Depth Cache (UBLDC)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-depthcache-cluster-ubdcc">UNICORN Binance DepthCache Cluster (UBDCC)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-trailing-stop-loss-ubtsl">UNICORN Binance Trailing Stop Loss (UBTSL)</a></li>
+<li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#websocket-stream-in-4-lines">WebSocket stream in 4 lines</a></li>
+<li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
+<li><a class="reference internal" href="#trailing-stop-loss-via-cli">Trailing stop loss via CLI</a></li>
+<li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#update">Update</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#a-conda-package-of-the-latest-version-with-conda-from-anaconda">A Conda Package of the latest version with <code class="docutils literal notranslate"><span class="pre">conda</span></code> from Anaconda</a><ul>
-<li><a class="reference internal" href="#id1">Installation</a></li>
-<li><a class="reference internal" href="#id2">Update</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#from-source-of-the-latest-release-with-pip-from-github">From source of the latest release with PIP from GitHub</a><ul>
-<li><a class="reference internal" href="#linux-macos">Linux, macOS, …</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#from-the-latest-source-dev-stage-with-pip-from-github">From the latest source (dev-stage) with PIP from GitHub</a></li>
-<li><a class="reference internal" href="#conda-environment-virtualenv-or-plain-python">Conda environment, Virtualenv or plain Python</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#change-log">Change Log</a></li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#howto">Howto</a></li>
-<li><a class="reference internal" href="#project-homepage">Project Homepage</a></li>
-<li><a class="reference internal" href="#wiki">Wiki</a></li>
-<li><a class="reference internal" href="#social">Social</a></li>
-<li><a class="reference internal" href="#how-to-report-bugs-or-suggest-improvements">How to report Bugs or suggest Improvements?</a></li>
+<li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
 <li><a class="reference internal" href="#disclaimer">Disclaimer</a><ul>
-<li><a class="reference internal" href="#if-you-intend-to-use-real-money-use-it-at-your-own-risk">If you intend to use real money, use it at your own risk!</a></li>
 <li><a class="reference internal" href="#socks5-proxy-geoblocking">SOCKS5 Proxy / Geoblocking</a></li>
 </ul>
 </li>
@@ -196,234 +188,356 @@
 <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases"><img alt="GitHub Downloads" src="https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue" /></a>
 <a class="reference external" href="https://pypi.org/project/unicorn-binance-suite/"><img alt="PyPi Release" src="https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue" /></a>
 <a class="reference external" href="https://pepy.tech/project/unicorn-binance-suite"><img alt="PyPi Downloads" src="https://pepy.tech/badge/unicorn-binance-suite" /></a>
-<a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/license.html"><img alt="License" src="https://img.shields.io/github/license/oliver-zehentleitner/unicorn-binance-websocket-api.svg?color=blue" /></a>
+<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/oliver-zehentleitner/unicorn-binance-suite.svg?color=blue" /></a>
 <a class="reference external" href="https://www.python.org/downloads/"><img alt="Supported Python Version" src="https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg" /></a>
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues"><img alt="PyPI - Status" src="https://img.shields.io/pypi/status/unicorn_binance_suite.svg" /></a>
-<a class="reference external" href="https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite"><img alt="codecov" src="https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S" /></a>
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml"><img alt="CodeQL" src="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml"><img alt="Unit Tests" src="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml"><img alt="Build and Publish GH+PyPi" src="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg" /></a>
 <a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-suite/"><img alt="Read the Docs" src="https://img.shields.io/badge/read-%20docs-yellow" /></a>
-<a class="reference external" href="https://technopathy.club"><img alt="Read How To`s" src="https://img.shields.io/badge/read-%20howto-yellow" /></a>
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite"><img alt="GitHub" src="https://img.shields.io/badge/source-github-cbc2c8" /></a>
 <a class="reference external" href="https://t.me/unicorndevs"><img alt="Telegram" src="https://img.shields.io/badge/community-telegram-41ab8c" /></a></p>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite"><img alt="LUCIT-UBS-Banner" src="https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png" /></a></p>
 <section id="unicorn-binance-suite">
 <h1>UNICORN Binance Suite<a class="headerlink" href="#unicorn-binance-suite" title="Link to this heading">¶</a></h1>
-<p><a class="reference internal" href="#description">Description</a> | <a class="reference internal" href="#installation-and-upgrade">Installation</a> | <a class="reference internal" href="#howto">How To</a> | <a class="reference internal" href="#change-log">Change Log</a> |
-<a class="reference internal" href="#documentation">Documentation</a> | <a class="reference internal" href="#social">Social</a> | <a class="reference internal" href="#how-to-report-bugs-or-suggest-improvements">Bugs</a> |
-<a class="reference internal" href="#contributing">Contributing</a> | <a class="reference internal" href="#disclaimer">Disclaimer</a></p>
-<section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
-<p>The <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">Suite</span></code></a> is a comprehensive collection of open-source Python packages designed for
-building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless
-integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and
-efficient cryptocurrency trading.</p>
-<p>The suite is the most stable, powerful and convenient way to interact with various Binance API endpoints via
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-rest-api">REST</a> and
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api">Websocket</a> and to
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache">manage local order books</a> and
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss">trailing stop losses</a>.</p>
-<p>All libraries in the suite are coordinated with each other, interlock perfectly, are fully documented and offer
-standardized interfaces and tools for the programmer.</p>
-<p>All modules are delivered optimized as PyPy and as Python C Extension (Cython) via
-<a class="reference external" href="https://pypi.org/">PyPi</a> and <a class="reference external" href="https://anaconda.org">Anaconda</a>. The package
-creation runs completely transparently directly from the respective GitHub repository through GitHub Actions and is
-deployed directly to PyPi and Anaconda in a traceable manner. This process makes it tamper-proof for you to
-understand which code is contained in which package and can therefore easily install optimized builds for the platform,
-architecture and Python version used.</p>
+<p><strong>The production-grade Python toolkit for Binance.</strong> WebSocket streams, REST API, local order books, trailing stop
+losses and cluster-scale depth caches – all coordinated, fully documented, MIT-licensed and delivered as optimized
+Cython C extensions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+<p><strong>2.8 M+ PyPI downloads</strong> | <strong>980+ GitHub stars</strong> | <strong>388+ dependent projects</strong> | Python 3.9 – 3.14</p>
+<hr class="docutils" />
+<section id="why-unicorn-binance-suite-the-honest-comparison">
+<h2>Why UNICORN Binance Suite — the honest comparison<a class="headerlink" href="#why-unicorn-binance-suite-the-honest-comparison" title="Link to this heading">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th></th>
+<th><strong>UBS</strong></th>
+<th><strong>python-binance</strong></th>
+<th><strong>ccxt / ccxt.pro</strong></th>
+<th><strong>binance-connector-python</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binance focus</strong></td>
+<td>Specialist. Knows every quirk (Spot, Margin, Futures, COIN-M, Options, US, TR, Testnets)</td>
+<td>Binance-only, but shallower</td>
+<td>Generalist for 100+ exchanges — Binance is <em>one of many</em></td>
+<td>Official, but only a <em>"simple connector"</em> (Binance's own words)</td>
+</tr>
+<tr>
+<td><strong>WebSocket reconnect</strong></td>
+<td>Automatic, unlimited, battle-tested, logged</td>
+<td>Hard-coded <strong>max. 5 retries</strong>, then <code>BinanceUnableToConnect</code> and you're done</td>
+<td><a href="https://github.com/ccxt/ccxt/issues/22662">Silently hangs without exception</a> after ~12h, no heartbeat</td>
+<td>DIY — build it yourself</td>
+</tr>
+<tr>
+<td><strong>DepthCache sync detection</strong></td>
+<td><code>is_depth_cache_synchronized()</code> + <code>DepthCacheOutOfSync</code> exception + auto re-init in seconds</td>
+<td>Returns <code>None</code>, instance dead: <em>"this instance of the DepthCacheManager will not be able to be used again"</em></td>
+<td>See silent-hang bug above</td>
+<td>No DepthCache, no sync</td>
+</tr>
+<tr>
+<td><strong>Orphan level cleanup (&gt;1000)</strong></td>
+<td>Implemented — strictly follows Binance spec</td>
+<td>No — delivers inconsistent books</td>
+<td>No</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DepthCache refresh</strong></td>
+<td>Event-driven, same asyncio loop as the stream</td>
+<td><strong>REST polling every 30 min</strong> (default) — not truly "live local"</td>
+<td>Cache via Pro license</td>
+<td>Not available</td>
+</tr>
+<tr>
+<td><strong>Kubernetes cluster</strong></td>
+<td><strong>UBDCC</strong> — horizontally scalable, load balancing, failover, REST API</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Trailing stop loss</strong></td>
+<td><strong>UBTSL</strong> as SDK + CLI, incl. <code>jump-in-and-trail</code></td>
+<td>Build it yourself</td>
+<td>Build it yourself</td>
+<td>Build it yourself</td>
+</tr>
+<tr>
+<td><strong>Performance</strong></td>
+<td>Cython C extensions, PyPy wheels, pre-compiled</td>
+<td>Pure Python, no C</td>
+<td>Pure Python — <a href="https://github.com/ccxt/ccxt/issues/25152">documented performance ceiling ~1k msg/s</a> with many symbols</td>
+<td>Pure Python</td>
+</tr>
+<tr>
+<td><strong>Multi-arch wheels</strong></td>
+<td>x86_64, aarch64, arm64, PyPy</td>
+<td>Mostly x86_64</td>
+<td>Pure Python</td>
+<td>Pure Python</td>
+</tr>
+<tr>
+<td><strong>Python support</strong></td>
+<td>3.9 – 3.14</td>
+<td>3.8+</td>
+<td>3.9+</td>
+<td>3.9+</td>
+</tr>
+<tr>
+<td><strong>Runtime sub/unsub without disconnect</strong></td>
+<td>Yes</td>
+<td>No — stop &amp; restart the stream</td>
+<td>Partially</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>UserData stream handling</strong></td>
+<td>Automatic, listenKey refresh transparent</td>
+<td>Manual</td>
+<td>Partially abstracted</td>
+<td>Manual</td>
+</tr>
+<tr>
+<td><strong>Package structure</strong></td>
+<td>One monolith <code>unicorn-binance-suite</code> or modular</td>
+<td>One package</td>
+<td>One huge package (100+ exchanges)</td>
+<td><strong>Recently split</strong> into <code>binance-sdk-spot</code>, <code>binance-sdk-derivatives-trading-usds-futures</code>, etc. — migration guide required</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>MIT</td>
+<td>MIT</td>
+<td>MIT (ccxt), <strong>ccxt.pro = commercial</strong></td>
+<td>MIT</td>
+</tr>
+<tr>
+<td><strong>Maintainer</strong></td>
+<td>Active, reachable by name</td>
+<td>Sam inactive for years — now community-continued by third parties</td>
+<td>Commercial entity, enterprise-first</td>
+<td>Auto-generated SDK, Binance team</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="modules-of-the-unicorn-binance-suite">
-<h2>Modules of the UNICORN Binance Suite<a class="headerlink" href="#modules-of-the-unicorn-binance-suite" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">Local</span> <span class="pre">Depth</span> <span class="pre">Cache</span></code></a>: A Python SDK to access and manage multiple local Binance
-DepthCaches with Python in a simple, fast, flexible, robust and fully-featured way.</p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">Depth</span> <span class="pre">Cache</span> <span class="pre">Cluster</span></code></a>: A highly scalable Kubernetes application to manage
-multiple and redundant UNICORN Binance Local Depth Cache Instances on a Kubernetes Cluster for high-frequency access
-to Binance’s DepthCache data (order books).</p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-rest-api"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">REST</span> <span class="pre">API</span></code></a>: A Python SDK to use the Binance REST API`s (com+testnet,
-com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a simple, fast, flexible, robust
-and fully-featured way.</p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">Trailing</span> <span class="pre">Stop</span> <span class="pre">Loss</span></code></a>: A Python SDK and <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli">Command Line Tool</a>
-with a trailing stop loss engine for the Binance Exchanges.</p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api"><code class="docutils literal notranslate"><span class="pre">UNICORN</span> <span class="pre">Binance</span> <span class="pre">WebSocket</span> <span class="pre">API</span></code></a>: A Python SDK to use the Binance Websocket API`s (com+testnet,
-com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in
-a simple, fast, flexible, robust and fully-featured way.</p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-fy"><code class="docutils literal notranslate"><span class="pre">UnicornFy</span></code></a>: A Python SDK to convert received raw data from crypto exchange API endpoints into
-well-formed python dictionaries.</p></li>
-</ul>
-<p>If you like our projects, please
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers"><img alt="star" src="https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png" /></a> them on
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite">GitHub</a>!</p>
+<hr class="docutils" />
+<section id="the-pain-points-ubs-saves-you-from">
+<h2>The pain points UBS saves you from<a class="headerlink" href="#the-pain-points-ubs-saves-you-from" title="Link to this heading">¶</a></h2>
+<p><strong>python-binance</strong> — <code class="docutils literal notranslate"><span class="pre">DepthCacheManager</span></code> is <em>permanently</em> unusable after a missed reconnect. You restart the process. Default refresh via REST every 30 min = you’re trading on a non-synchronized book in the meantime.</p>
+<p><strong>ccxt / ccxt.pro</strong> — <code class="docutils literal notranslate"><span class="pre">watch_order_book</span></code> hangs silently without exception, <a class="reference external" href="https://github.com/ccxt/ccxt/issues/22662">open since 2024</a>. Timeout workarounds don’t help because the internal reconnect logic doesn’t detect the dead state. On top of that, generalist overhead: every call pays the abstraction tax for 100+ exchanges you’ll never use.</p>
+<p><strong>binance-connector-python</strong> — Official ≠ production-ready. No DepthCache, no automatic reconnect, no UserDataStream management, no trailing stop. Just split into ~5 packages, migration guide mandatory.</p>
 </section>
-<section id="installation-and-upgrade">
-<h2>Installation and Upgrade<a class="headerlink" href="#installation-and-upgrade" title="Link to this heading">¶</a></h2>
-<p>The modules require Python 3.7 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent
-processing.</p>
-<p>For the PyPy interpreter we offer packages only from Python version 3.9 and higher.</p>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17">There is no conda support until the migration to conda-forge.</a></p>
-<p>If you run into errors during the installation take a look <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki/Installation">here</a>.</p>
-<section id="packages-are-created-automatically-with-github-actions">
-<h3>Packages are created automatically with GitHub Actions<a class="headerlink" href="#packages-are-created-automatically-with-github-actions" title="Link to this heading">¶</a></h3>
-<p>When a new release is to be created, we start two GitHubActions:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17">Build and Publish Anaconda</a></p></li>
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml">Build and Publish GH+PyPi</a></p></li>
-</ul>
-<p>Both start virtual Windows/Linux/Mac servers provided by GitHub in the cloud with preconfigured environments and
-create the respective compilations and stub files, pack them into wheels and conda packages and then publish them on
-GitHub, PYPI and Anaconda. This is a transparent method that makes it possible to trace the source code behind a
-compilation.</p>
+<hr class="docutils" />
+<section id="the-money-shot">
+<h2>The money shot<a class="headerlink" href="#the-money-shot" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p><strong>python-binance has become a hobby project. ccxt is a Swiss army knife with known Binance bugs. The official connector is a REST wrapper with a WebSocket afterthought.</strong></p>
+<p><strong>UBS is what comes out when someone trades on Binance daily since 2019 and has eaten every edge case himself — including bugs in Binance’s own spec.</strong></p>
+</div></blockquote>
 </section>
-<section id="a-cython-binary-pypy-or-source-code-based-cpython-wheel-of-the-latest-version-with-pip-from-pypi">
-<h3>A Cython binary, PyPy or source code based CPython wheel of the latest version with <code class="docutils literal notranslate"><span class="pre">pip</span></code> from <a class="reference external" href="https://pypi.org/project/unicorn-binance-rest-api/">PyPI</a><a class="headerlink" href="#a-cython-binary-pypy-or-source-code-based-cpython-wheel-of-the-latest-version-with-pip-from-pypi" title="Link to this heading">¶</a></h3>
-<p>Our <a class="reference external" href="https://cython.org/">Cython</a> and <a class="reference external" href="https://www.pypy.org/">PyPy</a> Wheels are available on <a class="reference external" href="https://pypi.org/">PyPI</a>,
-these wheels offer significant advantages for Python developers:</p>
-<ul class="simple">
-<li><p><em><strong>Performance Boost with Cython Wheels:</strong></em> Cython is a programming language that supplements Python with static
-typing and C-level performance. By compiling Python code into C, Cython Wheels can significantly enhance the
-execution speed of Python code, especially in computationally intensive tasks. This means faster runtimes and more
-efficient processing for users of our package.</p></li>
-<li><p><em><strong>PyPy Wheels for Enhanced Efficiency:</strong></em> PyPy is an alternative Python interpreter known for its speed and
-efficiency. It uses Just-In-Time (JIT) compilation, which can dramatically improve the performance of Python code.
-Our PyPy Wheels are tailored for compatibility with PyPy, allowing users to leverage this speed advantage seamlessly.</p></li>
-</ul>
-<p>Both Cython and PyPy Wheels on PyPI make the installation process simpler and more straightforward. They ensure that
-you get the optimized version of our package with minimal setup, allowing you to focus on development rather than
-configuration.</p>
-<section id="installation">
-<h4>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">unicorn-binance-suite</span></code></p>
-</section>
-<section id="update">
-<h4>Update<a class="headerlink" href="#update" title="Link to this heading">¶</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">unicorn-binance-suite</span> <span class="pre">--upgrade</span></code></p>
-</section>
-</section>
-<section id="a-conda-package-of-the-latest-version-with-conda-from-anaconda">
-<h3>A Conda Package of the latest version with <code class="docutils literal notranslate"><span class="pre">conda</span></code> from <a class="reference external" href="https://anaconda.org/lucit">Anaconda</a><a class="headerlink" href="#a-conda-package-of-the-latest-version-with-conda-from-anaconda" title="Link to this heading">¶</a></h3>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17">There is no conda support until the migration to conda-forge.</a></p>
-<p>The <code class="docutils literal notranslate"><span class="pre">unicorn-binance-suite</span></code> package is also available as a Cython version for the <code class="docutils literal notranslate"><span class="pre">linux-64</span></code>, <code class="docutils literal notranslate"><span class="pre">osx-64</span></code>
-and <code class="docutils literal notranslate"><span class="pre">win-64</span></code> architectures with <a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a> through the
-<a class="reference external" href="https://anaconda.org/lucit"><code class="docutils literal notranslate"><span class="pre">lucit</span></code> channel</a>.</p>
-<p>For optimal compatibility and performance, it is recommended to source the necessary dependencies from the
-<a class="reference external" href="https://anaconda.org/conda-forge"><code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel</a>.</p>
-<section id="id1">
-<h4>Installation<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h4>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17">There is no conda support until the migration to conda-forge.</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
-<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">lucit</span>
-<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">lucit</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
+<hr class="docutils" />
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         ┌────────────────────────────────────────────────┐
+         │            Your Trading Application            │
+         └──────┬────────────────┬───────────┬────────────┘
+                │                │           │
+       ┌────────▼───────┐  ┌─────▼───┐  ┌────▼───────────────┐
+       │  UBLDC / UBDCC │  │  UBTSL  │  │  Direct UBWA/UBRA  │
+       │  (Order Books) │  │  (Stop  │  │  access for custom │
+       │                │  │   Loss) │  │  strategies        │
+       └───────┬────────┘  └──┬──┬───┘  └──────┬─────────────┘
+               │              │  │             │
+         ┌─────▼──────────────▼──▼─────────────▼────────────┐
+         │                  UnicornFy                       │
+         │          (raw data → Python dicts)               │
+         └────────────────┬─────────────────┬───────────────┘
+                          │                 │
+                ┌─────────▼───┐     ┌───────▼───────┐
+                │    UBWA     │     │     UBRA      │
+                │ (WebSocket) │     │    (REST)     │
+                └──────┬──────┘     └───────┬───────┘
+                       │                    │
+                ┌──────▼────────────────────▼──────┐
+                │          Binance API             │
+                └──────────────────────────────────┘
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h4>Update<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h4>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17">There is no conda support until the migration to conda-forge.</a></p>
-<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">update</span> <span class="pre">-c</span> <span class="pre">lucit</span> <span class="pre">unicorn-binance-suite</span></code></p>
+<hr class="docutils" />
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<section id="unicorn-binance-websocket-api-ubwa">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api">UNICORN Binance WebSocket API</a> (UBWA)<a class="headerlink" href="#unicorn-binance-websocket-api-ubwa" title="Link to this heading">¶</a></h3>
+<p>Real-time market data and user data streams with automatic reconnect, sequence validation, native asyncio queues and
+runtime subscribe/unsubscribe without disconnecting. Supports all Binance endpoints including Spot, Margin, Futures,
+Coin-Futures, US and TR.</p>
+<p><strong>1.1M+ downloads</strong> | <strong>727 stars</strong></p>
+</section>
+<section id="unicorn-binance-rest-api-ubra">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-rest-api">UNICORN Binance REST API</a> (UBRA)<a class="headerlink" href="#unicorn-binance-rest-api-ubra" title="Link to this heading">¶</a></h3>
+<p>Full coverage of Binance REST endpoints for account management, order placement and market data queries. Spot, Margin,
+Isolated Margin, Futures, US and TR – all with testnet support.</p>
+<p><strong>663K+ downloads</strong> | <strong>67 stars</strong></p>
+</section>
+<section id="unicorn-binance-local-depth-cache-ubldc">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache">UNICORN Binance Local Depth Cache</a> (UBLDC)<a class="headerlink" href="#unicorn-binance-local-depth-cache-ubldc" title="Link to this heading">¶</a></h3>
+<p>Synchronized local order books with real-time WebSocket updates and automatic re-initialization on gaps. The fastest
+way to access current order book depth without exceeding Binance rate limits. Supports Spot, Futures,
+<strong>European Options (Vanilla Options)</strong>, US and TR. Manages multiple depth caches per instance in asyncio coroutines.</p>
+<p><strong>220K+ downloads</strong> | <strong>49 stars</strong></p>
+</section>
+<section id="unicorn-binance-depthcache-cluster-ubdcc">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster">UNICORN Binance DepthCache Cluster</a> (UBDCC)<a class="headerlink" href="#unicorn-binance-depthcache-cluster-ubdcc" title="Link to this heading">¶</a></h3>
+<p>Kubernetes-native cluster for production-scale depth cache management. Load balancing, automatic failover and
+self-healing state. Runs locally on a single machine or scales across a K8s cluster. REST API accessible from any
+programming language.</p>
+</section>
+<section id="unicorn-binance-trailing-stop-loss-ubtsl">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss">UNICORN Binance Trailing Stop Loss</a> (UBTSL)<a class="headerlink" href="#unicorn-binance-trailing-stop-loss-ubtsl" title="Link to this heading">¶</a></h3>
+<p>Trailing stop loss engine with smart entry (<code class="docutils literal notranslate"><span class="pre">jump-in-and-trail</span></code>). Available as Python SDK and
+<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli">CLI tool</a>.
+Supports email notifications.</p>
+<p><strong>101K+ downloads</strong> | <strong>27 stars</strong></p>
+</section>
+<section id="unicornfy">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-fy">UnicornFy</a><a class="headerlink" href="#unicornfy" title="Link to this heading">¶</a></h3>
+<p>Normalization layer that converts raw exchange API payloads into well-formed Python dictionaries. Used internally by
+all suite modules.</p>
+<p><strong>685K+ downloads</strong> | <strong>56 stars</strong></p>
 </section>
 </section>
-<section id="from-source-of-the-latest-release-with-pip-from-github">
-<h3>From source of the latest release with PIP from <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite">GitHub</a><a class="headerlink" href="#from-source-of-the-latest-release-with-pip-from-github" title="Link to this heading">¶</a></h3>
-<section id="linux-macos">
-<h4>Linux, macOS, …<a class="headerlink" href="#linux-macos" title="Link to this heading">¶</a></h4>
-<p>Run in bash:</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/$(curl</span> <span class="pre">-s</span> <span class="pre">https://api.github.com/repos/oliver-zehentleitner/unicorn-binance-suite/releases/latest</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">-oP</span> <span class="pre">'&quot;tag_name&quot;:</span> <span class="pre">&quot;\K(.*)(?=&quot;)').tar.gz</span> <span class="pre">--upgrade</span></code></p>
+<hr class="docutils" />
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
+<section id="websocket-stream-in-4-lines">
+<h3>WebSocket stream in 4 lines<a class="headerlink" href="#websocket-stream-in-4-lines" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_websocket_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceWebSocketApiManager</span>
+
+<span class="n">ubwa</span> <span class="o">=</span> <span class="n">BinanceWebSocketApiManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span>
+<span class="n">ubwa</span><span class="o">.</span><span class="n">create_stream</span><span class="p">(</span><span class="n">channels</span><span class="o">=</span><span class="s2">&quot;trade&quot;</span><span class="p">,</span> <span class="n">markets</span><span class="o">=</span><span class="s2">&quot;btcusdt&quot;</span><span class="p">,</span> <span class="n">process_stream_data</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+</pre></div>
+</div>
 </section>
-<section id="windows">
-<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h4>
-<p>Use the below command with the version (such as 2.0.0) you determined
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest">here</a>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/2.0.0.tar.gz</span> <span class="pre">--upgrade</span></code></p>
+<section id="local-order-book-in-3-lines">
+<h3>Local order book in 3 lines<a class="headerlink" href="#local-order-book-in-3-lines" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span>
+
+<span class="n">ubldc</span> <span class="o">=</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span>
+<span class="n">ubldc</span><span class="o">.</span><span class="n">create_depthcache</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="trailing-stop-loss-via-cli">
+<h3>Trailing stop loss via CLI<a class="headerlink" href="#trailing-stop-loss-via-cli" title="Link to this heading">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>unicorn-binance-trailing-stop-loss
+$<span class="w"> </span>ubtsl<span class="w"> </span>--profile<span class="w"> </span>BTCUSDT_SELL<span class="w"> </span>--stoplosslimit<span class="w"> </span><span class="m">0</span>.5%
+</pre></div>
+</div>
+</section>
+<section id="install-everything-at-once">
+<h3>Install everything at once<a class="headerlink" href="#install-everything-at-once" title="Link to this heading">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
 </section>
 </section>
-<section id="from-the-latest-source-dev-stage-with-pip-from-github">
-<h3>From the latest source (dev-stage) with PIP from <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite">GitHub</a><a class="headerlink" href="#from-the-latest-source-dev-stage-with-pip-from-github" title="Link to this heading">¶</a></h3>
-<p>This is not a release version and can not be considered to be stable!</p>
-<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">https://github.com/oliver-zehentleitner/unicorn-binance-suite/tarball/master</span> <span class="pre">--upgrade</span></code></p>
+<hr class="docutils" />
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>Python 3.9+ required. Runs smoothly up to and including Python 3.14.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+<p>Or install individual modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">websocket</span><span class="o">-</span><span class="n">api</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">rest</span><span class="o">-</span><span class="n">api</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">depth</span><span class="o">-</span><span class="n">cache</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">binance</span><span class="o">-</span><span class="n">trailing</span><span class="o">-</span><span class="n">stop</span><span class="o">-</span><span class="n">loss</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">unicorn</span><span class="o">-</span><span class="n">fy</span>
+</pre></div>
+</div>
+<p>PyPy interpreter supported from Python 3.9+.</p>
+<p>All packages are built transparently via GitHub Actions and published directly to
+<a class="reference external" href="https://pypi.org/project/unicorn-binance-suite/">PyPI</a> – the entire pipeline from source to wheel is traceable.</p>
 </section>
-<section id="conda-environment-virtualenv-or-plain-python">
-<h3><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda environment</a>, <a class="reference external" href="https://virtualenv.pypa.io/en/latest/">Virtualenv</a> or plain <a class="reference external" href="https://www.python.org">Python</a><a class="headerlink" href="#conda-environment-virtualenv-or-plain-python" title="Link to this heading">¶</a></h3>
-<p>Download the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest">latest release</a>
-or the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/master.zip">current master branch</a>
-and use:</p>
-<ul class="simple">
-<li><p>./environment.yml</p></li>
-<li><p>./pyproject.toml</p></li>
-<li><p>./requirements.txt</p></li>
-<li><p>./setup.py</p></li>
-</ul>
-</section>
-</section>
-<section id="change-log">
-<h2>Change Log<a class="headerlink" href="#change-log" title="Link to this heading">¶</a></h2>
-<p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html">https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html</a></p>
-<p>Please look for the information in the README.md of the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite">responsible subrepository</a>.</p>
-</section>
+<hr class="docutils" />
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Module</th>
+<th>Docs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suite (this package)</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-suite">oliver-zehentleitner.github.io/unicorn-binance-suite</a></td>
+</tr>
+<tr>
+<td>UBWA (WebSocket)</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api">oliver-zehentleitner.github.io/unicorn-binance-websocket-api</a></td>
+</tr>
+<tr>
+<td>UBRA (REST)</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-rest-api">oliver-zehentleitner.github.io/unicorn-binance-rest-api</a></td>
+</tr>
+<tr>
+<td>UBLDC (Depth Cache)</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache">oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache</a></td>
+</tr>
+<tr>
+<td>UBTSL (Trailing Stop)</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss">oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss</a></td>
+</tr>
+<tr>
+<td>UnicornFy</td>
+<td><a href="https://oliver-zehentleitner.github.io/unicorn-fy">oliver-zehentleitner.github.io/unicorn-fy</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<hr class="docutils" />
+<section id="community">
+<h2>Community<a class="headerlink" href="#community" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-suite/">General</a></p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-binance-suite</p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache</p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-binance-rest-api</p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss</p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api</p></li>
-<li><p>https://oliver-zehentleitner.github.io/unicorn-fy</p></li>
+<li><p><a class="reference external" href="https://t.me/unicorndevs">Telegram</a> – questions, announcements, chat</p></li>
+<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions">GitHub Discussions</a> – longer-form Q&amp;A</p></li>
+<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues">Issue Tracker</a> – bugs and feature requests</p></li>
 </ul>
+<p>Binance API news:
+<a class="reference external" href="https://t.me/binance_api_announcements">Announcements</a> |
+<a class="reference external" href="https://t.me/binance_api_english">English</a> |
+<a class="reference external" href="https://t.me/Binance_USA">Binance US</a></p>
 </section>
-<section id="howto">
-<h2>Howto<a class="headerlink" href="#howto" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8">How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice</a></p></li>
-</ul>
-</section>
-<section id="project-homepage">
-<h2>Project Homepage<a class="headerlink" href="#project-homepage" title="Link to this heading">¶</a></h2>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite">https://github.com/oliver-zehentleitner/unicorn-binance-suite</a></p>
-</section>
-<section id="wiki">
-<h2>Wiki<a class="headerlink" href="#wiki" title="Link to this heading">¶</a></h2>
-<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki">https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki</a></p>
-</section>
-<section id="social">
-<h2>Social<a class="headerlink" href="#social" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions">Discussions</a></p></li>
-<li><p><a class="reference external" href="https://t.me/unicorndevs">https://t.me/unicorndevs</a></p></li>
-<li><p><a class="reference external" href="https://dev.binance.vision">https://dev.binance.vision</a></p></li>
-<li><p><a class="reference external" href="https://community.binance.org">https://community.binance.org</a></p></li>
-</ul>
-<p>Please look for the information in the README.md of the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite">responsible subrepository</a> for spezific notifications.</p>
-</section>
-<section id="how-to-report-bugs-or-suggest-improvements">
-<h2>How to report Bugs or suggest Improvements?<a class="headerlink" href="#how-to-report-bugs-or-suggest-improvements" title="Link to this heading">¶</a></h2>
-<p>Please look for the information in the README.md of the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite">responsible subrepository</a>.</p>
-</section>
+<hr class="docutils" />
 <section id="contributing">
 <h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h2>
-<p>Please look for the information in the README.md of the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite">responsible subrepository</a>.</p>
+<p>Contributions are welcome – from documentation fixes to new features. Each module has its own repository;
+check the <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a>
+for guidelines.</p>
+<p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/graphs/contributors"><img alt="Contributors" src="https://contributors-img.web.app/image?repo=oliver-zehentleitner/unicorn-binance-suite" /></a></p>
 </section>
+<hr class="docutils" />
 <section id="disclaimer">
 <h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
-<p>This project is for informational purposes only. You should not construe this information or any other material as
-legal, tax, investment, financial or other advice. Nothing contained herein constitutes a solicitation, recommendation,
-endorsement or offer by us or any third party provider to buy or sell any securities or other financial instruments in
-this or any other jurisdiction in which such solicitation or offer would be unlawful under the securities laws of such
-jurisdiction.</p>
-<section id="if-you-intend-to-use-real-money-use-it-at-your-own-risk">
-<h3>If you intend to use real money, use it at your own risk!<a class="headerlink" href="#if-you-intend-to-use-real-money-use-it-at-your-own-risk" title="Link to this heading">¶</a></h3>
-<p>Under no circumstances will we be responsible or liable for any claims, damages, losses, expenses, costs or liabilities
-of any kind, including but not limited to direct or indirect damages for loss of profits.</p>
-</section>
+<p>This project is for informational purposes only. Nothing contained herein constitutes financial advice or a
+solicitation to buy or sell securities.</p>
+<p><strong>If you intend to use real money, use it at your own risk.</strong></p>
+<p>Under no circumstances will we be responsible or liable for any claims, damages, losses, expenses, costs or
+liabilities of any kind, including but not limited to direct or indirect damages for loss of profits.</p>
 <section id="socks5-proxy-geoblocking">
 <h3>SOCKS5 Proxy / Geoblocking<a class="headerlink" href="#socks5-proxy-geoblocking" title="Link to this heading">¶</a></h3>
-<p>We would like to explicitly point out that in our opinion US citizens are exclusively authorized to trade on Binance.US
-and that this restriction must not be circumvented!</p>
-<p>The purpose of supporting a SOCKS5 proxy in the UNICORN Binance Suite and its modules is to allow non-US citizens to
-use US services. For example, GitHub actions with UBS will not work without a SOCKS5 proxy, as they will inevitably run
-on servers in the US and be blocked by Binance.com. Moreover, it also seems justified that traders, data scientists and
-companies from the US analyze binance.com market data - as long as they do not trade there.</p>
+<p>US citizens are exclusively authorized to trade on Binance.US – this restriction must not be circumvented.
+SOCKS5 proxy support exists for non-US citizens accessing US services (e.g. CI runners blocked by Binance.com) and
+for legitimate market data analysis.</p>
 </section>
 </section>
 </section>
@@ -444,39 +558,31 @@ companies from the US analyze binance.com market data - as long as they do not t
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">UNICORN Binance Suite</a><ul>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#modules-of-the-unicorn-binance-suite">Modules of the UNICORN Binance Suite</a></li>
-<li><a class="reference internal" href="#installation-and-upgrade">Installation and Upgrade</a><ul>
-<li><a class="reference internal" href="#packages-are-created-automatically-with-github-actions">Packages are created automatically with GitHub Actions</a></li>
-<li><a class="reference internal" href="#a-cython-binary-pypy-or-source-code-based-cpython-wheel-of-the-latest-version-with-pip-from-pypi">A Cython binary, PyPy or source code based CPython wheel of the latest version with <code class="docutils literal notranslate"><span class="pre">pip</span></code> from PyPI</a><ul>
+<li><a class="reference internal" href="#why-unicorn-binance-suite-the-honest-comparison">Why UNICORN Binance Suite — the honest comparison</a></li>
+<li><a class="reference internal" href="#the-pain-points-ubs-saves-you-from">The pain points UBS saves you from</a></li>
+<li><a class="reference internal" href="#the-money-shot">The money shot</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
+<li><a class="reference internal" href="#modules">Modules</a><ul>
+<li><a class="reference internal" href="#unicorn-binance-websocket-api-ubwa">UNICORN Binance WebSocket API (UBWA)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-rest-api-ubra">UNICORN Binance REST API (UBRA)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-local-depth-cache-ubldc">UNICORN Binance Local Depth Cache (UBLDC)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-depthcache-cluster-ubdcc">UNICORN Binance DepthCache Cluster (UBDCC)</a></li>
+<li><a class="reference internal" href="#unicorn-binance-trailing-stop-loss-ubtsl">UNICORN Binance Trailing Stop Loss (UBTSL)</a></li>
+<li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
+<li><a class="reference internal" href="#websocket-stream-in-4-lines">WebSocket stream in 4 lines</a></li>
+<li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
+<li><a class="reference internal" href="#trailing-stop-loss-via-cli">Trailing stop loss via CLI</a></li>
+<li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#update">Update</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#a-conda-package-of-the-latest-version-with-conda-from-anaconda">A Conda Package of the latest version with <code class="docutils literal notranslate"><span class="pre">conda</span></code> from Anaconda</a><ul>
-<li><a class="reference internal" href="#id1">Installation</a></li>
-<li><a class="reference internal" href="#id2">Update</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#from-source-of-the-latest-release-with-pip-from-github">From source of the latest release with PIP from GitHub</a><ul>
-<li><a class="reference internal" href="#linux-macos">Linux, macOS, …</a></li>
-<li><a class="reference internal" href="#windows">Windows</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#from-the-latest-source-dev-stage-with-pip-from-github">From the latest source (dev-stage) with PIP from GitHub</a></li>
-<li><a class="reference internal" href="#conda-environment-virtualenv-or-plain-python">Conda environment, Virtualenv or plain Python</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#change-log">Change Log</a></li>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
-<li><a class="reference internal" href="#howto">Howto</a></li>
-<li><a class="reference internal" href="#project-homepage">Project Homepage</a></li>
-<li><a class="reference internal" href="#wiki">Wiki</a></li>
-<li><a class="reference internal" href="#social">Social</a></li>
-<li><a class="reference internal" href="#how-to-report-bugs-or-suggest-improvements">How to report Bugs or suggest Improvements?</a></li>
+<li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
 <li><a class="reference internal" href="#disclaimer">Disclaimer</a><ul>
-<li><a class="reference internal" href="#if-you-intend-to-use-real-money-use-it-at-your-own-risk">If you intend to use real money, use it at your own risk!</a></li>
 <li><a class="reference internal" href="#socks5-proxy-geoblocking">SOCKS5 Proxy / Geoblocking</a></li>
 </ul>
 </li>
@@ -582,7 +688,7 @@ companies from the US analyze binance.com market data - as long as they do not t
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 16 2026 at 16:43 (CET).
+    Last updated on Apr 17 2026 at 09:17 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.

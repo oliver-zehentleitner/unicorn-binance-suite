@@ -6,7 +6,7 @@ This document outlines security procedures and general policies for the `unicorn
   * [Comments on this Policy](#comments-on-this-policy)
 
 ## Reporting a Bug
-`LUCIT Systems and Development` takes all security bugs in `unicorn-binance-suite` seriously.
+`Oliver Zehentleitner` takes all security bugs in `unicorn-binance-suite` seriously.
 Thank you for improving the security of `unicorn-binance-suite`. We appreciate your efforts and 
 responsible disclosure and will make every effort to acknowledge your contributions.
 

@@ -2,220 +2,241 @@
 [![GitHub Downloads](https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
 [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
 [![PyPi Downloads](https://pepy.tech/badge/unicorn-binance-suite)](https://pepy.tech/project/unicorn-binance-suite)
-[![License](https://img.shields.io/github/license/oliver-zehentleitner/unicorn-binance-websocket-api.svg?color=blue)](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/license.html)
+[![License](https://img.shields.io/github/license/oliver-zehentleitner/unicorn-binance-suite.svg?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/LICENSE)
 [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
-[![PyPI - Status](https://img.shields.io/pypi/status/unicorn_binance_suite.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues)
-[![codecov](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite/branch/master/graph/badge.svg?token=5I03AZ3F5S)](https://codecov.io/gh/oliver-zehentleitner/unicorn-binance-suite)
-[![CodeQL](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/codeql-analysis.yml)
 [![Unit Tests](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml)
 [![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
-[![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://technopathy.club)
-[![GitHub](https://img.shields.io/badge/source-github-cbc2c8)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
-[![LUCIT-UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/LUCIT-UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
-
 # UNICORN Binance Suite
-[Description](#description) | [Installation](#installation-and-upgrade) | [How To](#howto) | [Change Log](#change-log) | 
-[Documentation](#documentation) | [Social](#social) | [Bugs](#how-to-report-bugs-or-suggest-improvements) | 
-[Contributing](#contributing) | [Disclaimer](#disclaimer)
 
-## Description
-The [`UNICORN Binance Suite`](https://github.com/oliver-zehentleitner/unicorn-binance-suite) is a comprehensive collection of open-source Python packages designed for 
-building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless 
-integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and 
-efficient cryptocurrency trading.
-
-The suite is the most stable, powerful and convenient way to interact with various Binance API endpoints via 
-[REST](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) and 
-[Websocket](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) and to 
-[manage local order books](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) and 
-[trailing stop losses](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss).
-
-All libraries in the suite are coordinated with each other, interlock perfectly, are fully documented and offer 
-standardized interfaces and tools for the programmer.
-
-All modules are delivered optimized as PyPy and as Python C Extension (Cython) via 
-[PyPi](https://pypi.org/) and [Anaconda](https://anaconda.org). The package 
-creation runs completely transparently directly from the respective GitHub repository through GitHub Actions and is 
-deployed directly to PyPi and Anaconda in a traceable manner. This process makes it tamper-proof for you to 
-understand which code is contained in which package and can therefore easily install optimized builds for the platform, 
-architecture and Python version used.
-
-## Modules of the UNICORN Binance Suite
-
-- [`UNICORN Binance Local Depth Cache`](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache): A Python SDK to access and manage multiple local Binance 
-  DepthCaches with Python in a simple, fast, flexible, robust and fully-featured way. 
-- [`UNICORN Binance Depth Cache Cluster`](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster): A highly scalable Kubernetes application to manage 
-  multiple and redundant UNICORN Binance Local Depth Cache Instances on a Kubernetes Cluster for high-frequency access 
-  to Binance's DepthCache data (order books).
-- [`UNICORN Binance REST API`](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api): A Python SDK to use the Binance REST API`s (com+testnet, 
-  com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, us, tr) in a simple, fast, flexible, robust 
-  and fully-featured way. 
-- [`UNICORN Binance Trailing Stop Loss`](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss): A Python SDK and [Command Line Tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli) 
-  with a trailing stop loss engine for the Binance Exchanges.
-- [`UNICORN Binance WebSocket API`](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api): A Python SDK to use the Binance Websocket API`s (com+testnet, 
-  com-margin+testnet, com-isolated_margin+testnet, com-futures+testnet, com-coin_futures, us, tr, dex/chain+testnet) in 
-  a simple, fast, flexible, robust and fully-featured way. 
-- [`UnicornFy`](https://github.com/oliver-zehentleitner/unicorn-fy): A Python SDK to convert received raw data from crypto exchange API endpoints into 
-  well-formed python dictionaries. 
-
-If you like our projects, please 
-[![star](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/misc/star.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/stargazers) them on 
-[GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)!
-
-## Installation and Upgrade
-
-The modules require Python 3.7 or above, as they depend on Pythons latest asyncio features for asynchronous/concurrent 
-processing. 
-
-For the PyPy interpreter we offer packages only from Python version 3.9 and higher.
-
-[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
-
-If you run into errors during the installation take a look [here](https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki/Installation).
-
-### Packages are created automatically with GitHub Actions
-When a new release is to be created, we start two GitHubActions: 
-
-- [Build and Publish Anaconda](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
-- [Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml) 
-
-Both start virtual Windows/Linux/Mac servers provided by GitHub in the cloud with preconfigured environments and 
-create the respective compilations and stub files, pack them into wheels and conda packages and then publish them on 
-GitHub, PYPI and Anaconda. This is a transparent method that makes it possible to trace the source code behind a 
-compilation.
-
-### A Cython binary, PyPy or source code based CPython wheel of the latest version with `pip` from [PyPI](https://pypi.org/project/unicorn-binance-rest-api/)
-Our [Cython](https://cython.org/) and [PyPy](https://www.pypy.org/) Wheels are available on [PyPI](https://pypi.org/), 
-these wheels offer significant advantages for Python developers:
-
-- ***Performance Boost with Cython Wheels:*** Cython is a programming language that supplements Python with static 
-  typing and C-level performance. By compiling Python code into C, Cython Wheels can significantly enhance the 
-  execution speed of Python code, especially in computationally intensive tasks. This means faster runtimes and more 
-  efficient processing for users of our package. 
-
-- ***PyPy Wheels for Enhanced Efficiency:*** PyPy is an alternative Python interpreter known for its speed and 
-  efficiency. It uses Just-In-Time (JIT) compilation, which can dramatically improve the performance of Python code. 
-  Our PyPy Wheels are tailored for compatibility with PyPy, allowing users to leverage this speed advantage seamlessly.
-
-Both Cython and PyPy Wheels on PyPI make the installation process simpler and more straightforward. They ensure that 
-you get the optimized version of our package with minimal setup, allowing you to focus on development rather than 
-configuration.
-
-#### Installation
-`pip install unicorn-binance-suite`
-
-#### Update
-`pip install unicorn-binance-suite --upgrade`
-
-### A Conda Package of the latest version with `conda` from [Anaconda](https://anaconda.org/lucit)
-[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
-
-The `unicorn-binance-suite` package is also available as a Cython version for the `linux-64`, `osx-64` 
-and `win-64` architectures with [Conda](https://docs.conda.io/en/latest/) through the 
-[`lucit` channel](https://anaconda.org/lucit). 
-
-For optimal compatibility and performance, it is recommended to source the necessary dependencies from the 
-[`conda-forge` channel](https://anaconda.org/conda-forge). 
-
-#### Installation
-[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
+**The production-grade Python toolkit for Binance.** WebSocket streams, REST API, local order books, trailing stop 
+losses and cluster-scale depth caches -- all coordinated, fully documented, MIT-licensed and delivered as optimized 
+Cython C extensions.
 
 ```
-conda config --add channels conda-forge
-conda config --add channels lucit
-conda install -c lucit unicorn-binance-suite
+pip install unicorn-binance-suite
 ```
 
-#### Update
-[There is no conda support until the migration to conda-forge.](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/17)
+**2.8 M+ PyPI downloads** | **980+ GitHub stars** | **388+ dependent projects** | Python 3.9 -- 3.14
 
-`conda update -c lucit unicorn-binance-suite`
+---
 
-### From source of the latest release with PIP from [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
-#### Linux, macOS, ...
-Run in bash:
+## Why UNICORN Binance Suite — the honest comparison
 
-`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/$(curl -s https://api.github.com/repos/oliver-zehentleitner/unicorn-binance-suite/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")').tar.gz --upgrade`
+|  | **UBS** | **python-binance** | **ccxt / ccxt.pro** | **binance-connector-python** |
+|---|---|---|---|---|
+| **Binance focus** | Specialist. Knows every quirk (Spot, Margin, Futures, COIN-M, Options, US, TR, Testnets) | Binance-only, but shallower | Generalist for 100+ exchanges — Binance is *one of many* | Official, but only a *"simple connector"* (Binance's own words) |
+| **WebSocket reconnect** | Automatic, unlimited, battle-tested, logged | Hard-coded **max. 5 retries**, then `BinanceUnableToConnect` and you're done | [Silently hangs without exception](https://github.com/ccxt/ccxt/issues/22662) after ~12h, no heartbeat | DIY — build it yourself |
+| **DepthCache sync detection** | `is_depth_cache_synchronized()` + `DepthCacheOutOfSync` exception + auto re-init in seconds | Returns `None`, instance dead: *"this instance of the DepthCacheManager will not be able to be used again"* | See silent-hang bug above | No DepthCache, no sync |
+| **Orphan level cleanup (>1000)** | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
+| **DepthCache refresh** | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
+| **Kubernetes cluster** | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
+| **Trailing stop loss** | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Build it yourself | Build it yourself | Build it yourself |
+| **Performance** | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
+| **Multi-arch wheels** | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
+| **Python support** | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
+| **Runtime sub/unsub without disconnect** | Yes | No — stop & restart the stream | Partially | No |
+| **UserData stream handling** | Automatic, listenKey refresh transparent | Manual | Partially abstracted | Manual |
+| **Package structure** | One monolith `unicorn-binance-suite` or modular | One package | One huge package (100+ exchanges) | **Recently split** into `binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, etc. — migration guide required |
+| **License** | MIT | MIT | MIT (ccxt), **ccxt.pro = commercial** | MIT |
+| **Maintainer** | Active, reachable by name | Sam inactive for years — now community-continued by third parties | Commercial entity, enterprise-first | Auto-generated SDK, Binance team |
 
-#### Windows
-Use the below command with the version (such as 2.0.0) you determined 
-[here](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest):
+---
 
-`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/2.0.0.tar.gz --upgrade`
+## The pain points UBS saves you from
 
-### From the latest source (dev-stage) with PIP from [GitHub](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
-This is not a release version and can not be considered to be stable!
+**python-binance** — `DepthCacheManager` is *permanently* unusable after a missed reconnect. You restart the process. Default refresh via REST every 30 min = you're trading on a non-synchronized book in the meantime.
 
-`pip install https://github.com/oliver-zehentleitner/unicorn-binance-suite/tarball/master --upgrade`
+**ccxt / ccxt.pro** — `watch_order_book` hangs silently without exception, [open since 2024](https://github.com/ccxt/ccxt/issues/22662). Timeout workarounds don't help because the internal reconnect logic doesn't detect the dead state. On top of that, generalist overhead: every call pays the abstraction tax for 100+ exchanges you'll never use.
 
-### [Conda environment](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html), [Virtualenv](https://virtualenv.pypa.io/en/latest/) or plain [Python](https://www.python.org)
-Download the [latest release](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases/latest) 
-or the [current master branch](https://github.com/oliver-zehentleitner/unicorn-binance-suite/archive/master.zip)
- and use:
- 
-- ./environment.yml
-- ./pyproject.toml
-- ./requirements.txt
-- ./setup.py
+**binance-connector-python** — Official ≠ production-ready. No DepthCache, no automatic reconnect, no UserDataStream management, no trailing stop. Just split into ~5 packages, migration guide mandatory.
 
-## Change Log
-[https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html](https://oliver-zehentleitner.github.io/unicorn-binance-suite/changelog.html)
+---
 
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
+## The money shot
+
+> **python-binance has become a hobby project. ccxt is a Swiss army knife with known Binance bugs. The official connector is a REST wrapper with a WebSocket afterthought.**
+>
+> **UBS is what comes out when someone trades on Binance daily since 2019 and has eaten every edge case himself — including bugs in Binance's own spec.**
+
+---
+
+## Architecture
+
+```
+         ┌────────────────────────────────────────────────┐
+         │            Your Trading Application            │
+         └──────┬────────────────┬───────────┬────────────┘
+                │                │           │
+       ┌────────▼───────┐  ┌─────▼───┐  ┌────▼───────────────┐
+       │  UBLDC / UBDCC │  │  UBTSL  │  │  Direct UBWA/UBRA  │
+       │  (Order Books) │  │  (Stop  │  │  access for custom │
+       │                │  │   Loss) │  │  strategies        │
+       └───────┬────────┘  └──┬──┬───┘  └──────┬─────────────┘
+               │              │  │             │
+         ┌─────▼──────────────▼──▼─────────────▼────────────┐
+         │                  UnicornFy                       │
+         │          (raw data → Python dicts)               │
+         └────────────────┬─────────────────┬───────────────┘
+                          │                 │
+                ┌─────────▼───┐     ┌───────▼───────┐
+                │    UBWA     │     │     UBRA      │
+                │ (WebSocket) │     │    (REST)     │
+                └──────┬──────┘     └───────┬───────┘
+                       │                    │
+                ┌──────▼────────────────────▼──────┐
+                │          Binance API             │
+                └──────────────────────────────────┘
+```
+
+---
+
+## Modules
+
+### [UNICORN Binance WebSocket API](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) (UBWA)
+Real-time market data and user data streams with automatic reconnect, sequence validation, native asyncio queues and 
+runtime subscribe/unsubscribe without disconnecting. Supports all Binance endpoints including Spot, Margin, Futures, 
+Coin-Futures, US and TR.
+
+**1.1M+ downloads** | **727 stars**
+
+### [UNICORN Binance REST API](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) (UBRA)
+Full coverage of Binance REST endpoints for account management, order placement and market data queries. Spot, Margin, 
+Isolated Margin, Futures, US and TR -- all with testnet support.
+
+**663K+ downloads** | **67 stars**
+
+### [UNICORN Binance Local Depth Cache](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) (UBLDC)
+Synchronized local order books with real-time WebSocket updates and automatic re-initialization on gaps. The fastest 
+way to access current order book depth without exceeding Binance rate limits. Supports Spot, Futures, 
+**European Options (Vanilla Options)**, US and TR. Manages multiple depth caches per instance in asyncio coroutines.
+
+**220K+ downloads** | **49 stars**
+
+### [UNICORN Binance DepthCache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
+Kubernetes-native cluster for production-scale depth cache management. Load balancing, automatic failover and 
+self-healing state. Runs locally on a single machine or scales across a K8s cluster. REST API accessible from any 
+programming language.
+
+### [UNICORN Binance Trailing Stop Loss](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss) (UBTSL)
+Trailing stop loss engine with smart entry (`jump-in-and-trail`). Available as Python SDK and 
+[CLI tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli). 
+Supports email notifications.
+
+**101K+ downloads** | **27 stars**
+
+### [UnicornFy](https://github.com/oliver-zehentleitner/unicorn-fy)
+Normalization layer that converts raw exchange API payloads into well-formed Python dictionaries. Used internally by 
+all suite modules.
+
+**685K+ downloads** | **56 stars**
+
+---
+
+## Quick Start
+
+### WebSocket stream in 4 lines
+```python
+from unicorn_binance_websocket_api import BinanceWebSocketApiManager
+
+ubwa = BinanceWebSocketApiManager(exchange="binance.com")
+ubwa.create_stream(channels="trade", markets="btcusdt", process_stream_data=lambda data: print(data))
+```
+
+### Local order book in 3 lines
+```python
+from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager
+
+ubldc = BinanceLocalDepthCacheManager(exchange="binance.com")
+ubldc.create_depthcache("BTCUSDT")
+```
+
+### Trailing stop loss via CLI
+```sh
+$ pip install unicorn-binance-trailing-stop-loss
+$ ubtsl --profile BTCUSDT_SELL --stoplosslimit 0.5%
+```
+
+### Install everything at once
+```
+pip install unicorn-binance-suite
+```
+
+---
+
+## Installation
+
+Python 3.9+ required. Runs smoothly up to and including Python 3.14.
+
+```
+pip install unicorn-binance-suite
+```
+
+Or install individual modules:
+```
+pip install unicorn-binance-websocket-api
+pip install unicorn-binance-rest-api
+pip install unicorn-binance-local-depth-cache
+pip install unicorn-binance-trailing-stop-loss
+pip install unicorn-fy
+```
+
+PyPy interpreter supported from Python 3.9+.
+
+All packages are built transparently via GitHub Actions and published directly to 
+[PyPI](https://pypi.org/project/unicorn-binance-suite/) -- the entire pipeline from source to wheel is traceable.
+
+---
 
 ## Documentation
-- [General](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 
-- https://oliver-zehentleitner.github.io/unicorn-binance-suite
-- https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache
-- https://oliver-zehentleitner.github.io/unicorn-binance-rest-api
-- https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss
-- https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api
-- https://oliver-zehentleitner.github.io/unicorn-fy
+| Module | Docs |
+|--------|------|
+| Suite (this package) | [oliver-zehentleitner.github.io/unicorn-binance-suite](https://oliver-zehentleitner.github.io/unicorn-binance-suite) |
+| UBWA (WebSocket) | [oliver-zehentleitner.github.io/unicorn-binance-websocket-api](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api) |
+| UBRA (REST) | [oliver-zehentleitner.github.io/unicorn-binance-rest-api](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) |
+| UBLDC (Depth Cache) | [oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) |
+| UBTSL (Trailing Stop) | [oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) |
+| UnicornFy | [oliver-zehentleitner.github.io/unicorn-fy](https://oliver-zehentleitner.github.io/unicorn-fy) |
 
-## Howto
-- [How to Obtain and Use a Unicorn Binance Suite License Key and Run the UBS Module According to Best Practice](https://technopathy.club/how-to-obtain-and-use-a-unicorn-binance-suite-license-key-and-run-the-ubs-module-according-to-best-87b0088124a8)
+---
 
-## Project Homepage
-[https://github.com/oliver-zehentleitner/unicorn-binance-suite](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
+## Community
 
-## Wiki
-[https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki](https://github.com/oliver-zehentleitner/unicorn-binance-suite/wiki)
+- [Telegram](https://t.me/unicorndevs) -- questions, announcements, chat
+- [GitHub Discussions](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions) -- longer-form Q&A
+- [Issue Tracker](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues) -- bugs and feature requests
 
-## Social
-- [Discussions](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions)
-- [https://t.me/unicorndevs](https://t.me/unicorndevs)
-- [https://dev.binance.vision](https://dev.binance.vision)
-- [https://community.binance.org](https://community.binance.org)
+Binance API news:
+[Announcements](https://t.me/binance_api_announcements) |
+[English](https://t.me/binance_api_english) |
+[Binance US](https://t.me/Binance_USA)
 
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite) for spezific notifications.
-
-## How to report Bugs or suggest Improvements?
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
+---
 
 ## Contributing
-Please look for the information in the README.md of the [responsible subrepository](https://github.com/oliver-zehentleitner/unicorn-binance-suite#modules-of-the-unicorn-binance-suite).
+
+Contributions are welcome -- from documentation fixes to new features. Each module has its own repository; 
+check the [CONTRIBUTING.md](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/CONTRIBUTING.md) 
+for guidelines.
+
+[![Contributors](https://contributors-img.web.app/image?repo=oliver-zehentleitner/unicorn-binance-suite)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/graphs/contributors)
+
+---
 
 ## Disclaimer
-This project is for informational purposes only. You should not construe this information or any other material as 
-legal, tax, investment, financial or other advice. Nothing contained herein constitutes a solicitation, recommendation, 
-endorsement or offer by us or any third party provider to buy or sell any securities or other financial instruments in 
-this or any other jurisdiction in which such solicitation or offer would be unlawful under the securities laws of such 
-jurisdiction.
 
-### If you intend to use real money, use it at your own risk!
+This project is for informational purposes only. Nothing contained herein constitutes financial advice or a 
+solicitation to buy or sell securities.
 
-Under no circumstances will we be responsible or liable for any claims, damages, losses, expenses, costs or liabilities 
-of any kind, including but not limited to direct or indirect damages for loss of profits.
+**If you intend to use real money, use it at your own risk.**
+
+Under no circumstances will we be responsible or liable for any claims, damages, losses, expenses, costs or 
+liabilities of any kind, including but not limited to direct or indirect damages for loss of profits.
 
 ### SOCKS5 Proxy / Geoblocking
-We would like to explicitly point out that in our opinion US citizens are exclusively authorized to trade on Binance.US 
-and that this restriction must not be circumvented!
-
-The purpose of supporting a SOCKS5 proxy in the UNICORN Binance Suite and its modules is to allow non-US citizens to 
-use US services. For example, GitHub actions with UBS will not work without a SOCKS5 proxy, as they will inevitably run 
-on servers in the US and be blocked by Binance.com. Moreover, it also seems justified that traders, data scientists and 
-companies from the US analyze binance.com market data - as long as they do not trade there.
+US citizens are exclusively authorized to trade on Binance.US -- this restriction must not be circumvented.
+SOCKS5 proxy support exists for non-US citizens accessing US services (e.g. CI runners blocked by Binance.com) and 
+for legitimate market data analysis.
