@@ -13,7 +13,8 @@
 
 **The production-grade Python toolkit for Binance.** WebSocket streams, REST API, local order books, trailing stop 
 losses and cluster-scale depth caches -- all coordinated, fully documented, MIT-licensed and delivered as optimized 
-Cython C extensions.
+Cython C extensions. Available via [PyPI](https://pypi.org/project/unicorn-binance-suite/) and 
+[Anaconda](https://anaconda.org/conda-forge/unicorn-binance-suite).
 
 ```
 pip install unicorn-binance-suite
@@ -47,11 +48,11 @@ pip install unicorn-binance-suite
 
 ## The pain points UBS saves you from
 
-**python-binance** — `DepthCacheManager` is *permanently* unusable after a missed reconnect. You restart the process. Default refresh via REST every 30 min = you're trading on a non-synchronized book in the meantime.
+**python-binance** — WebSocket reconnect capped at 5 retries, then dead. `DepthCacheManager` permanently unusable after a missed reconnect — restart the process. No Cython, no multi-arch wheels, maintainer inactive since years.
 
-**ccxt / ccxt.pro** — `watch_order_book` hangs silently without exception, [open since 2024](https://github.com/ccxt/ccxt/issues/22662). Timeout workarounds don't help because the internal reconnect logic doesn't detect the dead state. On top of that, generalist overhead: every call pays the abstraction tax for 100+ exchanges you'll never use.
+**ccxt / ccxt.pro** — `watch_order_book` [hangs silently after ~12h](https://github.com/ccxt/ccxt/issues/22662), no heartbeat detection. Generalist overhead: every call pays the abstraction tax for 100+ exchanges you'll never use. Pro features (order book caching) require a commercial license.
 
-**binance-connector-python** — Official ≠ production-ready. No DepthCache, no automatic reconnect, no UserDataStream management, no trailing stop. Just split into ~5 packages, migration guide mandatory.
+**binance-connector-python** — Official ≠ production-ready. No automatic reconnect, no UserDataStream management, no DepthCache, no trailing stop. Recently split into ~5 packages with mandatory migration.
 
 ---
 
@@ -116,8 +117,8 @@ way to access current order book depth without exceeding Binance rate limits. Su
 **220K+ downloads** | **49 stars**
 
 ### [UNICORN Binance DepthCache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
-Kubernetes-native cluster for production-scale depth cache management. Load balancing, automatic failover and 
-self-healing state. Runs locally on a single machine or scales across a K8s cluster. REST API accessible from any 
+Production-scale depth cache management with load balancing, automatic failover and self-healing state. Runs locally 
+on a single machine (`pip install ubdcc`) or scales across a Kubernetes cluster. REST API accessible from any 
 programming language.
 
 ### [UNICORN Binance Trailing Stop Loss](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss) (UBTSL)
@@ -170,11 +171,17 @@ pip install unicorn-binance-suite
 
 Python 3.9+ required. Runs smoothly up to and including Python 3.14.
 
+### pip
 ```
 pip install unicorn-binance-suite
 ```
 
-Or install individual modules:
+### conda
+```
+conda install -c conda-forge unicorn-binance-suite
+```
+
+### Or install individual modules
 ```
 pip install unicorn-binance-websocket-api
 pip install unicorn-binance-rest-api
@@ -186,7 +193,9 @@ pip install unicorn-fy
 PyPy interpreter supported from Python 3.9+.
 
 All packages are built transparently via GitHub Actions and published directly to 
-[PyPI](https://pypi.org/project/unicorn-binance-suite/) -- the entire pipeline from source to wheel is traceable.
+[PyPI](https://pypi.org/project/unicorn-binance-suite/) and 
+[conda-forge](https://anaconda.org/conda-forge/unicorn-binance-suite) -- the entire pipeline from source to wheel 
+is traceable.
 
 ---
 
