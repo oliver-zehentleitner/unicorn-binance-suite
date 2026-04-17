@@ -50,20 +50,20 @@ pip install unicorn-binance-suite
 
 ---
 
-### python-binance reconnect issues
+### python-binance: reconnect limitations
 
 Original author abandoned the project in 2022. Community fork ships sporadic patches, but the fundamental architecture 
 is unchanged: max. 5 reconnect retries, then dead. `DepthCacheManager` permanently unusable after a missed 
 reconnect — restart your process, lose your state. Default 30-minute REST polling means you're trading on a stale 
 book between refreshes. No Cython, no multi-arch wheels, no cluster story.
 
-### ccxt watch_order_book hangs
+### ccxt: silent disconnect on watch_order_book
 
 `watch_order_book` [hangs silently after ~12h](https://github.com/ccxt/ccxt/issues/22662) — no exception, no 
 reconnect, your bot just stops. Open since May 2024. Generalist architecture means you pay the abstraction tax for 
 100+ exchanges you'll never use. Order book caching requires a commercial ccxt.pro license.
 
-### binance-connector-python missing features
+### binance-connector-python: minimal by design
 
 Official ≠ production. No reconnect, no UserDataStream refresh, no DepthCache, no trailing stop. Recently fragmented 
 into 5+ packages (`binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, ...) — existing code needs 
