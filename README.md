@@ -138,7 +138,7 @@ all suite modules.
 
 ## Quick Start
 
-### WebSocket stream in 4 lines
+### WebSocket stream in 3 lines
 ```python
 from unicorn_binance_websocket_api import BinanceWebSocketApiManager
 
@@ -154,11 +154,26 @@ ubldc = BinanceLocalDepthCacheManager(exchange="binance.com")
 ubldc.create_depthcache("BTCUSDT")
 ```
 
-### Trailing stop loss via CLI
-```sh
-$ pip install unicorn-binance-trailing-stop-loss
-$ ubtsl --profile BTCUSDT_SELL --stoplosslimit 0.5%
+### Trailing stop loss in 3 lines
+```python
+from unicorn_binance_trailing_stop_loss import BinanceTrailingStopLossManager
+
+ubtsl = BinanceTrailingStopLossManager(exchange="binance.com", market="BTCUSDT",
+                                       stop_loss_limit="1.5%", stop_loss_order_type="LIMIT",
+                                       api_key="...", api_secret="...")
 ```
+
+Also available as a CLI: `ubtsl --profile BTCUSDT_SELL --stoplosslimit 0.5%`
+
+### DepthCache Cluster in 3 lines
+```python
+from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager
+
+with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.0.1") as ubldc:
+    ubldc.cluster.create_depthcaches(exchange="binance.com", markets=["BTCUSDT", "ETHUSDT"])
+```
+
+Runs locally (`pip install ubdcc && ubdcc start`) or on a Kubernetes cluster. Access via REST API from any language.
 
 ### Install everything at once
 ```
@@ -188,6 +203,7 @@ pip install unicorn-binance-rest-api
 pip install unicorn-binance-local-depth-cache
 pip install unicorn-binance-trailing-stop-loss
 pip install unicorn-fy
+pip install ubdcc
 ```
 
 PyPy interpreter supported from Python 3.9+.
