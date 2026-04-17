@@ -69,11 +69,13 @@
 <li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
-<li><a class="reference internal" href="#websocket-stream-in-3-lines">WebSocket stream in 3 lines</a></li>
-<li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
-<li><a class="reference internal" href="#trailing-stop-loss-in-3-lines">Trailing stop loss in 3 lines</a></li>
-<li><a class="reference internal" href="#depthcache-cluster-in-3-lines">DepthCache Cluster in 3 lines</a></li>
+<li><a class="reference internal" href="#common-use-cases">Common Use Cases</a><ul>
+<li><a class="reference internal" href="#stream-trades-via-websocket">Stream trades via WebSocket</a></li>
+<li><a class="reference internal" href="#maintain-a-local-order-book">Maintain a local order book</a></li>
+<li><a class="reference internal" href="#place-an-order-via-rest">Place an order via REST</a></li>
+<li><a class="reference internal" href="#trail-a-stop-loss">Trail a stop loss</a></li>
+<li><a class="reference internal" href="#run-a-depthcache-cluster">Run a DepthCache cluster</a></li>
+<li><a class="reference internal" href="#canonical-example-stream-local-order-book">Canonical example — stream + local order book</a></li>
 <li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
 </ul>
 </li>
@@ -86,6 +88,7 @@
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#ai-integration">AI Integration</a></li>
 <li><a class="reference internal" href="#disclaimer">Disclaimer</a><ul>
 <li><a class="reference internal" href="#socks5-proxy-geoblocking">SOCKS5 Proxy / Geoblocking</a></li>
 </ul>
@@ -468,29 +471,54 @@ all suite modules.</p>
 </section>
 </section>
 <hr class="docutils" />
-<section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
-<section id="websocket-stream-in-3-lines">
-<h3>WebSocket stream in 3 lines<a class="headerlink" href="#websocket-stream-in-3-lines" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_websocket_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceWebSocketApiManager</span>
+<section id="common-use-cases">
+<h2>Common Use Cases<a class="headerlink" href="#common-use-cases" title="Link to this heading">¶</a></h2>
+<section id="stream-trades-via-websocket">
+<h3>Stream trades via WebSocket<a class="headerlink" href="#stream-trades-via-websocket" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use case: receive real-time trade events</span>
+<span class="c1"># module: unicorn-binance-websocket-api (UBWA)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_websocket_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceWebSocketApiManager</span>
 
 <span class="n">ubwa</span> <span class="o">=</span> <span class="n">BinanceWebSocketApiManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span>
 <span class="n">ubwa</span><span class="o">.</span><span class="n">create_stream</span><span class="p">(</span><span class="n">channels</span><span class="o">=</span><span class="s2">&quot;trade&quot;</span><span class="p">,</span> <span class="n">markets</span><span class="o">=</span><span class="s2">&quot;btcusdt&quot;</span><span class="p">,</span> <span class="n">process_stream_data</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api">UBWA docs</a> — manages reconnect, sequence validation and stream lifecycle automatically.</p>
 </section>
-<section id="local-order-book-in-3-lines">
-<h3>Local order book in 3 lines<a class="headerlink" href="#local-order-book-in-3-lines" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span>
+<section id="maintain-a-local-order-book">
+<h3>Maintain a local order book<a class="headerlink" href="#maintain-a-local-order-book" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use case: synchronized local depth cache with real-time updates</span>
+<span class="c1"># module: unicorn-binance-local-depth-cache (UBLDC)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">,</span> <span class="n">DepthCacheOutOfSync</span>
 
 <span class="n">ubldc</span> <span class="o">=</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span>
 <span class="n">ubldc</span><span class="o">.</span><span class="n">create_depthcache</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">asks</span> <span class="o">=</span> <span class="n">ubldc</span><span class="o">.</span><span class="n">get_asks</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="n">limit_count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">bids</span> <span class="o">=</span> <span class="n">ubldc</span><span class="o">.</span><span class="n">get_bids</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="n">limit_count</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">DepthCacheOutOfSync</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># cache is re-syncing automatically</span>
 </pre></div>
 </div>
+<p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache">UBLDC docs</a> — event-driven sync, auto re-init on gaps, orphan level cleanup.</p>
 </section>
-<section id="trailing-stop-loss-in-3-lines">
-<h3>Trailing stop loss in 3 lines<a class="headerlink" href="#trailing-stop-loss-in-3-lines" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_trailing_stop_loss</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceTrailingStopLossManager</span>
+<section id="place-an-order-via-rest">
+<h3>Place an order via REST<a class="headerlink" href="#place-an-order-via-rest" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use case: place a market order on Binance Spot</span>
+<span class="c1"># module: unicorn-binance-rest-api (UBRA)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_rest_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceRestApiManager</span>
+
+<span class="k">with</span> <span class="n">BinanceRestApiManager</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="n">api_secret</span><span class="o">=</span><span class="s2">&quot;...&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ubra</span><span class="p">:</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="n">ubra</span><span class="o">.</span><span class="n">create_order</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;BUY&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;MARKET&quot;</span><span class="p">,</span> <span class="n">quoteOrderQty</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-rest-api">UBRA docs</a> — full Binance REST coverage (Spot, Margin, Futures, US, TR).</p>
+</section>
+<section id="trail-a-stop-loss">
+<h3>Trail a stop loss<a class="headerlink" href="#trail-a-stop-loss" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use case: automated trailing stop loss with notification</span>
+<span class="c1"># module: unicorn-binance-trailing-stop-loss (UBTSL)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_trailing_stop_loss</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceTrailingStopLossManager</span>
 
 <span class="n">ubtsl</span> <span class="o">=</span> <span class="n">BinanceTrailingStopLossManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span>
                                        <span class="n">stop_loss_limit</span><span class="o">=</span><span class="s2">&quot;1.5%&quot;</span><span class="p">,</span> <span class="n">stop_loss_order_type</span><span class="o">=</span><span class="s2">&quot;LIMIT&quot;</span><span class="p">,</span>
@@ -498,19 +526,44 @@ all suite modules.</p>
 </pre></div>
 </div>
 <p>Also available as a CLI: <code class="docutils literal notranslate"><span class="pre">ubtsl</span> <span class="pre">--profile</span> <span class="pre">BTCUSDT_SELL</span> <span class="pre">--stoplosslimit</span> <span class="pre">0.5%</span></code></p>
+<p><a class="reference external" href="https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss">UBTSL docs</a> — SDK + CLI, smart entry (<code class="docutils literal notranslate"><span class="pre">jump-in-and-trail</span></code>), email notifications.</p>
 </section>
-<section id="depthcache-cluster-in-3-lines">
-<h3>DepthCache Cluster in 3 lines<a class="headerlink" href="#depthcache-cluster-in-3-lines" title="Link to this heading">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span>
+<section id="run-a-depthcache-cluster">
+<h3>Run a DepthCache cluster<a class="headerlink" href="#run-a-depthcache-cluster" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># use case: production-scale order books with failover</span>
+<span class="c1"># module: unicorn-binance-local-depth-cache (UBLDC) + ubdcc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span>
 
 <span class="k">with</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">ubdcc_address</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ubldc</span><span class="p">:</span>
     <span class="n">ubldc</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">create_depthcaches</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">markets</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="s2">&quot;ETHUSDT&quot;</span><span class="p">])</span>
+    <span class="n">asks</span> <span class="o">=</span> <span class="n">ubldc</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">get_asks</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes">Runs locally</a>
 (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ubdcc</span> <span class="pre">&amp;&amp;</span> <span class="pre">ubdcc</span> <span class="pre">start</span></code>) or on a
-<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup">Kubernetes</a>
-cluster. Access via <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api">REST API</a> from any language.</p>
+<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup">Kubernetes cluster</a>.
+<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api">REST API</a> accessible from any language.</p>
+</section>
+<section id="canonical-example-stream-local-order-book">
+<h3>Canonical example — stream + local order book<a class="headerlink" href="#canonical-example-stream-local-order-book" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># purpose: the most common UBS pattern — stream market data and maintain a local order book</span>
+<span class="c1"># modules: UBWA (WebSocket) + UBLDC (Depth Cache)</span>
+<span class="c1"># install: pip install unicorn-binance-suite</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unicorn_binance_local_depth_cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">,</span> <span class="n">DepthCacheOutOfSync</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="k">with</span> <span class="n">BinanceLocalDepthCacheManager</span><span class="p">(</span><span class="n">exchange</span><span class="o">=</span><span class="s2">&quot;binance.com&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ubldc</span><span class="p">:</span>
+    <span class="n">ubldc</span><span class="o">.</span><span class="n">create_depthcache</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">best_ask</span> <span class="o">=</span> <span class="n">ubldc</span><span class="o">.</span><span class="n">get_asks</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="n">limit_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">best_bid</span> <span class="o">=</span> <span class="n">ubldc</span><span class="o">.</span><span class="n">get_bids</span><span class="p">(</span><span class="s2">&quot;BTCUSDT&quot;</span><span class="p">,</span> <span class="n">limit_count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Best ask: </span><span class="si">{</span><span class="n">best_ask</span><span class="si">}</span><span class="s2">, Best bid: </span><span class="si">{</span><span class="n">best_bid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">DepthCacheOutOfSync</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DepthCache is re-syncing...&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="install-everything-at-once">
 <h3>Install everything at once<a class="headerlink" href="#install-everything-at-once" title="Link to this heading">¶</a></h3>
@@ -616,6 +669,13 @@ for guidelines.</p>
 <p><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/graphs/contributors"><img alt="Contributors" src="https://contributors-img.web.app/image?repo=oliver-zehentleitner/unicorn-binance-suite" /></a></p>
 </section>
 <hr class="docutils" />
+<section id="ai-integration">
+<h2>AI Integration<a class="headerlink" href="#ai-integration" title="Link to this heading">¶</a></h2>
+<p>This project provides <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/llms.txt"><code class="docutils literal notranslate"><span class="pre">llms.txt</span></code></a> files for AI tools (ChatGPT, Claude, Copilot, etc.). The
+<a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/llms.txt">suite-level llms.txt</a> routes use cases to the correct module. Each module also has its own <code class="docutils literal notranslate"><span class="pre">llms.txt</span></code> with
+detailed API reference and code examples.</p>
+</section>
+<hr class="docutils" />
 <section id="disclaimer">
 <h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Link to this heading">¶</a></h2>
 <p>This project is for informational purposes only. Nothing contained herein constitutes financial advice or a
@@ -665,11 +725,13 @@ for legitimate market data analysis.</p>
 <li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#quick-start">Quick Start</a><ul>
-<li><a class="reference internal" href="#websocket-stream-in-3-lines">WebSocket stream in 3 lines</a></li>
-<li><a class="reference internal" href="#local-order-book-in-3-lines">Local order book in 3 lines</a></li>
-<li><a class="reference internal" href="#trailing-stop-loss-in-3-lines">Trailing stop loss in 3 lines</a></li>
-<li><a class="reference internal" href="#depthcache-cluster-in-3-lines">DepthCache Cluster in 3 lines</a></li>
+<li><a class="reference internal" href="#common-use-cases">Common Use Cases</a><ul>
+<li><a class="reference internal" href="#stream-trades-via-websocket">Stream trades via WebSocket</a></li>
+<li><a class="reference internal" href="#maintain-a-local-order-book">Maintain a local order book</a></li>
+<li><a class="reference internal" href="#place-an-order-via-rest">Place an order via REST</a></li>
+<li><a class="reference internal" href="#trail-a-stop-loss">Trail a stop loss</a></li>
+<li><a class="reference internal" href="#run-a-depthcache-cluster">Run a DepthCache cluster</a></li>
+<li><a class="reference internal" href="#canonical-example-stream-local-order-book">Canonical example — stream + local order book</a></li>
 <li><a class="reference internal" href="#install-everything-at-once">Install everything at once</a></li>
 </ul>
 </li>
@@ -682,6 +744,7 @@ for legitimate market data analysis.</p>
 <li><a class="reference internal" href="#documentation">Documentation</a></li>
 <li><a class="reference internal" href="#community">Community</a></li>
 <li><a class="reference internal" href="#contributing">Contributing</a></li>
+<li><a class="reference internal" href="#ai-integration">AI Integration</a></li>
 <li><a class="reference internal" href="#disclaimer">Disclaimer</a><ul>
 <li><a class="reference internal" href="#socks5-proxy-geoblocking">SOCKS5 Proxy / Geoblocking</a></li>
 </ul>
@@ -789,7 +852,7 @@ for legitimate market data analysis.</p>
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 17 2026 at 11:43 (CET).
+    Last updated on Apr 17 2026 at 11:47 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
