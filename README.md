@@ -37,7 +37,7 @@ pip install unicorn-binance-suite
 | **Performance**                                                                                               | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [documented performance ceiling ~1k msg/s](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
 | **Multi-arch wheels**                                                                                         | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
 | **Python support**                                                                                            | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
-| **Runtime sub/unsub without disconnect**                                                                      | Yes | No — stop & restart the stream | Partially | No |
+| **Runtime subscribe/unsubscribe without disconnect**                                                          | Yes | No — stop & restart the stream | Partially | No |
 | **UserData stream handling**                                                                                  | Automatic, listenKey refresh transparent | Manual | Partially abstracted | Manual |
 | **Package structure**                                                                                         | One monolith `unicorn-binance-suite` or modular | One package | One huge package (100+ exchanges) | **Recently split** into `binance-sdk-spot`, `binance-sdk-derivatives-trading-usds-futures`, etc. — migration guide required |
 | **License**                                                                                                   | MIT | MIT | MIT (ccxt), **ccxt.pro = commercial** | MIT |
