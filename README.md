@@ -318,6 +318,14 @@ for guidelines.
 
 ---
 
+## AI Integration
+
+This project provides [`llms.txt`](llms.txt) files for AI tools (ChatGPT, Claude, Copilot, etc.). The 
+[suite-level llms.txt](llms.txt) routes use cases to the correct module. Each module also has its own `llms.txt` with 
+detailed API reference and code examples.
+
+---
+
 ## Disclaimer
 
 This project is for informational purposes only. Nothing contained herein constitutes financial advice or a 
