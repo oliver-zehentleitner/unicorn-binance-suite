@@ -320,8 +320,8 @@ for guidelines.
 
 ## AI Integration
 
-This project provides [`llms.txt`](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/llms.txt) files for AI tools (ChatGPT, Claude, Copilot, etc.). The 
-[suite-level llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-suite/blob/master/llms.txt) routes use cases to the correct module. Each module also has its own `llms.txt` with 
+This project provides [`llms.txt`](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/refs/heads/master/llms.txt) files for AI tools (ChatGPT, Claude, Copilot, etc.). The 
+[suite-level llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/refs/heads/master/llms.txt) routes use cases to the correct module. Each module also has its own `llms.txt` with 
 detailed API reference and code examples.
 
 ---

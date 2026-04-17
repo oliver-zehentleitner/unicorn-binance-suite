@@ -56,9 +56,9 @@ Additional per module:
 ## Per-Module Documentation
 
 Each module has its own `llms.txt` with detailed API reference:
-- [UBWA llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/blob/master/llms.txt)
-- [UBRA llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api/blob/master/llms.txt)
-- [UBLDC llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache/blob/master/llms.txt)
-- [UBDCC llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster/blob/master/llms.txt)
-- [UBTSL llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/blob/master/llms.txt)
-- [UnicornFy llms.txt](https://github.com/oliver-zehentleitner/unicorn-fy/blob/master/llms.txt)
+- [UBWA llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-websocket-api/refs/heads/master/llms.txt)
+- [UBRA llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-rest-api/refs/heads/master/llms.txt)
+- [UBLDC llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-local-depth-cache/refs/heads/master/llms.txt)
+- [UBDCC llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster/refs/heads/master/llms.txt)
+- [UBTSL llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/refs/heads/master/llms.txt)
+- [UnicornFy llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-fy/refs/heads/master/llms.txt)
