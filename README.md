@@ -152,47 +152,94 @@ all suite modules.
 
 ---
 
-## Quick Start
+## Common Use Cases
 
-### WebSocket stream in 3 lines
+### Stream trades via WebSocket
 ```python
+# use case: receive real-time trade events
+# module: unicorn-binance-websocket-api (UBWA)
 from unicorn_binance_websocket_api import BinanceWebSocketApiManager
 
 ubwa = BinanceWebSocketApiManager(exchange="binance.com")
 ubwa.create_stream(channels="trade", markets="btcusdt", process_stream_data=lambda data: print(data))
 ```
+[UBWA docs](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api) — manages reconnect, sequence validation and stream lifecycle automatically.
 
-### Local order book in 3 lines
+### Maintain a local order book
 ```python
-from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager
+# use case: synchronized local depth cache with real-time updates
+# module: unicorn-binance-local-depth-cache (UBLDC)
+from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager, DepthCacheOutOfSync
 
 ubldc = BinanceLocalDepthCacheManager(exchange="binance.com")
 ubldc.create_depthcache("BTCUSDT")
+try:
+    asks = ubldc.get_asks("BTCUSDT", limit_count=10)
+    bids = ubldc.get_bids("BTCUSDT", limit_count=10)
+except DepthCacheOutOfSync:
+    pass  # cache is re-syncing automatically
 ```
+[UBLDC docs](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) — event-driven sync, auto re-init on gaps, orphan level cleanup.
 
-### Trailing stop loss in 3 lines
+### Place an order via REST
 ```python
+# use case: place a market order on Binance Spot
+# module: unicorn-binance-rest-api (UBRA)
+from unicorn_binance_rest_api import BinanceRestApiManager
+
+with BinanceRestApiManager(api_key="...", api_secret="...") as ubra:
+    order = ubra.create_order(symbol="BTCUSDT", side="BUY", type="MARKET", quoteOrderQty=100)
+```
+[UBRA docs](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) — full Binance REST coverage (Spot, Margin, Futures, US, TR).
+
+### Trail a stop loss
+```python
+# use case: automated trailing stop loss with notification
+# module: unicorn-binance-trailing-stop-loss (UBTSL)
 from unicorn_binance_trailing_stop_loss import BinanceTrailingStopLossManager
 
 ubtsl = BinanceTrailingStopLossManager(exchange="binance.com", market="BTCUSDT",
                                        stop_loss_limit="1.5%", stop_loss_order_type="LIMIT",
                                        api_key="...", api_secret="...")
 ```
-
 Also available as a CLI: `ubtsl --profile BTCUSDT_SELL --stoplosslimit 0.5%`
 
-### DepthCache Cluster in 3 lines
+[UBTSL docs](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) — SDK + CLI, smart entry (`jump-in-and-trail`), email notifications.
+
+### Run a DepthCache cluster
 ```python
+# use case: production-scale order books with failover
+# module: unicorn-binance-local-depth-cache (UBLDC) + ubdcc
 from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager
 
 with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.0.1") as ubldc:
     ubldc.cluster.create_depthcaches(exchange="binance.com", markets=["BTCUSDT", "ETHUSDT"])
+    asks = ubldc.cluster.get_asks(exchange="binance.com", market="BTCUSDT")
 ```
+[Runs locally](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes)
+(`pip install ubdcc && ubdcc start`) or on a
+[Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup).
+[REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) accessible from any language.
 
-[Runs locally](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes) 
-(`pip install ubdcc && ubdcc start`) or on a 
-[Kubernetes](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup) 
-cluster. Access via [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) from any language.
+### Canonical example — stream + local order book
+```python
+# purpose: the most common UBS pattern — stream market data and maintain a local order book
+# modules: UBWA (WebSocket) + UBLDC (Depth Cache)
+# install: pip install unicorn-binance-suite
+from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager, DepthCacheOutOfSync
+import time
+
+with BinanceLocalDepthCacheManager(exchange="binance.com") as ubldc:
+    ubldc.create_depthcache("BTCUSDT")
+    while True:
+        try:
+            best_ask = ubldc.get_asks("BTCUSDT", limit_count=1)
+            best_bid = ubldc.get_bids("BTCUSDT", limit_count=1)
+            print(f"Best ask: {best_ask}, Best bid: {best_bid}")
+        except DepthCacheOutOfSync:
+            print("DepthCache is re-syncing...")
+        time.sleep(1)
+```
 
 ### Install everything at once
 ```
@@ -268,6 +315,14 @@ check the [CONTRIBUTING.md](https://github.com/oliver-zehentleitner/unicorn-bina
 for guidelines.
 
 [![Contributors](https://contributors-img.web.app/image?repo=oliver-zehentleitner/unicorn-binance-suite)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/graphs/contributors)
+
+---
+
+## AI Integration
+
+This project provides [`llms.txt`](llms.txt) files for AI tools (ChatGPT, Claude, Copilot, etc.). The 
+[suite-level llms.txt](llms.txt) routes use cases to the correct module. Each module also has its own `llms.txt` with 
+detailed API reference and code examples.
 
 ---
 

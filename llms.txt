@@ -1,0 +1,64 @@
+# UNICORN Binance Suite
+
+> The production-grade Python toolkit for Binance. MIT-licensed.
+
+Install: `pip install unicorn-binance-suite`
+
+## Use Case → Module Routing
+
+| I want to... | Module | Install | Import |
+|---|---|---|---|
+| Stream real-time market data via WebSocket | UBWA | `pip install unicorn-binance-websocket-api` | `from unicorn_binance_websocket_api import BinanceWebSocketApiManager` |
+| Place orders, query account via REST | UBRA | `pip install unicorn-binance-rest-api` | `from unicorn_binance_rest_api import BinanceRestApiManager` |
+| Maintain a local order book (depth cache) | UBLDC | `pip install unicorn-binance-local-depth-cache` | `from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager` |
+| Run a scalable depth cache cluster | UBDCC | `pip install ubdcc` | CLI: `ubdcc start` / Python: via UBLDC cluster attribute |
+| Trail a stop loss order | UBTSL | `pip install unicorn-binance-trailing-stop-loss` | `from unicorn_binance_trailing_stop_loss import BinanceTrailingStopLossManager` |
+| Normalize raw exchange data to dicts | UnicornFy | `pip install unicorn-fy` | `from unicorn_fy import UnicornFy` |
+
+## Canonical Example
+
+```python
+# purpose: stream market data and maintain a synchronized local order book
+# modules: UBLDC (wraps UBWA internally)
+# install: pip install unicorn-binance-local-depth-cache
+
+from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager, DepthCacheOutOfSync
+import time
+
+with BinanceLocalDepthCacheManager(exchange="binance.com") as ubldc:
+    ubldc.create_depthcache("BTCUSDT")
+    while True:
+        try:
+            asks = ubldc.get_asks("BTCUSDT", limit_count=5)
+            bids = ubldc.get_bids("BTCUSDT", limit_count=5)
+            print(f"Best ask: {asks[0]}, Best bid: {bids[0]}")
+        except DepthCacheOutOfSync:
+            print("Re-syncing...")
+        time.sleep(1)
+```
+
+## Supported Exchanges
+
+All modules support: `binance.com`, `binance.com-testnet`, `binance.us`, `trbinance.com`
+
+Additional per module:
+- UBWA/UBRA: `binance.com-margin`, `binance.com-isolated_margin`, `binance.com-futures`, `binance.com-coin_futures` (all with `-testnet` variants), `binance.com-vanilla-options` (+testnet)
+- UBLDC/UBDCC: `binance.com-futures` (+testnet), `binance.com-vanilla-options` (+testnet)
+- UBTSL: `binance.com-futures`, `binance.com-margin`, `binance.com-isolated_margin`
+
+## Key Design Principles
+
+- All modules use native asyncio internally but require NO async boilerplate from the user
+- Use `with` context manager for clean shutdown (calls `stop_manager()` automatically)
+- WebSocket reconnect is automatic and unlimited — no manual retry logic needed
+- All modules can share a single UBRA instance via the `ubra_manager` parameter
+
+## Per-Module Documentation
+
+Each module has its own `llms.txt` with detailed API reference:
+- [UBWA llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/blob/master/llms.txt)
+- [UBRA llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api/blob/master/llms.txt)
+- [UBLDC llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache/blob/master/llms.txt)
+- [UBDCC llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster/blob/master/llms.txt)
+- [UBTSL llms.txt](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/blob/master/llms.txt)
+- [UnicornFy llms.txt](https://github.com/oliver-zehentleitner/unicorn-fy/blob/master/llms.txt)
