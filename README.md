@@ -60,7 +60,7 @@ pip install unicorn-binance-suite
 
 ---
 
-## The money shot
+## TL;DR
 
 > **python-binance has become a hobby project. ccxt is a Swiss army knife with known Binance bugs. The official connector is a REST wrapper with a WebSocket afterthought.**
 >
