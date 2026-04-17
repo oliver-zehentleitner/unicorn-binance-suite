@@ -121,9 +121,11 @@ way to access current order book depth without exceeding Binance rate limits. Su
 **220K+ downloads** | **49 stars**
 
 ### [UNICORN Binance DepthCache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
-Production-scale depth cache management with load balancing, automatic failover and self-healing state. Runs locally 
-on a single machine (`pip install ubdcc`) or scales across a Kubernetes cluster. REST API accessible from any 
-programming language.
+Production-scale depth cache management with load balancing, automatic failover and self-healing state. 
+[Runs locally on a single machine (`pip install ubdcc`)](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes) 
+or [scales across a Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup). 
+[REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) 
+accessible from any programming language.
 
 ### [UNICORN Binance Trailing Stop Loss](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss) (UBTSL)
 Trailing stop loss engine with smart entry (`jump-in-and-trail`). Available as Python SDK and 
