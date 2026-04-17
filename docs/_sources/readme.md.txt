@@ -9,7 +9,7 @@
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
-[![UNICORNFY-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-fy)
+[![UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
 
 # UNICORN Binance Suite
 
