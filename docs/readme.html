@@ -325,17 +325,17 @@ Cython C extensions. Available via <a class="reference external" href="https://p
 </tr>
 <tr>
 <td><strong><a href="https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api/unicorn_binance_websocket_api.html#module-unicorn_binance_websocket_api.api">WebSocket API</a> (order placement via WS)</strong></td>
-<td>Yes — Spot and Futures</td>
+<td>Yes — Spot and Futures, managed connection</td>
 <td>No</td>
 <td>Partially</td>
-<td>Yes</td>
+<td>Raw access, no reconnect handling</td>
 </tr>
 <tr>
-<td><strong>SOCKS5 proxy</strong></td>
-<td>Yes — per connection</td>
-<td>No</td>
-<td>No</td>
-<td>No</td>
+<td><strong>Asyncio</strong></td>
+<td>Native asyncio under the hood, but <strong>no async boilerplate required</strong> — works out of the box with sync code</td>
+<td>Threads + callbacks</td>
+<td>Async-first, requires <code>await</code> everywhere</td>
+<td>Sync and async variants, but separate packages</td>
 </tr>
 <tr>
 <td><strong>Package structure</strong></td>
@@ -764,7 +764,7 @@ for legitimate market data analysis.</p>
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 17 2026 at 10:14 (CET).
+    Last updated on Apr 17 2026 at 10:23 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
