@@ -402,15 +402,15 @@ including bugs in Binance’s own spec.</strong></p>
 <h2>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>         ┌────────────────────────────────────────────────┐
          │            Your Trading Application            │
-         └──────┬────────────────┬───────────┬────────────┘
-                │                │           │
-       ┌────────▼───────┐  ┌─────▼───┐  ┌────▼───────────────┐
-       │  UBLDC / UBDCC │  │  UBTSL  │  │  Direct UBWA/UBRA  │
-       │  (Order Books) │  │  (Stop  │  │  access for custom │
-       │                │  │   Loss) │  │  strategies        │
-       └───────┬────────┘  └──┬──┬───┘  └──────┬─────────────┘
-               │              │  │             │
-         ┌─────▼──────────────▼──▼─────────────▼────────────┐
+         └──────┬────────────────┬────────────┬───────────┘
+                │                │            │
+       ┌────────▼───────┐  ┌─────▼────┐  ┌────▼───────────────┐
+       │  UBLDC / UBDCC │  │  UBTSL   │  │  Direct UBWA/UBRA  │
+       │  (Order Books) │  │  (Stop   │  │  access for custom │
+       │                │  │   Loss)  │  │  strategies        │
+       └───────┬────────┘  └─────┬────┘  └──────┬─────────────┘
+               │                 │              │
+         ┌─────▼─────────────────▼──────────────▼───────────┐
          │                  UnicornFy                       │
          │          (raw data → Python dicts)               │
          └────────────────┬─────────────────┬───────────────┘
@@ -853,7 +853,7 @@ for legitimate market data analysis.</p>
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 17 2026 at 14:31 (CET).
+    Last updated on Apr 18 2026 at 22:46 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.

@@ -10,6 +10,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [How to upgrade to the latest version!](https://oliver-zehentleitner.github.io/unicorn-binance-suite/readme.html#installation-and-upgrade)
 
 ## 2.1.0.dev (development stage/unreleased/unstable)
+### Changed
+- Bumped suite dependency minimums to the cleanup-round releases:
+  - `unicorn-fy >= 0.17.2`
+  - `unicorn-binance-rest-api >= 2.11.0`
+  - `unicorn-binance-websocket-api >= 2.12.2`
+  - `unicorn-binance-local-depth-cache >= 2.12.2`
+  - `unicorn-binance-trailing-stop-loss >= 1.3.1`
+
+  (`ubdcc` stays at `>= 0.5.0`.) Synced across `setup.py`,
+  `pyproject.toml` and `requirements.txt`.
+- `meta.yaml`: switched conda deps from the legacy `lucit::` channel
+  prefixes to conda-forge. Removed the leftover `channels:` and
+  `dependencies:` blocks (they are `environment.yml` keys, not valid
+  in `meta.yaml`). Dropped the stale "Anaconda Release"/"Anaconda
+  Downloads" lucit badges. Re-embedded the current `README.md` into
+  `about.description`.
+- `environment.yml`: dropped the `lucit` and `defaults` channels and
+  the `lucit::` prefixes on suite deps — conda-forge only.
+- `SECURITY.md`: replaced the lucit.tech contact form with the GitHub
+  Security Advisories private reporting URL.
+### Removed
+- `.github/workflows/build_conda.yml`: the conda-forge feedstock
+  (`conda-forge/unicorn-binance-suite-feedstock`) now builds and
+  publishes the conda package; no in-repo build is needed anymore.
 
 ## 2.1.0
 ### Added                                                                                                                                                                                                                                                                                                             
