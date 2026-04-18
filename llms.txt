@@ -2,6 +2,22 @@
 
 > The production-grade Python toolkit for Binance. MIT-licensed.
 
+Python 3.9 – 3.14.
+
+Suite:
+- Repo: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+- Docs: https://oliver-zehentleitner.github.io/unicorn-binance-suite/
+- PyPI: https://pypi.org/project/unicorn-binance-suite/
+- conda-forge: https://anaconda.org/conda-forge/unicorn-binance-suite
+
+Module repositories (all under `oliver-zehentleitner/`):
+- UBWA: https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api
+- UBRA: https://github.com/oliver-zehentleitner/unicorn-binance-rest-api
+- UBLDC: https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache
+- UBDCC: https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster
+- UBTSL: https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss
+- UnicornFy: https://github.com/oliver-zehentleitner/unicorn-fy
+
 Install: `pip install unicorn-binance-suite`
 
 ## Use Case → Module Routing
