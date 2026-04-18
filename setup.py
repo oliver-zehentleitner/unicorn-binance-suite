@@ -54,9 +54,9 @@ setup(
      long_description=long_description,
      long_description_content_type="text/markdown",
      license='MIT',
-     install_requires=['unicorn-binance-websocket-api>=2.12.0', 'unicorn-binance-rest-api>=2.10.0',
-                       'unicorn-fy>=0.17.1', 'unicorn-binance-local-depth-cache>=2.12.1',
-                       'unicorn-binance-trailing-stop-loss>=1.3.0', 'ubdcc>=0.5.0'],
+     install_requires=['unicorn-binance-websocket-api>=2.12.2', 'unicorn-binance-rest-api>=2.11.0',
+                       'unicorn-fy>=0.17.2', 'unicorn-binance-local-depth-cache>=2.12.2',
+                       'unicorn-binance-trailing-stop-loss>=1.3.1', 'ubdcc>=0.5.0'],
      keywords='Binance, Websocket, REST, Local Depth Cache, Trailing Stop Loss, Trading Bot, Algo Trading',
      project_urls={
         'Documentation': 'https://oliver-zehentleitner.github.io/unicorn-binance-suite/',

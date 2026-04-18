@@ -5,8 +5,8 @@ channels:
 
 dependencies:
   - python>=3.9
-  - unicorn-fy
-  - unicorn-binance-local-depth-cache
-  - unicorn-binance-rest-api
-  - unicorn-binance-trailing-stop-loss
-  - unicorn-binance-websocket-api
+  - unicorn-fy>=0.17.2
+  - unicorn-binance-local-depth-cache>=2.12.2
+  - unicorn-binance-rest-api>=2.11.0
+  - unicorn-binance-trailing-stop-loss>=1.3.1
+  - unicorn-binance-websocket-api>=2.12.2

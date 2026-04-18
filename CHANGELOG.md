@@ -11,6 +11,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 2.1.0.dev (development stage/unreleased/unstable)
 ### Changed
+- Bumped suite dependency minimums to the cleanup-round releases:
+  - `unicorn-fy >= 0.17.2`
+  - `unicorn-binance-rest-api >= 2.11.0`
+  - `unicorn-binance-websocket-api >= 2.12.2`
+  - `unicorn-binance-local-depth-cache >= 2.12.2`
+  - `unicorn-binance-trailing-stop-loss >= 1.3.1`
+
+  (`ubdcc` stays at `>= 0.5.0`.) Synced across `setup.py`,
+  `pyproject.toml` and `requirements.txt`.
 - `meta.yaml`: switched conda deps from the legacy `lucit::` channel
   prefixes to conda-forge. Removed the leftover `channels:` and
   `dependencies:` blocks (they are `environment.yml` keys, not valid
