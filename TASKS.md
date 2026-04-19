@@ -6,6 +6,9 @@ Suite-wide backlog. Per-module tasks live in the respective repo's `TASKS.md`.
 
 ## Open
 
+### [ ] README: add "Start here / Choose the right module" block at the very top
+Before the competitor comparison table, add a short decision block so a first-time visitor instantly knows which sub-package they need. Template available in `llms.txt` (`## Use Case → Module Routing` table — one-liner per module). Suggested placement: directly after the install snippet, before the "Why UBS" comparison.
+
 ### [ ] Check for Python 3.15 support (November 2026)
 CPython 3.15 is scheduled for release in October 2026 ([PEP 790](https://peps.python.org/pep-0790/)).
 conda-forge typically adds a new Python version to the global pinning 1–2 months after the CPython release,
