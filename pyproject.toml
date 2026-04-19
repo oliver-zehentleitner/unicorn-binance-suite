@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "unicorn-binance-suite"
-version = "2.1.0"
+version = "2.1.1"
 description = "The UNICORN Binance Suite is a comprehensive collection of open-source Python packages designed for building sophisticated automated trading systems. Tailored for Python developers, this suite offers seamless integration with the Binance API, enabling the creation of advanced and professional trading bots for streamlined and efficient cryptocurrency trading."
 authors = ["Oliver Zehentleitner"]
 license = "MIT"

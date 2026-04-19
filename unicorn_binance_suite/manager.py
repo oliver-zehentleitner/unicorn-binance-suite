@@ -45,7 +45,7 @@ from unicorn_binance_websocket_api import *
 from unicorn_fy import *
 
 __app_name__: str = "unicorn-binance-suite"
-__version__: str = "2.1.0"
+__version__: str = "2.1.1"
 
 logger = logging.getLogger("unicorn_binance_suite")
 

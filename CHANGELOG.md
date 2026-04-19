@@ -9,7 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [How to upgrade to the latest version!](https://oliver-zehentleitner.github.io/unicorn-binance-suite/readme.html#installation-and-upgrade)
 
-## 2.1.0.dev (development stage/unreleased/unstable)
+## 2.1.1.dev (development stage/unreleased/unstable)
+
+## 2.1.1
 ### Changed
 - Bumped suite dependency minimums to the cleanup-round releases:
   - `unicorn-fy >= 0.17.2`

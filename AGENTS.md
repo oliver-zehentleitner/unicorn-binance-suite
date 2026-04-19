@@ -13,7 +13,7 @@ Suite-wide tasks and decisions are tracked in **[TASKS.md](TASKS.md)**. Per-modu
 
 `unicorn-binance-suite` is the **meta-package** (pure-Python, noarch) that pulls in the entire UNICORN Binance Suite as a single install. It has no source code of its own — it just pins and composes the six suite modules.
 
-**Current Version:** 2.1.0
+**Current Version:** 2.1.1
 **Python Compatibility:** 3.9 – 3.14
 **Author:** Oliver Zehentleitner
 **PyPI:** `unicorn-binance-suite`
