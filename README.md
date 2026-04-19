@@ -267,6 +267,8 @@ pip install unicorn-binance-suite
 conda install -c conda-forge unicorn-binance-suite
 ```
 
+**conda-forge note:** Conda packages are provided for Python 3.10 – 3.14. Python 3.9 is not available on conda-forge — it was dropped from the global pinning after reaching end-of-life in October 2025. For Python 3.9, use `pip install`.
+
 ### Or install individual modules
 ```
 pip install unicorn-binance-websocket-api
