@@ -6,6 +6,15 @@ Suite-wide backlog. Per-module tasks live in the respective repo's `TASKS.md`.
 
 ## Open
 
+### [ ] conda-forge: finish the python 3.14 rollout
+UBRA, UBWA, UBLDC and UBTSL feedstocks do not have py3.14 variants yet — the python314 migrator bot never opened a PR for them because they were `noarch: python` at the time of the first migrator run. Open rerun-bot issues waiting for the autotick-bot:
+- UBRA: conda-forge/unicorn-binance-rest-api-feedstock#27
+- UBWA: conda-forge/unicorn-binance-websocket-api-feedstock#36
+- UBLDC: conda-forge/unicorn-binance-local-depth-cache-feedstock#17
+- UBTSL: conda-forge/unicorn-binance-trailing-stop-loss-feedstock#21
+
+Once all four feedstocks have `migrations/python314.yaml` + py3.14 variants built, drop the `python <3.14` cap on the UBS-Meta feedstock (`recipe/meta.yaml` lines pinning `python >=3.10,<3.14` — just remove the `<3.14` part).
+
 ### [ ] README: add "Start here / Choose the right module" block at the very top
 Before the competitor comparison table, add a short decision block so a first-time visitor instantly knows which sub-package they need. Template available in `llms.txt` (`## Use Case → Module Routing` table — one-liner per module). Suggested placement: directly after the install snippet, before the "Why UBS" comparison.
 
