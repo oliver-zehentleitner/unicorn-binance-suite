@@ -279,7 +279,7 @@ pip install unicorn-fy
 pip install ubdcc
 ```
 
-PyPy interpreter supported from Python 3.9+.
+PyPy wheels are available for all supported Python versions.
 
 All packages are built transparently via GitHub Actions and published directly to 
 [PyPI](https://pypi.org/project/unicorn-binance-suite/) and 
