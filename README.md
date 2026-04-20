@@ -8,7 +8,7 @@
 [![Supported Python Version](https://img.shields.io/pypi/pyversions/unicorn_binance_suite.svg)](https://www.python.org/downloads/)
 [![Unit Tests](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/unit-tests.yml)
 [![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
-[![Conda-Forge Build](https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/unicorn-binance-suite-feedstock?branchName=main)](https://github.com/conda-forge/unicorn-binance-suite-feedstock)
+[![Conda-Forge Build](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml/badge.svg?branch=main)](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml)
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
