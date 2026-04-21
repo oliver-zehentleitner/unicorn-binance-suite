@@ -10,6 +10,7 @@
 [![Build and Publish GH+PyPi](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml/badge.svg)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/actions/workflows/build_wheels.yml)
 [![Conda-Forge Build](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml/badge.svg?branch=main)](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml)
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
+[![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://blog.technopathy.club/series/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 
 [![UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/UBS-Banner-Readme.png)](https://github.com/oliver-zehentleitner/unicorn-binance-suite)
