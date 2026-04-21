@@ -25,7 +25,7 @@ Cython C extensions. Available via [PyPI](https://pypi.org/project/unicorn-binan
 pip install unicorn-binance-suite
 ```
 
-Or via conda (UBDCC not included — install separately via `pip install ubdcc`):
+Or via conda ([UBDCC](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) not included — install separately via `pip install ubdcc`):
 
 ```
 conda install -c conda-forge unicorn-binance-suite
