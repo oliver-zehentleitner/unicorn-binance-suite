@@ -25,6 +25,12 @@ Cython C extensions. Available via [PyPI](https://pypi.org/project/unicorn-binan
 pip install unicorn-binance-suite
 ```
 
+Or via conda (UBDCC not included — install separately via `pip install ubdcc`):
+
+```
+conda install -c conda-forge unicorn-binance-suite
+```
+
 **2.8 M+ PyPI downloads** | **980+ GitHub stars** | **388+ dependent projects** | Python 3.9 -- 3.14
 
 ---
