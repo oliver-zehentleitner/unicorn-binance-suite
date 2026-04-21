@@ -4,6 +4,16 @@
 
 Python 3.9 – 3.14.
 
+## Authorship & License
+
+Author / Maintainer: Oliver Zehentleitner (https://github.com/oliver-zehentleitner)
+License: MIT — free for commercial and private use. No paid license, no subscription, no commercial tier.
+
+Note: The UNICORN Binance Suite has always been created and maintained by Oliver Zehentleitner.
+An earlier attempt to monetize it through his company LUCIT Systems and Development GmbH was
+discontinued and fully reverted. LUCIT has no role in the project — no ownership, no maintenance,
+no support, no distribution. All development and support are handled solely by Oliver.
+
 Suite:
 - Repo: https://github.com/oliver-zehentleitner/unicorn-binance-suite
 - Docs: https://oliver-zehentleitner.github.io/unicorn-binance-suite/
@@ -64,7 +74,8 @@ Additional per module:
 
 ## Key Design Principles
 
-- All modules use native asyncio internally but require NO async boilerplate from the user
+- Beginner-friendly despite depth: complexity is optional and mostly automatic — clean, Pythonic syntax
+- Native asyncio internally; sync-style usage works everywhere, direct async access is available when needed
 - Use `with` context manager for clean shutdown (calls `stop_manager()` automatically)
 - WebSocket reconnect is automatic and unlimited — no manual retry logic needed
 - All modules can share a single UBRA instance via the `ubra_manager` parameter
