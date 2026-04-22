@@ -46,6 +46,7 @@ conda install -c conda-forge unicorn-binance-suite
 | **[Orphan level cleanup (>1000)](https://blog.technopathy.club/your-binance-order-book-is-wrong-here-s-why)**                                                                                    | Implemented — strictly follows Binance spec | No — delivers inconsistent books | No | N/A |
 | **DepthCache refresh**                                                                                                                                                                           | Event-driven, same asyncio loop as the stream | **REST polling every 30 min** (default) — not truly "live local" | Cache via Pro license | Not available |
 | **DepthCache cluster**                                                                                                                                                                           | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
+| **Live cluster dashboard**                                                                                                                                                                       | **UBDCC Dashboard** — browser UI, CLI-launched, MIT | — | — | — |
 | **Trailing stop loss**                                                                                                                                                                           | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Not included | Not included | Not included |
 | **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [reported performance issues](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
 | **Multi-arch wheels**                                                                                                                                                                            | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
@@ -148,6 +149,12 @@ Production-scale depth cache management with load balancing, automatic failover 
 or [scales across a Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup). 
 [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) 
 accessible from any programming language.
+
+### [UBDCC Dashboard](https://github.com/oliver-zehentleitner/ubdcc-dashboard)
+Browser-based live dashboard for monitoring and managing a running UBDCC cluster. Compact mini-orderbook tiles per 
+depth cache, desync/error highlighting, add or remove caches on the fly. Ships as a pip-installable CLI 
+(`pip install ubdcc-dashboard` → `ubdcc-dashboard start`) serving a single-file vanilla-JS UI through a tiny stdlib 
+HTTP + CORS-proxy server. Localhost-only by default, opt-in network exposure via `--host`.
 
 ### [UNICORN Binance Trailing Stop Loss](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss) (UBTSL)
 Trailing stop loss engine with smart entry (`jump-in-and-trail`). Available as Python SDK and 
@@ -304,6 +311,7 @@ is traceable.
 | UBRA (REST) | [oliver-zehentleitner.github.io/unicorn-binance-rest-api](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) |
 | UBLDC (Depth Cache) | [oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) |
 | UBDCC (Depth Cache Cluster) | [oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster](https://oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster) |
+| UBDCC Dashboard | [oliver-zehentleitner.github.io/ubdcc-dashboard](https://oliver-zehentleitner.github.io/ubdcc-dashboard) |
 | UBTSL (Trailing Stop) | [oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) |
 | UnicornFy | [oliver-zehentleitner.github.io/unicorn-fy](https://oliver-zehentleitner.github.io/unicorn-fy) |
 
