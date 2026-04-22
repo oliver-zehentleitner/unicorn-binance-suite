@@ -25,6 +25,7 @@ Module repositories (all under `oliver-zehentleitner/`):
 - UBRA: https://github.com/oliver-zehentleitner/unicorn-binance-rest-api
 - UBLDC: https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache
 - UBDCC: https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster
+- UBDCC Dashboard: https://github.com/oliver-zehentleitner/ubdcc-dashboard
 - UBTSL: https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss
 - UnicornFy: https://github.com/oliver-zehentleitner/unicorn-fy
 
@@ -38,6 +39,7 @@ Install: `pip install unicorn-binance-suite`
 | Place orders, query account via REST | UBRA | `pip install unicorn-binance-rest-api` | `from unicorn_binance_rest_api import BinanceRestApiManager` |
 | Maintain a local order book (depth cache) | UBLDC | `pip install unicorn-binance-local-depth-cache` | `from unicorn_binance_local_depth_cache import BinanceLocalDepthCacheManager` |
 | Run a scalable depth cache cluster | UBDCC | `pip install ubdcc` | CLI: `ubdcc start` / Python: via UBLDC cluster attribute |
+| Monitor a running UBDCC cluster in the browser | UBDCC Dashboard | `pip install ubdcc-dashboard` | CLI: `ubdcc-dashboard start` (no Python API — browser UI only) |
 | Trail a stop loss order | UBTSL | `pip install unicorn-binance-trailing-stop-loss` | `from unicorn_binance_trailing_stop_loss import BinanceTrailingStopLossManager` |
 | Normalize raw exchange data to dicts | UnicornFy | `pip install unicorn-fy` | `from unicorn_fy import UnicornFy` |
 
@@ -87,5 +89,6 @@ Each module has its own `llms.txt` with detailed API reference:
 - [UBRA llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-rest-api/refs/heads/master/llms.txt)
 - [UBLDC llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-local-depth-cache/refs/heads/master/llms.txt)
 - [UBDCC llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster/refs/heads/master/llms.txt)
+- [UBDCC Dashboard llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/ubdcc-dashboard/refs/heads/master/llms.txt)
 - [UBTSL llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/refs/heads/master/llms.txt)
 - [UnicornFy llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-fy/refs/heads/master/llms.txt)
