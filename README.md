@@ -240,7 +240,7 @@ with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.
 [Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup).
 [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) accessible from any language.
 
-### Monitor a DepthCache cluster in the browser
+### Monitor and manage a DepthCache cluster in the browser
 ```sh
 # use case: live browser UI for a running UBDCC cluster
 # module: ubdcc-dashboard (CLI only, no Python API)
