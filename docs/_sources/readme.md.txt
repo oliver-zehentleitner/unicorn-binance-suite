@@ -240,6 +240,17 @@ with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.
 [Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup).
 [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) accessible from any language.
 
+### Monitor and manage a DepthCache cluster in the browser
+```sh
+# use case: live browser UI for a running UBDCC cluster
+# module: ubdcc-dashboard (CLI only, no Python API)
+pip install ubdcc-dashboard
+ubdcc-dashboard start
+```
+Opens `http://127.0.0.1:8080` in your browser — enter the URL of your UBDCC MGMT node and click `Connect`. Localhost-only by default; use `--host 0.0.0.0` to expose on the network.
+
+[UBDCC Dashboard docs](https://oliver-zehentleitner.github.io/ubdcc-dashboard) — mini-orderbook tiles per cache, desync/error highlighting, add/remove caches on the fly.
+
 ### Canonical example — stream + local order book
 ```python
 # purpose: the most common UBS pattern — stream market data and maintain a local order book
