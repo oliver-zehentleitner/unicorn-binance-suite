@@ -65,6 +65,7 @@
 <li><a class="reference internal" href="#unicorn-binance-rest-api-ubra">UNICORN Binance REST API (UBRA)</a></li>
 <li><a class="reference internal" href="#unicorn-binance-local-depth-cache-ubldc">UNICORN Binance Local Depth Cache (UBLDC)</a></li>
 <li><a class="reference internal" href="#unicorn-binance-depthcache-cluster-ubdcc">UNICORN Binance DepthCache Cluster (UBDCC)</a></li>
+<li><a class="reference internal" href="#ubdcc-dashboard">UBDCC Dashboard</a></li>
 <li><a class="reference internal" href="#unicorn-binance-trailing-stop-loss-ubtsl">UNICORN Binance Trailing Stop Loss (UBTSL)</a></li>
 <li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
 </ul>
@@ -285,6 +286,13 @@ Cython C extensions. Available via <a class="reference external" href="https://p
 <td>—</td>
 </tr>
 <tr>
+<td><strong>Live cluster dashboard</strong></td>
+<td><strong>UBDCC Dashboard</strong> — browser UI, CLI-launched, MIT</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
 <td><strong>Trailing stop loss</strong></td>
 <td><strong>UBTSL</strong> as SDK + CLI, incl. <code>jump-in-and-trail</code></td>
 <td>Not included</td>
@@ -465,6 +473,13 @@ way to access current order book depth without exceeding Binance rate limits. Su
 or <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup">scales across a Kubernetes cluster</a>.
 <a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api">REST API</a>
 accessible from any programming language.</p>
+</section>
+<section id="ubdcc-dashboard">
+<h3><a class="reference external" href="https://github.com/oliver-zehentleitner/ubdcc-dashboard">UBDCC Dashboard</a><a class="headerlink" href="#ubdcc-dashboard" title="Link to this heading">¶</a></h3>
+<p>Browser-based live dashboard for monitoring and managing a running UBDCC cluster. Compact mini-orderbook tiles per
+depth cache, desync/error highlighting, add or remove caches on the fly. Ships as a pip-installable CLI
+(<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ubdcc-dashboard</span></code> → <code class="docutils literal notranslate"><span class="pre">ubdcc-dashboard</span> <span class="pre">start</span></code>) serving a single-file vanilla-JS UI through a tiny stdlib
+HTTP + CORS-proxy server. Localhost-only by default, opt-in network exposure via <code class="docutils literal notranslate"><span class="pre">--host</span></code>.</p>
 </section>
 <section id="unicorn-binance-trailing-stop-loss-ubtsl">
 <h3><a class="reference external" href="https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss">UNICORN Binance Trailing Stop Loss</a> (UBTSL)<a class="headerlink" href="#unicorn-binance-trailing-stop-loss-ubtsl" title="Link to this heading">¶</a></h3>
@@ -648,6 +663,10 @@ is traceable.</p>
 <td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster">oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster</a></td>
 </tr>
 <tr>
+<td>UBDCC Dashboard</td>
+<td><a href="https://oliver-zehentleitner.github.io/ubdcc-dashboard">oliver-zehentleitner.github.io/ubdcc-dashboard</a></td>
+</tr>
+<tr>
 <td>UBTSL (Trailing Stop)</td>
 <td><a href="https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss">oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss</a></td>
 </tr>
@@ -740,6 +759,7 @@ for legitimate market data analysis.</p>
 <li><a class="reference internal" href="#unicorn-binance-rest-api-ubra">UNICORN Binance REST API (UBRA)</a></li>
 <li><a class="reference internal" href="#unicorn-binance-local-depth-cache-ubldc">UNICORN Binance Local Depth Cache (UBLDC)</a></li>
 <li><a class="reference internal" href="#unicorn-binance-depthcache-cluster-ubdcc">UNICORN Binance DepthCache Cluster (UBDCC)</a></li>
+<li><a class="reference internal" href="#ubdcc-dashboard">UBDCC Dashboard</a></li>
 <li><a class="reference internal" href="#unicorn-binance-trailing-stop-loss-ubtsl">UNICORN Binance Trailing Stop Loss (UBTSL)</a></li>
 <li><a class="reference internal" href="#unicornfy">UnicornFy</a></li>
 </ul>
@@ -872,7 +892,7 @@ for legitimate market data analysis.</p>
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite#documentation">Index of all docs</a><br />
     &copy; <a href="/license.html">Copyright</a> 2019-2025, Oliver Zehentleitner All Rights Reserved..
     See <a href="/license.html">License</a> for more information.<br />
-    Last updated on Apr 21 2026 at 12:13 (CET).
+    Last updated on Apr 23 2026 at 14:02 (CET).
     <a href="https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues/new/choose">Found a bug</a>?
     <br />
     Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
