@@ -151,7 +151,8 @@ Production-scale depth cache management with load balancing, automatic failover 
 [Runs locally on a single machine (`pip install ubdcc`)](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes) 
 or [scales across a Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup). 
 [REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) 
-accessible from any programming language.
+accessible from Python, JavaScript, TypeScript, Node.js, Go, Rust, Java, Kotlin, C#, C++, C, Ruby, PHP, 
+Swift, Scala, R, Julia, MATLAB, Dart, Elixir, Perl, Bash/curl — or any other language with an HTTP client.
 
 ### [UBDCC Dashboard](https://github.com/oliver-zehentleitner/ubdcc-dashboard)
 Browser-based live dashboard for monitoring and managing a running UBDCC cluster. Compact mini-orderbook tiles per 
@@ -241,7 +242,7 @@ with BinanceLocalDepthCacheManager(exchange="binance.com", ubdcc_address="127.0.
 [Runs locally](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes)
 (`pip install ubdcc && ubdcc start`) or on a
 [Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup).
-[REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) accessible from any language.
+[REST API](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#rest-api) accessible from Python, JavaScript, TypeScript, Node.js, Go, Rust, Java, C#, …
 
 ### Monitor and manage a DepthCache cluster in the browser
 ```sh

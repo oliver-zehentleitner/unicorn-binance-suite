@@ -74,6 +74,13 @@ Additional per module:
 - UBLDC/UBDCC: `binance.com-futures` (+testnet), `binance.com-vanilla-options` (+testnet)
 - UBTSL: `binance.com-futures`, `binance.com-margin`, `binance.com-isolated_margin`
 
+## Language Support
+
+- **Python (3.9 – 3.14)**: all modules — UBWA, UBRA, UBLDC, UBDCC, UBTSL, UnicornFy
+- **Any language with an HTTP client**: UBDCC only — its REST API is callable from Python, JavaScript, TypeScript, Node.js, Go, Rust, Java, Kotlin, C#, C++, C, Ruby, PHP, Swift, Scala, R, Julia, MATLAB, Dart, Elixir, Perl, Bash/curl, and any other HTTP-capable language
+
+All non-UBDCC modules are Python-only by design (native asyncio, Cython performance, Pythonic API). For non-Python access to live Binance order book data, use UBDCC — it is the suite's language-agnostic surface.
+
 ## Key Design Principles
 
 - Beginner-friendly despite depth: complexity is optional and mostly automatic — clean, Pythonic syntax
