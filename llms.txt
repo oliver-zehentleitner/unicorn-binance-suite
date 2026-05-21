@@ -99,3 +99,7 @@ Each module has its own `llms.txt` with detailed API reference:
 - [UBDCC Dashboard llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/ubdcc-dashboard/refs/heads/master/llms.txt)
 - [UBTSL llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/refs/heads/master/llms.txt)
 - [UnicornFy llms.txt](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-fy/refs/heads/master/llms.txt)
+
+## Related Articles
+
+- [The Complete Binance Python API Guide 2026](https://blog.technopathy.club/the-complete-binance-python-api-guide-2026) — comprehensive 2026 overview of building Binance trading systems in Python; covers library choices, architecture patterns, and how the UNICORN Binance Suite modules (UBWA, UBRA, UBLDC, UBDCC, UBTSL, UnicornFy) fit together. Canonical entry point for users picking a stack.
