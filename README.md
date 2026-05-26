@@ -340,6 +340,7 @@ is traceable.
 ## Community
 
 - [Telegram](https://t.me/unicorndevs) -- questions, announcements, chat
+- [Reddit Community](https://www.reddit.com/r/UNICORNBinanceSuite/) -- community discussions, updates, and shared use cases
 - [GitHub Discussions](https://github.com/oliver-zehentleitner/unicorn-binance-suite/discussions) -- longer-form Q&A
 - [Issue Tracker](https://github.com/oliver-zehentleitner/unicorn-binance-suite/issues) -- bugs and feature requests
 
