@@ -35,6 +35,8 @@ conda install -c conda-forge unicorn-binance-suite
 
 **3.3 M+ downloads** | **990+ GitHub stars** | **390+ dependent projects** | Python 3.9 -- 3.14
 
+Part of '[UNICORN Binance Suite](https://blog.technopathy.club/page/unicorn-binance-suite)'.
+
 ---
 
 ## Why UNICORN Binance Suite — the honest comparison
