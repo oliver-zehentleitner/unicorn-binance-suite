@@ -33,7 +33,7 @@ Or via conda ([UBDCC](https://github.com/oliver-zehentleitner/unicorn-binance-de
 conda install -c conda-forge unicorn-binance-suite
 ```
 
-**2.8 M+ PyPI downloads** | **980+ GitHub stars** | **388+ dependent projects** | Python 3.9 -- 3.14
+**3.3 M+ downloads** | **990+ GitHub stars** | **390+ dependent projects** | Python 3.9 -- 3.14
 
 ---
 
@@ -129,20 +129,20 @@ Real-time market data and user data streams with automatic reconnect, sequence v
 runtime subscribe/unsubscribe without disconnecting. Supports all Binance endpoints including Spot, Margin, Futures, 
 Coin-Futures, US and TR.
 
-**1.1M+ downloads** | **727 stars**
+**1.2M+ downloads** | **729 stars**
 
 ### [UNICORN Binance REST API](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) (UBRA)
 Full coverage of Binance REST endpoints for account management, order placement and market data queries. Spot, Margin, 
 Isolated Margin, Futures, US and TR -- all with testnet support.
 
-**663K+ downloads** | **67 stars**
+**847K+ downloads** | **68 stars**
 
 ### [UNICORN Binance Local Depth Cache](https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache) (UBLDC)
 Synchronized local order books with real-time WebSocket updates and automatic re-initialization on gaps. The fastest 
 way to access current order book depth without exceeding Binance rate limits. Supports Spot, Futures, 
 **European Options (Vanilla Options)**, US and TR. Manages multiple depth caches per instance in asyncio coroutines.
 
-**220K+ downloads** | **49 stars**
+**295K+ downloads** | **53 stars**
 
 ### [UNICORN Binance DepthCache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
 Production-scale depth cache management with load balancing, automatic failover and self-healing state. 
@@ -163,13 +163,13 @@ Trailing stop loss engine with smart entry (`jump-in-and-trail`). Available as P
 [CLI tool](https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss/tree/master/cli). 
 Supports email notifications.
 
-**101K+ downloads** | **27 stars**
+**144K+ downloads** | **30 stars**
 
 ### [UnicornFy](https://github.com/oliver-zehentleitner/unicorn-fy)
 Normalization layer that converts raw exchange API payloads into well-formed Python dictionaries. Used internally by 
 all suite modules.
 
-**685K+ downloads** | **56 stars**
+**749K+ downloads** | **57 stars**
 
 ---
 
