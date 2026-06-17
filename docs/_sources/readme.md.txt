@@ -146,7 +146,7 @@ way to access current order book depth without exceeding Binance rate limits. Su
 
 **295K+ downloads** | **53 stars**
 
-### [UNICORN Binance DepthCache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
+### [UNICORN Binance Depth Cache Cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster) (UBDCC)
 Production-scale depth cache management with load balancing, automatic failover and self-healing state. 
 [Runs locally on a single machine (`pip install ubdcc`)](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#local-setup-without-kubernetes) 
 or [scales across a Kubernetes cluster](https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster?tab=readme-ov-file#kubernetes-setup). 
