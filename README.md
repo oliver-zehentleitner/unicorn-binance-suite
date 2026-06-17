@@ -319,16 +319,16 @@ is traceable.
 
 ## Documentation
 
-| Module | Docs |
-|--------|------|
-| Suite (this package) | [oliver-zehentleitner.github.io/unicorn-binance-suite](https://oliver-zehentleitner.github.io/unicorn-binance-suite) |
-| UBWA (WebSocket) | [oliver-zehentleitner.github.io/unicorn-binance-websocket-api](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api) |
-| UBRA (REST) | [oliver-zehentleitner.github.io/unicorn-binance-rest-api](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) |
-| UBLDC (Depth Cache) | [oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) |
+| Module                      | Docs |
+|-----------------------------|------|
+| Suite (this package)        | [oliver-zehentleitner.github.io/unicorn-binance-suite](https://oliver-zehentleitner.github.io/unicorn-binance-suite) |
+| UBWA (WebSocket)            | [oliver-zehentleitner.github.io/unicorn-binance-websocket-api](https://oliver-zehentleitner.github.io/unicorn-binance-websocket-api) |
+| UBRA (REST)                 | [oliver-zehentleitner.github.io/unicorn-binance-rest-api](https://oliver-zehentleitner.github.io/unicorn-binance-rest-api) |
+| UBLDC (Local Depth Cache)   | [oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache](https://oliver-zehentleitner.github.io/unicorn-binance-local-depth-cache) |
 | UBDCC (Depth Cache Cluster) | [oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster](https://oliver-zehentleitner.github.io/unicorn-binance-depth-cache-cluster) |
-| UBDCC Dashboard | [oliver-zehentleitner.github.io/ubdcc-dashboard](https://oliver-zehentleitner.github.io/ubdcc-dashboard) |
-| UBTSL (Trailing Stop) | [oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) |
-| UnicornFy | [oliver-zehentleitner.github.io/unicorn-fy](https://oliver-zehentleitner.github.io/unicorn-fy) |
+| UBDCC Dashboard             | [oliver-zehentleitner.github.io/ubdcc-dashboard](https://oliver-zehentleitner.github.io/ubdcc-dashboard) |
+| UBTSL (Trailing Stop)       | [oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss](https://oliver-zehentleitner.github.io/unicorn-binance-trailing-stop-loss) |
+| UnicornFy                   | [oliver-zehentleitner.github.io/unicorn-fy](https://oliver-zehentleitner.github.io/unicorn-fy) |
 
 ---
 
