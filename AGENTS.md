@@ -3,6 +3,10 @@
 > **End-user cheatsheet for AI-assisted consumption:** [`llms.txt`](llms.txt) — use that one if you're writing code *against* the suite.
 > **This file** is for AI agents working *on* the suite repos themselves.
 
+## Why things are the way they are
+
+See [`context/index.md`](context/index.md) before making non-trivial changes — it points to the reasoning behind design decisions, rejected alternatives, and constraints that aren't visible in the code. If `AGENTS.local.md` exists in this repo, that's personal/local notes, not relevant to anyone else.
+
 ## Planning & Backlog
 
 Suite-wide tasks and decisions are tracked in **[TASKS.md](TASKS.md)**. Per-module tasks live in the respective module repo's `TASKS.md`.
@@ -50,7 +54,7 @@ dev/sphinx/               # Sphinx source
 
 ## Dependencies
 
-Managed in `requirements.txt`, `setup.py`, `pyproject.toml`, `environment.yml` and `meta.yaml` — **all five must be kept in sync manually**, with `setup.py` as source of truth.
+Managed in `requirements.txt`, `setup.py`, `pyproject.toml`, `environment.yml` and `meta.yaml` — all five kept in sync manually, with `setup.py` as source of truth. Why five files, and the pin-timing rule: [`context/dependency-management.md`](context/dependency-management.md).
 
 Current pins (see [CHANGELOG.md](CHANGELOG.md) for the history):
 
@@ -60,8 +64,6 @@ Current pins (see [CHANGELOG.md](CHANGELOG.md) for the history):
 - `unicorn-binance-local-depth-cache >= 2.12.2`
 - `unicorn-binance-trailing-stop-loss >= 1.3.1`
 - `ubdcc >= 0.5.0`
-
-**Rule:** Never pin to a version that isn't released on PyPI yet — pip-resolver will silently fall through to the previous suite version. Bump constraints *after* upstream modules have been published.
 
 ---
 
@@ -80,7 +82,7 @@ CI runs the same across the full Python matrix.
 
 - **PyPI:** `.github/workflows/build_wheels.yml` builds the sdist + noarch wheel and publishes via trusted publisher on release.
 - **conda-forge:** the [unicorn-binance-suite-feedstock](https://github.com/conda-forge/unicorn-binance-suite-feedstock) picks up the new PyPI release automatically. `meta.yaml` in this repo is the local dev copy, not used by the feedstock.
-- **No in-repo conda build.** `build_conda.yml` was removed during the LUCIT cleanup round — conda-forge is the single conda source.
+- No in-repo conda build — why, and the `meta.yaml`/`environment.yml` boundary: [`context/packaging.md`](context/packaging.md).
 
 **Version bump** — `dev/set_version.py` (run by Oliver only). Version string lives in:
 1. `setup.py` — `version=`
@@ -108,13 +110,16 @@ A release cycle across the suite typically runs in dependency order:
 6. `ubdcc` (depends on UBLDC) — PyPI only (no conda-forge by design)
 7. **This repo** — bump pins to the new module versions, PyPI + feedstock bump
 
-Conda-forge channel indexing takes ~10–30 min per feedstock, so running downstream feedstock bumps too early will fail with unsatisfiable deps — wait for the upstream package to land in the channel.
+Why this exact order, the conda-forge indexing wait, and recurring release pitfalls: [`context/release-workflow.md`](context/release-workflow.md).
 
 ---
 
 ## Notes & Gotchas
 
 - Meta-package has no source code; any "bug" is really in one of the six modules.
-- The `meta.yaml` in this repo is for **local dev builds only**. Conda-forge uses its own feedstock recipe.
-- Don't add a `channels:` block to `meta.yaml` — it's not a valid key there; it belongs in `environment.yml` (`conda-forge` only, no `defaults`, no pip mixing).
-- `dev/sphinx/source/conf.py` has a legacy `'lucit': True` theme option — keep it (theme-specific).
+- Packaging/dependency gotchas (meta.yaml, channels, the Sphinx `'lucit': True` flag): see [`context/packaging.md`](context/packaging.md).
+
+<!-- keep-the-why:config -->
+- context: `context/`
+- init: complete
+<!-- /keep-the-why:config -->
