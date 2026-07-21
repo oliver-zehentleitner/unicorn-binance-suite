@@ -1,4 +1,3 @@
-[![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
 [![GitHub Release](https://img.shields.io/github/release/oliver-zehentleitner/unicorn-binance-suite.svg?label=github)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
 [![GitHub Downloads](https://img.shields.io/github/downloads/oliver-zehentleitner/unicorn-binance-suite/total?color=blue)](https://github.com/oliver-zehentleitner/unicorn-binance-suite/releases)
 [![PyPi Release](https://img.shields.io/pypi/v/unicorn-binance-suite?color=blue)](https://pypi.org/project/unicorn-binance-suite/)
@@ -14,6 +13,7 @@
 [![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://blog.technopathy.club/series/unicorn-binance-suite)
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 [![Reddit](https://img.shields.io/badge/community-reddit-41ab8c)](https://www.reddit.com/r/UNICORNBinanceSuite)
+[![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
 
 [![UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/UBS-Banner-Readme.png)](https://blog.technopathy.club/page/unicorn-binance-suite)
 
