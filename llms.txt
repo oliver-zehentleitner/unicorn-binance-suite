@@ -70,7 +70,7 @@ with BinanceLocalDepthCacheManager(exchange="binance.com") as ubldc:
 All modules support: `binance.com`, `binance.com-testnet`, `binance.us`, `trbinance.com`
 
 Additional per module:
-- UBWA/UBRA: `binance.com-margin`, `binance.com-isolated_margin`, `binance.com-futures`, `binance.com-coin_futures` (all with `-testnet` variants), `binance.com-vanilla-options` (+testnet)
+- UBWA/UBRA: `binance.com-margin`, `binance.com-isolated_margin`, `binance.com-futures`, `binance.com-coin_futures` (all with `-testnet` variants), `binance.com-vanilla-options` (+testnet), `binance.com-portfolio_margin` (listenKey/user-data streams only, see UBWA issue #452)
 - UBLDC/UBDCC: `binance.com-futures` (+testnet), `binance.com-vanilla-options` (+testnet)
 - UBTSL: `binance.com-futures`, `binance.com-margin`, `binance.com-isolated_margin`
 

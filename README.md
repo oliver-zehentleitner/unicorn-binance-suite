@@ -129,13 +129,13 @@ migration.
 ### [UNICORN Binance WebSocket API](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) (UBWA)
 Real-time market data and user data streams with automatic reconnect, sequence validation, native asyncio queues and 
 runtime subscribe/unsubscribe without disconnecting. Supports all Binance endpoints including Spot, Margin, Futures, 
-Coin-Futures, US and TR.
+Coin-Futures, **Portfolio Margin (user data streams)**, US and TR.
 
 **1.2M+ downloads** | **729 stars**
 
 ### [UNICORN Binance REST API](https://github.com/oliver-zehentleitner/unicorn-binance-rest-api) (UBRA)
 Full coverage of Binance REST endpoints for account management, order placement and market data queries. Spot, Margin, 
-Isolated Margin, Futures, US and TR -- all with testnet support.
+Isolated Margin, Futures, **Portfolio Margin (listenKey management)**, US and TR -- all with testnet support.
 
 **847K+ downloads** | **68 stars**
 
