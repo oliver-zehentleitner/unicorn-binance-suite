@@ -1,4 +1,4 @@
-<img src="https://keepthewhy.com/assets/logo.png" alt="Keep the Why" width="500">
+<img src="https://keepthewhy.com/assets/logo.png" alt="Keep the Why">
 
 # Context
 
