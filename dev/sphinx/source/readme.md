@@ -11,7 +11,7 @@
 [![Conda-Forge Build](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml/badge.svg?branch=main)](https://github.com/conda-forge/unicorn-binance-suite-feedstock/actions/workflows/conda-build.yml)
 [![Read the Docs](https://img.shields.io/badge/read-%20docs-yellow)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/)
 [![Read How To`s](https://img.shields.io/badge/read-%20howto-yellow)](https://blog.technopathy.club/series/unicorn-binance-suite)
-[![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs/4500)
+[![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 [![Reddit](https://img.shields.io/badge/community-reddit-41ab8c)](https://www.reddit.com/r/UNICORNBinanceSuite)
 [![Keep the Why](https://keepthewhy.com/assets/badge.svg)](https://keepthewhy.com)
 
