@@ -3,7 +3,7 @@
 ## Deps are declared in 5 files, kept in sync manually
 
 **Status:** active
-**Inferred** (no alternative found in history — see below)
+**Evidence:** inferred
 
 `requirements.txt`, `setup.py`, `pyproject.toml`, `environment.yml`, and `meta.yaml` (local dev copy) all declare the suite's module dependencies independently. `setup.py` is the source of truth; the other four are updated by hand whenever it changes.
 
@@ -12,7 +12,8 @@
 ## Never pin to a version that isn't released on PyPI yet
 
 **Status:** active
-**Confirmed** (maintainer)
+**Evidence:** confirmed
+**Source:** maintainer
 
 When bumping a suite-module constraint (e.g. `unicorn-binance-websocket-api >= 2.15.0`), the new floor must already be published on PyPI before the commit lands here.
 

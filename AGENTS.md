@@ -122,4 +122,6 @@ Why this exact order, the conda-forge indexing wait, and recurring release pitfa
 <!-- keep-the-why:config -->
 - context: `context/`
 - init: complete
+- context-schema: 0.5.1
+- capture-confirmation: confirm-when-unsure
 <!-- /keep-the-why:config -->
