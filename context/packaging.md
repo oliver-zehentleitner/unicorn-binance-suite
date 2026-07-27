@@ -3,7 +3,8 @@
 ## No in-repo conda build
 
 **Status:** active
-**Confirmed** (commit 83cc723, 2026-04-18)
+**Evidence:** confirmed
+**Source:** commit 83cc723, 2026-04-18
 
 `.github/workflows/build_conda.yml` was removed; conda-forge's own feedstock (`unicorn-binance-suite-feedstock`) is the only conda build path. `meta.yaml` in this repo is kept only as a local dev copy — it's not used by the feedstock and not built in CI.
 
@@ -14,7 +15,8 @@
 ## `channels:` doesn't belong in `meta.yaml`
 
 **Status:** active
-**Confirmed** (commit 83cc723, 2026-04-18)
+**Evidence:** confirmed
+**Source:** commit 83cc723, 2026-04-18
 
 `meta.yaml` no longer has a `channels:` block. It was removed because conda-build silently ignores `channels:`/`dependencies:` keys there — those are `environment.yml` keys, not valid `meta.yaml` recipe keys. Silently ignored, not erroring, is what let it sit there unnoticed for a while.
 
@@ -23,7 +25,7 @@
 ## Sphinx theme's `'lucit': True` flag
 
 **Status:** active
-**Inferred**
+**Evidence:** inferred
 
 `dev/sphinx/source/conf.py` sets `'lucit': True` in `html_context`, even though the LUCIT branding/licensing cleanup (see `history.md`) removed LUCIT elsewhere in the repo (badges, channel refs, contact URLs).
 
