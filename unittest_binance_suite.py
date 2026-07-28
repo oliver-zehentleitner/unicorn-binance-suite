@@ -43,13 +43,16 @@ import unittest
 import os
 
 import tracemalloc
+
 tracemalloc.start(25)
 
 logging.getLogger("unicorn_binance_websocket_api")
-logging.basicConfig(level=logging.DEBUG,
-                    filename=os.path.basename(__file__) + '.log',
-                    format="{asctime} [{levelname:8}] {process} {thread} {module}: {message}",
-                    style="{")
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename=os.path.basename(__file__) + ".log",
+    format="{asctime} [{levelname:8}] {process} {thread} {module}: {message}",
+    style="{",
+)
 
 print(f"Starting unittests!")
 
@@ -62,5 +65,5 @@ class Suite(unittest.TestCase):
         print(unicorn_binance_suite.manager.__version__)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

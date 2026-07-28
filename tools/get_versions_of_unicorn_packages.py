@@ -35,19 +35,25 @@
 
 import logging
 
-logging.basicConfig(level=logging.ERROR,
-                    format="{asctime} [{levelname:8}] {process} {thread} {module}: {message}",
-                    style="{")
+logging.basicConfig(
+    level=logging.ERROR,
+    format="{asctime} [{levelname:8}] {process} {thread} {module}: {message}",
+    style="{",
+)
 
 try:
     import unicorn_fy
+
     unify_version = unicorn_fy.UnicornFy().get_version()
 except ModuleNotFoundError:
     unify_version = "not found"
 
 try:
     import unicorn_binance_local_depth_cache
-    ubldc = unicorn_binance_local_depth_cache.BinanceLocalDepthCacheManager(warn_on_update=False)
+
+    ubldc = unicorn_binance_local_depth_cache.BinanceLocalDepthCacheManager(
+        warn_on_update=False
+    )
     ubldc_version = ubldc.get_version()
     ubldc.stop_manager()
 except ModuleNotFoundError:
@@ -55,6 +61,7 @@ except ModuleNotFoundError:
 
 try:
     from unicorn_binance_rest_api.manager import BinanceRestApiManager
+
     with BinanceRestApiManager(warn_on_update=False) as ubra:
         ubra_version = ubra.get_version()
 except ModuleNotFoundError:
@@ -62,7 +69,10 @@ except ModuleNotFoundError:
 
 try:
     import unicorn_binance_trailing_stop_loss
-    ubtsl = unicorn_binance_trailing_stop_loss.BinanceTrailingStopLossManager(warn_on_update=False, start_engine=False)
+
+    ubtsl = unicorn_binance_trailing_stop_loss.BinanceTrailingStopLossManager(
+        warn_on_update=False, start_engine=False
+    )
     ubtsl_version = ubtsl.get_version()
     ubtsl.stop_manager()
 except ModuleNotFoundError:
@@ -70,7 +80,10 @@ except ModuleNotFoundError:
 
 try:
     import unicorn_binance_websocket_api
-    ubwa = unicorn_binance_websocket_api.BinanceWebSocketApiManager(warn_on_update=False)
+
+    ubwa = unicorn_binance_websocket_api.BinanceWebSocketApiManager(
+        warn_on_update=False
+    )
     ubwa_version = ubwa.get_version()
     ubwa.stop_manager()
 except ModuleNotFoundError:
