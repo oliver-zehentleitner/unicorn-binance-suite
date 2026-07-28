@@ -36,3 +36,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.poetry.package_data]
 unicorn_binance_suite = ["*.so", "*.dll"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
