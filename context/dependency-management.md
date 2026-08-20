@@ -2,6 +2,7 @@
 
 ## Deps are declared in 5 files, kept in sync manually
 
+**Type:** constraint
 **Status:** active
 **Evidence:** inferred
 
@@ -11,6 +12,7 @@
 
 ## Never pin to a version that isn't released on PyPI yet
 
+**Type:** decision
 **Status:** active
 **Evidence:** confirmed
 **Source:** maintainer

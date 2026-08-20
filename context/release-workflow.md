@@ -2,6 +2,7 @@
 
 ## Fixed release order across the suite
 
+**Type:** decision
 **Status:** active
 **Evidence:** confirmed
 **Source:** maintainer
@@ -17,6 +18,7 @@ Releases across the suite always go in this order:
 
 ## Wait for conda-forge indexing, not just for the merge
 
+**Type:** constraint
 **Status:** active
 **Evidence:** confirmed
 **Source:** maintainer
@@ -27,6 +29,7 @@ After a feedstock PR is merged, there's a ~15–30 minute gap before the package
 
 ## Bot-driven pin bumps vs. manual PRs
 
+**Type:** decision
 **Status:** active
 **Evidence:** confirmed
 **Source:** maintainer

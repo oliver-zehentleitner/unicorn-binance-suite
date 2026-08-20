@@ -2,6 +2,7 @@
 
 ## LUCIT branding/licensing removal (April 2026)
 
+**Type:** decision
 **Status:** superseded — LUCIT is fully removed as of this cleanup round
 **Evidence:** confirmed
 **Source:** commits `83cc723`, `af0a4bf`, `c32edb2`, `097de55`, and others across April 2026

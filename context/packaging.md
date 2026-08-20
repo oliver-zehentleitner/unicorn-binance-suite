@@ -2,6 +2,7 @@
 
 ## No in-repo conda build
 
+**Type:** decision
 **Status:** active
 **Evidence:** confirmed
 **Source:** commit 83cc723, 2026-04-18
@@ -14,6 +15,7 @@
 
 ## `channels:` doesn't belong in `meta.yaml`
 
+**Type:** constraint
 **Status:** active
 **Evidence:** confirmed
 **Source:** commit 83cc723, 2026-04-18
@@ -24,6 +26,7 @@
 
 ## Sphinx theme's `'lucit': True` flag
 
+**Type:** decision
 **Status:** active
 **Evidence:** inferred
 
