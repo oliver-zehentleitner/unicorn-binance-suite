@@ -40,10 +40,13 @@ The conda-forge autotick bot opens pin-bump PRs in downstream feedstocks automat
 
 ## Recurring pitfalls (not bugs, expected friction)
 
+**Type:** workaround
+**Status:** active
+**Evidence:** confirmed
+**Source:** all of the above validated during the April 2026 (2026-04-18/19) suite-wide cleanup release round
+
 - **CDN-cache race:** a feedstock PR's own CI goes green, but the subsequent main-branch build goes red on the same `meta.yaml` roughly a minute later. Not a real regression — the fix is a new build-number bump and retry. Most likely right after suite deps were just freshly published, before the CDN has caught up.
 - **Parallel pin-PR conflicts:** two bump PRs open at once both touch the same `CHANGELOG.md` `X.X.dev` block; merging one requires rebasing the other.
 - **Partial Azure builds:** if Azure (Windows/Mac) fails with transient git-fetch errors while Linux is green, the package can land incomplete in the channel. Fix: a new PR bumping `build.number` plus an explicit `@conda-forge-admin, please rerender` comment (the rerender request must be a comment, not text in the PR body — it isn't executed there).
 - **Python 3.14 migration silently reverts:** once a feedstock has been converted from `noarch: python` to a compiled build (Cython), a plain rerender can *delete* the existing `.ci_support/*python3.14*` files instead of regenerating them, because conda-smithy falls back to global pinning defaults without an active migration file. Fix: ensure `.ci_support/migrations/python314.yaml` exists in the feedstock (copy from conda-forge's `conda-forge-pinning-feedstock` migrations, or from `unicorn-binance-websocket-api-feedstock` which already has it), commit it, then rerender. Check for this file on every UBS feedstock bump — it's easy to lose 3.14 support silently on a routine rerender otherwise.
 - **Autotick bot opens a redundant version-bump PR in parallel** with a manual one — just close it (requires maintainer, the AIgent account has no close rights on those repos).
-
-**Evidence:** all of the above validated during the April 2026 (2026-04-18/19) suite-wide cleanup release round.
