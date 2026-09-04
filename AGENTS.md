@@ -119,9 +119,5 @@ Why this exact order, the conda-forge indexing wait, and recurring release pitfa
 - Meta-package has no source code; any "bug" is really in one of the six modules.
 - Packaging/dependency gotchas (meta.yaml, channels, the Sphinx `'lucit': True` flag): see [`context/packaging.md`](context/packaging.md).
 
-<!-- keep-the-why:config -->
-- context: `context/`
-- init: complete
-- context-schema: 0.9.0
-- capture-confirmation: confirm-when-unsure
-<!-- /keep-the-why:config -->
+Keep the Why's config for this project migrated to .keep-the-why on
+2026-09-04 — requires skill version 0.10.0 or later to read it.
