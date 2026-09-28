@@ -4,10 +4,12 @@
 
 > Superseded — LUCIT is fully removed as of this cleanup round.
 
+**Id:** 2749fc08-cdca-456b-a8bd-fd4b646ff64c
 **Type:** decision
 **Status:** superseded
 **Evidence:** confirmed
 **Source:** commits `83cc723`, `af0a4bf`, `c32edb2`, `097de55`, and others across April 2026
+**Superseded by:** none — the removal was carried out in full in April 2026; no later decision replaced it
 
 The suite previously had a "LUCIT" branding and licensing layer across all repos: a `lucit` conda channel (`meta.yaml`/`environment.yml`), a `lucit-licensing-python` host dependency, LUCIT-branded logos/badges, a `lucit.tech` security-contact form, and Matomo/Freshchat tracking snippets pointing at `lucit.*` domains in the Sphinx theme config.
 

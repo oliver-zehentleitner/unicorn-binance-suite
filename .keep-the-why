@@ -4,9 +4,20 @@ README, for what Keep the Why actually is.
 
 <!-- keep-the-why:config -->
 - id: oliver-zehentleitner---unicorn-binance-suite
+- canonical: https://github.com/oliver-zehentleitner/unicorn-binance-suite
+- dashboard-state: https://oliver-zehentleitner.github.io/unicorn-binance-suite/keep-the-why-dashboard/state.json
 - context: `context/`
 - init: complete
-- context-schema: 0.17.0
+- context-schema: 0.18.0
 - capture-confirmation: automatic
 - source-reference: never
 <!-- /keep-the-why:config -->
+
+<!-- keep-the-why:children -->
+- unicorn-binance-websocket-api: https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api — WebSocket stream client: stream setup and management, the receive loop, reconnects, websocket libraries (websockets/picows) and proxies, userData/listenKey streams incl. Portfolio Margin
+- unicorn-binance-rest-api: https://github.com/oliver-zehentleitner/unicorn-binance-rest-api — REST client: endpoint coverage per Binance exchange (spot, margin, futures, options, Portfolio Margin, us, tr), request handling, listenKey endpoints, its CI test setup
+- unicorn-binance-local-depth-cache: https://github.com/oliver-zehentleitner/unicorn-binance-local-depth-cache — local order books (DepthCaches): snapshot/stream sync and resync per exchange (spot, futures, options, margin), orphaned-level handling, the Python client for UBDCC
+- unicorn-binance-depth-cache-cluster: https://github.com/oliver-zehentleitner/unicorn-binance-depth-cache-cluster — the DepthCache cluster (UBDCC): node roles, replication and failover, its REST API and error codes (fail-loud #6000), local and Kubernetes/Helm deployment, container images
+- unicorn-binance-trailing-stop-loss: https://github.com/oliver-zehentleitner/unicorn-binance-trailing-stop-loss — trailing stop loss and smart entry engine and its CLI: stop-loss modes (incl. jump-in-and-trail), order placement and retry handling, CLI configuration
+- unicorn-fy: https://github.com/oliver-zehentleitner/unicorn-fy — normalizing raw Binance payloads into consistent Python dicts: per-stream adapters, the userData envelope, event-type handling, JSON parsing (orjson)
+<!-- /keep-the-why:children -->

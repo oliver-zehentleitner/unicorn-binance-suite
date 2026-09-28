@@ -2,6 +2,7 @@
 
 ## Fixed release order across the suite
 
+**Id:** 11b118c1-3205-498d-807d-9ac4cbc7a186
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -18,6 +19,7 @@ Releases across the suite always go in this order:
 
 ## Wait for conda-forge indexing, not just for the merge
 
+**Id:** a5227f38-928b-4573-9f9a-eeae5a3b336b
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
@@ -29,6 +31,7 @@ After a feedstock PR is merged, there's a ~15–30 minute gap before the package
 
 ## Bot-driven pin bumps vs. manual PRs
 
+**Id:** 83aacda3-6460-4393-b741-542b2b78af92
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -40,6 +43,7 @@ The conda-forge autotick bot opens pin-bump PRs in downstream feedstocks automat
 
 ## Recurring pitfalls (not bugs, expected friction)
 
+**Id:** 477bb0a1-1bbf-481e-84b5-491596cd5bca
 **Type:** workaround
 **Status:** active
 **Evidence:** confirmed
