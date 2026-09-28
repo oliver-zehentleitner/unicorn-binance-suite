@@ -32,6 +32,7 @@
 **Type:** decision
 **Status:** active
 **Evidence:** inferred
+**See:** history.md#lucit-brandinglicensing-removal-april-2026 — 2749fc08-cdca-456b-a8bd-fd4b646ff64c — as of 2026-09-28
 
 `dev/sphinx/source/conf.py` sets `'lucit': True` in `html_context`, even though the LUCIT branding/licensing cleanup (see `history.md`) removed LUCIT elsewhere in the repo (badges, channel refs, contact URLs).
 

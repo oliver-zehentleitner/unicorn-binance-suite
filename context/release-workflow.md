@@ -8,6 +8,7 @@
 **Evidence:** confirmed
 **Source:** maintainer
 **Revisit when:** a new module is added to the suite, or a module's dependency graph changes
+**See:** history.md#lucit-brandinglicensing-removal-april-2026 — 2749fc08-cdca-456b-a8bd-fd4b646ff64c — as of 2026-09-28
 
 Releases across the suite always go in this order:
 
