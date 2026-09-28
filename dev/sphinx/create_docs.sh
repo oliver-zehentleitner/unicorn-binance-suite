@@ -59,6 +59,10 @@ rm -rf dev/sphinx/source/context
 mkdir -p dev/sphinx/source/context
 cp context/*.md dev/sphinx/source/context/
 rm -f dev/sphinx/source/context/README.md dev/sphinx/source/context/AGENTS.md dev/sphinx/source/context/CLAUDE.md
+# The index's 0-9/A-Z skeleton headings are for the file, not for the docs'
+# table of contents: list the page by its title only.
+printf -- '---\ntocdepth: 1\n---\n' | cat - dev/sphinx/source/context/index.md > dev/sphinx/source/context/index.md.tmp
+mv dev/sphinx/source/context/index.md.tmp dev/sphinx/source/context/index.md
 
 mkdir -vp dev/sphinx/build
 

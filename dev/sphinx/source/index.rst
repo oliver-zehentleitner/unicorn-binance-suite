@@ -13,7 +13,7 @@ Welcome to unicorn-binance-suite's documentation!
    Readme <readme.md>
    Docs Index <docs_index.md>
    Why this project is built this way <context/index.md>
-   Dashboard <https://oliver-zehentleitner.github.io/unicorn-binance-suite/dashboard/live/>
+   Keep the Why Dashboard <https://oliver-zehentleitner.github.io/unicorn-binance-suite/dashboard/live/>
    Modules <modules.rst>
    ChangeLog <changelog.md>
    Code of Conduct <code_of_conduct.md>
