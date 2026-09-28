@@ -2,6 +2,7 @@
 
 ## No in-repo conda build
 
+**Id:** 735b6b07-59d0-43a8-95cc-2938b62855a5
 **Type:** decision
 **Status:** active
 **Evidence:** confirmed
@@ -15,6 +16,7 @@
 
 ## `channels:` doesn't belong in `meta.yaml`
 
+**Id:** 9bc8270c-a534-41be-93b7-6ffaed7827b4
 **Type:** constraint
 **Status:** active
 **Evidence:** confirmed
@@ -26,9 +28,11 @@
 
 ## Sphinx theme's `'lucit': True` flag
 
+**Id:** 8724ad7d-0e41-4eb1-a2bb-15b01a941f1f
 **Type:** decision
 **Status:** active
 **Evidence:** inferred
+**See:** history.md#lucit-brandinglicensing-removal-april-2026 — 2749fc08-cdca-456b-a8bd-fd4b646ff64c — as of 2026-09-28
 
 `dev/sphinx/source/conf.py` sets `'lucit': True` in `html_context`, even though the LUCIT branding/licensing cleanup (see `history.md`) removed LUCIT elsewhere in the repo (badges, channel refs, contact URLs).
 
