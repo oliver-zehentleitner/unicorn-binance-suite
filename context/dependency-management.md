@@ -5,11 +5,12 @@
 **Id:** e4ecf155-46ab-432e-9403-25ad694f453c
 **Type:** constraint
 **Status:** active
-**Evidence:** inferred
+**Evidence:** confirmed
+**Source:** retrospective pass; maintainer, 2026-09-28
 
 `requirements.txt`, `setup.py`, `pyproject.toml`, `environment.yml`, and `meta.yaml` (local dev copy) all declare the suite's module dependencies independently. `setup.py` is the source of truth; the other four are updated by hand whenever it changes.
 
-**Reason (inferred):** the five files belong to four different packaging ecosystems (pip sdist, PEP 621/pyproject, conda env spec, conda recipe) that don't share a common dependency-declaration format this project generates from. No commit or discussion was found proposing a single generated source instead — this looks like the default state of a multi-ecosystem Python package rather than a considered-and-rejected alternative. Flagging as inferred rather than confirmed since no maintainer statement or history entry backs the "no alternative existed" reading specifically.
+**Reason:** the five files belong to four different packaging ecosystems (pip sdist, PEP 621/pyproject, conda env spec, conda recipe) that don't share a common dependency-declaration format this project generates from. A single generated source was never proposed; this is the default state of a multi-ecosystem Python package, not a considered-and-rejected alternative — derived from the history in a retrospective pass, confirmed by the maintainer on 2026-09-28.
 
 ## Never pin to a version that isn't released on PyPI yet
 
