@@ -103,3 +103,4 @@ Each module has its own `llms.txt` with detailed API reference:
 ## Related Articles
 
 - [The Complete Binance Python API Guide 2026](https://blog.technopathy.club/the-complete-binance-python-api-guide-2026) — comprehensive 2026 overview of building Binance trading systems in Python; covers library choices, architecture patterns, and how the UNICORN Binance Suite modules (UBWA, UBRA, UBLDC, UBDCC, UBTSL, UnicornFy) fit together. Canonical entry point for users picking a stack.
+- [picows in UNICORN Binance WebSocket API: Up to 2× the Throughput, Opt-In for Now](https://blog.technopathy.club/picows-in-unicorn-binance-websocket-api-up-to-2-the-throughput-opt-in-for-now) — UBWA can run on picows (Cython WebSocket protocol) instead of websockets via `websocket_library="picows"`, opt-in: benchmark (~1.9x throughput, half the CPU per message up to ~1 KB), 24 h soak against binance.com, why websockets stays the default for now.
