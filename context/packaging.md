@@ -31,11 +31,12 @@
 **Id:** 8724ad7d-0e41-4eb1-a2bb-15b01a941f1f
 **Type:** decision
 **Status:** active
-**Evidence:** inferred
+**Evidence:** confirmed
+**Source:** retrospective pass; maintainer, 2026-09-28
 **See:** history.md#lucit-brandinglicensing-removal-april-2026 — 2749fc08-cdca-456b-a8bd-fd4b646ff64c — as of 2026-09-28
 
 `dev/sphinx/source/conf.py` sets `'lucit': True` in `html_context`, even though the LUCIT branding/licensing cleanup (see `history.md`) removed LUCIT elsewhere in the repo (badges, channel refs, contact URLs).
 
-**Reason (inferred):** this is a boolean feature flag consumed by the custom Sphinx theme (`python_docs_theme_lucit`) to switch on a layout/behavior mode, not a literal LUCIT brand reference — removing it would change how the theme renders, not just cosmetic wording. No commit was found explaining the flag's internal meaning inside the theme itself; kept as inferred since that would require reading the theme package's source, not just this repo's history.
+**Reason:** this is a boolean feature flag consumed by the custom Sphinx theme (`python_docs_theme_lucit`) to switch on a layout/behavior mode, not a literal LUCIT brand reference — removing it would change how the theme renders, not just cosmetic wording. First derived in a retrospective pass — no commit here explains the flag's meaning inside the theme — and confirmed by the maintainer on 2026-09-28.
 
 **Revisit when:** the suite forks or replaces `python_docs_theme_lucit` (see suite-wide plan to fork it into a UBS-specific theme variant) — at that point this flag's meaning should be re-checked against the new theme's option, not carried over blindly.
