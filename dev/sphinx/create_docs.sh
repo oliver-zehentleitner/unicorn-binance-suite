@@ -51,6 +51,15 @@ cp LICENSE dev/sphinx/source/license.rst
 cp README.md dev/sphinx/source/readme.md
 cp SECURITY.md dev/sphinx/source/security.md
 
+# Keep the Why: context/ as its own section of the docs, "Why this project is
+# built this way" — the topic files and their index, rendered by myst like the
+# README. README, AGENTS and CLAUDE are for the folder on GitHub, not pages.
+# Build-only copy, ignored by git (dev/sphinx/source/context/ in .gitignore).
+rm -rf dev/sphinx/source/context
+mkdir -p dev/sphinx/source/context
+cp context/*.md dev/sphinx/source/context/
+rm -f dev/sphinx/source/context/README.md dev/sphinx/source/context/AGENTS.md dev/sphinx/source/context/CLAUDE.md
+
 mkdir -vp dev/sphinx/build
 
 cd dev/sphinx

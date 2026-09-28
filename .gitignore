@@ -108,3 +108,6 @@ venv.bak/
 /CLAUDE.md
 
 AGENTS.local.md
+
+# build-only copy of context/ for the docs (dev/sphinx/create_docs.sh)
+dev/sphinx/source/context/
