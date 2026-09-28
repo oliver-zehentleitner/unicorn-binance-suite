@@ -54,7 +54,8 @@ Part of '[UNICORN Binance Suite](https://blog.technopathy.club/page/unicorn-bina
 | **DepthCache cluster**                                                                                                                                                                           | **UBDCC** — horizontally scalable, load balancing, failover, REST API | — | — | — |
 | **Live cluster dashboard**                                                                                                                                                                       | **UBDCC Dashboard** — browser UI, CLI-launched, MIT | — | — | — |
 | **Trailing stop loss**                                                                                                                                                                           | **UBTSL** as SDK + CLI, incl. `jump-in-and-trail` | Not included | Not included | Not included |
-| **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled | Pure Python, no C | Pure Python — [reported performance issues](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
+| **Performance**                                                                                                                                                                                  | Cython C extensions, PyPy wheels, pre-compiled; stream loop profiled down to ~0.5 µs of own overhead per message ([numbers](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/blob/master/context/stream-loop.md)) | Pure Python, no C | Pure Python — [reported performance issues](https://github.com/ccxt/ccxt/issues/25152) with many symbols | Pure Python |
+| **WebSocket transport**                                                                                                                                                                          | `websockets` by default, [`picows`](https://github.com/tarasko/picows) (Cython WebSocket protocol) as a per-instance switch: same code, [measured](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api#is-picows-faster-measured-not-assumed) ~1.9x messages/s at half the CPU per message, 24 h soak against binance.com. Opt-in on purpose while it collects real-world mileage — two upstream findings so far, one fixed, [one with a fix proposed](https://github.com/tarasko/picows/pull/118) | `websockets` only | Own client on `aiohttp` only | `websockets` only |
 | **Multi-arch wheels**                                                                                                                                                                            | x86_64, aarch64, arm64, PyPy | Mostly x86_64 | Pure Python | Pure Python |
 | **Python support**                                                                                                                                                                               | 3.9 – 3.14 | 3.8+ | 3.9+ | 3.9+ |
 | **[Stream signals](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api/wiki/%60stream_signals%60)**                                                                            | `CONNECT`, `FIRST_RECEIVED_DATA`, `DISCONNECT`, `STOP`, `STREAM_UNREPAIRABLE` — know the exact state of every stream | No | No | No |
@@ -74,7 +75,8 @@ Part of '[UNICORN Binance Suite](https://blog.technopathy.club/page/unicorn-bina
 Original author abandoned the project in 2022. Community fork ships sporadic patches, but the fundamental architecture 
 is unchanged: max. 5 reconnect retries, then dead. `DepthCacheManager` permanently unusable after a missed 
 reconnect — restart your process, lose your state. Default 30-minute REST polling means you're trading on a stale 
-book between refreshes. No Cython, no multi-arch wheels, no cluster story.
+book between refreshes. No Cython, no multi-arch wheels, no cluster story, and the WebSocket layer is `websockets` 
+only — there is no faster transport to switch to.
 
 ### ccxt: silent disconnect on watch_order_book
 
@@ -132,7 +134,9 @@ migration.
 ### [UNICORN Binance WebSocket API](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api) (UBWA)
 Real-time market data and user data streams with automatic reconnect, sequence validation, native asyncio queues and 
 runtime subscribe/unsubscribe without disconnecting. Supports all Binance endpoints including Spot, Margin, Futures, 
-Coin-Futures, **Portfolio Margin (user data streams)**, US and TR.
+Coin-Futures, **Portfolio Margin (user data streams)**, US and TR. Runs on `websockets` by default or, with one 
+parameter, on [`picows`](https://github.com/tarasko/picows) for roughly twice the throughput per core (opt-in, 
+[measured and soaked](https://github.com/oliver-zehentleitner/unicorn-binance-websocket-api#websocket-library-websockets-or-picows)).
 
 **1.2M+ downloads** | **729 stars**
 
@@ -337,6 +341,7 @@ is traceable.
 
 ## Related Articles
 - [The Complete Binance Python API Guide 2026](https://blog.technopathy.club/the-complete-binance-python-api-guide-2026)
+- [picows in UNICORN Binance WebSocket API: Up to 2× the Throughput, Opt-In for Now](https://blog.technopathy.club/picows-in-unicorn-binance-websocket-api-up-to-2-the-throughput-opt-in-for-now)
 - [How to create a Binance API Key and API Secret?](https://blog.technopathy.club/how-to-create-a-binance-api-key-and-api-secret)
 - [UNICORN Binance Suite Article Series](https://blog.technopathy.club/series/unicorn-binance-suite)
 
