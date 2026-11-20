@@ -16,6 +16,7 @@
 [![Telegram](https://img.shields.io/badge/community-telegram-41ab8c)](https://t.me/unicorndevs)
 [![Reddit](https://img.shields.io/badge/community-reddit-41ab8c)](https://www.reddit.com/r/UNICORNBinanceSuite)
 [![Keep the Why · live](https://oliver-zehentleitner.github.io/unicorn-binance-suite/keep-the-why-dashboard/badge-entries.svg)](https://oliver-zehentleitner.github.io/unicorn-binance-suite/keep-the-why-dashboard/)
+[![maity](https://maity.team/badge/oliver-zehentleitner/unicorn-binance-suite.svg)](https://maity.team/oliver-zehentleitner/unicorn-binance-suite/overview)
 
 [![UBS-Banner](https://raw.githubusercontent.com/oliver-zehentleitner/unicorn-binance-suite/master/images/logo/UBS-Banner-Readme.png)](https://blog.technopathy.club/page/unicorn-binance-suite)
 
